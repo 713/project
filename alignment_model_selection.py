@@ -5,15 +5,22 @@ import sys
 
 # Fields for user to change.
 data_dirpath   = "/Users/lleung/713project/data_sample"
+
 data_backbone  = "/Users/lleung/713project/data_sample/backbone.txt"
 #data_file_list = ["seq0.txt", "seq1.txt"]
 data_file_list = ["HIV_vpu.ref2.fas"]   #testing jModelTest
-data_output    = "/Users/lleung/713project/output_mauve.txt"
 
+data_output    = "/Users/lleung/713project/output_mauve.txt"
 location_mauve = "/Applications/Mauve.app/Contents/MacOS/progressiveMauve"
 location_jModelTest = "/Users/lleung/713project/jmodeltest-2.1.3/jModelTest.jar"
 output_model = "/Users/lleung/713project/output_model_selection.txt"
 
+#Prateek's
+
+#data_backbone = data_dirpath+"/backbone.txt"
+#data_output = data_dirpath+"/output_mauve.txt"
+'''Should we hardcode the things as MacOS?'''
+################################################
 # ## Rebecca's variables
 # data_dirpath   = "/Users/relyanow/Dropbox/pipeline_output"
 # data_backbone  = "/Users/relyanow/Dropbox/pipeline_output/bb_apr7_2.txt"
@@ -30,7 +37,8 @@ output_model = "/Users/lleung/713project/output_model_selection.txt"
 
 
 ### User do not have to edit anything below. ###
-
+#### For joining the lines the following line is faster.
+#### sequence = ''.join(file.read().splitlines())
 #Function to fetch the sequence for a given strain.
 def get_sequence(filename, dirpath):
     sequence = ""
@@ -89,7 +97,7 @@ def get_concat_seq(sequence, seq_num, backbone):
             start = int(line[2*seq_num])
             end = int(line[(2*seq_num)+1])
             #Slice the sequence in those positions.
-#            print(sequence)
+            #print(sequence)
             assert(len(sequence) > end)
             if(start != 0 or end != 0):
                 align_seq += sequence[start:end]
