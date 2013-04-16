@@ -1,0 +1,830 @@
+$ python alignment_model_selection.py 
+/Applications/Mauve.app/Contents/MacOS/progressiveMauve --output=/Users/lleung/713project/output_mauve.txt --backbone-output=/Users/lleung/713project/data_sample/backbone.txt /Users/lleung/713project/data_sample/HIV_vpu.ref2.fas
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Sequence loaded successfully.
+/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
+Using 7-mers for initial seeds
+Creating sorted mer list
+ERROR! gap character encountered at genome sequence position 9
+Input sequences must be unaligned and ungapped!
+libc++abi.dylib: terminate called throwing an exception
+Model Selection in progress
+java -jar /Users/lleung/713project/jmodeltest-2.1.3/jModelTest.jar -d /Users/lleung/713project/data_sample/HIV_vpu.ref2.fas -g 4 -f -AIC -BIC -a -S BEST
+[MPI] Testing MPI environment... (GLaDOS.local)
+[MPI] Proceed without MPI
+------------------------------- jModeltest 2.1.3 -------------------------------
+(c) 2011-onwards D. Darriba, G.L. Taboada, R. Doallo and D. Posada,
+(1) Department of Biochemistry, Genetics and Immunology
+    University of Vigo, 36310 Vigo, Spain.
+(2) Department of Electronics and Systems
+    University of A Coruna, 15071 A Coruna, Spain.
+e-mail: ddarriba@udc.es, dposada@uvigo.es
+--------------------------------------------------------------------------------
+ 
+Tue Apr 16 06:57:06 EDT 2013
+Mac OS X 10.8.2, arch: x86_64, bits: 64, numcores: 2
+ 
+--------------------------------------------------------------------------------
+Citation: Darriba D, Taboada GL, Doallo R and Posada D. 2012.
+          "jModelTest 2: more models, new heuristics and parallel computing".
+          Nature Methods 9(8), 772.
+--------------------------------------------------------------------------------
+ 
+jModelTest 2.1.3
+Copyright (C) 2011 D. Darriba, G.L. Taboada, R. Doallo and D. Posada
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain conditions
+ 
+Notice: This program may contain errors. Please inspect results carefully.
+ 
+ 
+Arguments = -d /Users/lleung/713project/data_sample/HIV_vpu.ref2.fas -g 4 -f -AIC -BIC -a -S BEST
+
+Reading data file "HIV_vpu.ref2.fas"... OK.
+  number of sequences: 35
+  number of sites: 392
+ 
+ 
+---------------------------------------------------------------
+*                                                             *
+*        COMPUTATION OF LIKELIHOOD SCORES WITH PHYML          *
+*                                                             *
+---------------------------------------------------------------
+ 
+::Settings::
+ 
+ Phyml version = 3.0
+ Phyml binary = PhyML_3.0_macOS_i386
+ Candidate models = 12
+   number of substitution schemes = 3
+   including models with equal/unequal base frequencies (+F)
+   including only models without a proportion of invariable sites
+   including models with/without rate variation among sites (+G) (nCat = 4)
+ Optimized free parameters (K) = substitution parameters + 67 branch lengths + topology 
+ Base tree for likelihood calculations = ML tree
+ Tree topology search operation = BEST
+ 
+ 
+ 
+::Progress::
+ 
+Model 		 Exec. Time 	 Total Time 	 -lnL
+-------------------------------------------------------------------------
+F81+G		00h:00:53:07	00h:00:53:07	    3723.6018	 (1/12)
+HKY+G		00h:00:56:02	00h:00:56:02	    3628.6740	 (2/12)
+JC+G		00h:00:43:05	00h:01:39:06	    3775.5754	 (3/12)
+GTR+G		00h:01:06:07	00h:02:00:04	    3612.7999	 (4/12)
+K80+G		00h:00:54:09	00h:02:34:06	    3669.9969	 (5/12)
+F81		00h:00:11:05	00h:02:46:00	    3905.7283	 (6/12)
+SYM+G		00h:00:53:08	00h:02:54:02	    3656.9590	 (7/12)
+HKY		00h:00:13:06	00h:02:59:06	    3823.0913	 (8/12)
+GTR		00h:00:19:03	00h:03:13:05	    3794.9761	 (9/12)
+JC		00h:00:17:07	00h:03:17:03	    3961.9307	 (10/12)
+K80		00h:00:16:09	00h:03:30:04	    3867.9845	 (11/12)
+SYM		00h:00:13:02	00h:03:30:05	    3860.8475	 (12/12)
+ 
+   Model = JC
+   partition = 000000
+   -lnL = 3961.9307
+   K = 68 
+ 
+   Model = JC+G
+   partition = 000000
+   -lnL = 3775.5754
+   K = 69
+   gamma shape = 0.6840 
+ 
+   Model = F81
+   partition = 000000
+   -lnL = 3905.7283
+   K = 71
+   freqA = 0.3753 
+   freqC = 0.1440 
+   freqG = 0.2653 
+   freqT = 0.2154  
+ 
+   Model = F81+G
+   partition = 000000
+   -lnL = 3723.6018
+   K = 72
+   freqA = 0.3754 
+   freqC = 0.1466 
+   freqG = 0.2656 
+   freqT = 0.2124 
+   gamma shape = 0.6950 
+ 
+   Model = K80
+   partition = 010010
+   -lnL = 3867.9845
+   K = 69
+   kappa = 2.9829 (ti/tv = 1.4914) 
+ 
+   Model = K80+G
+   partition = 010010
+   -lnL = 3669.9969
+   K = 70
+   kappa = 3.3833 (ti/tv = 1.6917)
+   gamma shape = 0.6610 
+ 
+   Model = HKY
+   partition = 010010
+   -lnL = 3823.0913
+   K = 72
+   freqA = 0.3518 
+   freqC = 0.1491 
+   freqG = 0.2243 
+   freqT = 0.2749 
+   kappa = 2.9588 (ti/tv = 1.4523) 
+ 
+   Model = HKY+G
+   partition = 010010
+   -lnL = 3628.6740
+   K = 73
+   freqA = 0.3583 
+   freqC = 0.1473 
+   freqG = 0.2308 
+   freqT = 0.2636 
+   kappa = 3.3227 (ti/tv = 1.6681)
+   gamma shape = 0.6730 
+ 
+   Model = SYM
+   partition = 012345
+   -lnL = 3860.8475
+   K = 73
+   R(a) [AC] =  1.1033
+   R(b) [AG] =  2.7913
+   R(c) [AT] =  1.0292
+   R(d) [CG] =  0.4702
+   R(e) [CT] =  2.8139
+   R(f) [GT] =  1.0000 
+ 
+   Model = SYM+G
+   partition = 012345
+   -lnL = 3656.9590
+   K = 74
+   R(a) [AC] =  1.3307
+   R(b) [AG] =  3.8338
+   R(c) [AT] =  1.3155
+   R(d) [CG] =  0.3812
+   R(e) [CT] =  2.9401
+   R(f) [GT] =  1.0000
+   gamma shape = 0.6350 
+ 
+   Model = GTR
+   partition = 012345
+   -lnL = 3794.9761
+   K = 76
+   freqA = 0.3884 
+   freqC = 0.0946 
+   freqG = 0.2560 
+   freqT = 0.2611 
+   R(a) [AC] =  2.1533
+   R(b) [AG] =  2.5045
+   R(c) [AT] =  0.8571
+   R(d) [CG] =  1.0819
+   R(e) [CT] =  6.0572
+   R(f) [GT] =  1.0000 
+ 
+   Model = GTR+G
+   partition = 012345
+   -lnL = 3612.7999
+   K = 77
+   freqA = 0.3782 
+   freqC = 0.0997 
+   freqG = 0.2749 
+   freqT = 0.2473 
+   R(a) [AC] =  2.4107
+   R(b) [AG] =  2.8746
+   R(c) [AT] =  0.9484
+   R(d) [CG] =  1.1035
+   R(e) [CT] =  7.0270
+   R(f) [GT] =  1.0000
+   gamma shape = 0.6730 
+ 
+  Best-fit models should be reoptimized for comparison with unconstrained likelihood
+ 
+Computation of likelihood scores completed. It took 00h:03:30:05.
+ 
+
+
+
+---------------------------------------------------------------
+*                                                             *
+*             AKAIKE INFORMATION CRITERION (AIC)              *
+*                                                             *
+---------------------------------------------------------------
+ 
+ Model selected: 
+   Model = GTR+G
+   partition = 012345
+   -lnL = 3612.7999
+   K = 77
+   freqA = 0.3782 
+   freqC = 0.0997 
+   freqG = 0.2749 
+   freqT = 0.2473 
+   R(a) [AC] =  2.4107
+   R(b) [AG] =  2.8746
+   R(c) [AT] =  0.9484
+   R(d) [CG] =  1.1035
+   R(e) [CT] =  7.0270
+   R(f) [GT] =  1.0000
+   gamma shape = 0.6730 
+ 
+ML tree (NNI) for the best AIC model = (G.BE.96.DRCBL:0.03097013,G.NG.92.92NG083:0.04291394,(G.KE.93.HH8793_12_1:0.05987611,(G.SE.93.SE6165:0.01866564,(((B.NL.00.671_00T36:0.04302759,(B.US.98.1058_11:0.08666180,(B.FR.83.HXB2-LAI-IIIB-BRU:0.04291782,B.TH.90.BK132:0.04783868):0.01727309):0.00672424):0.06125269,((D.UG.94.94UG114:0.06000805,D.TZ.01.A280:0.09005027):0.03272341,(D.CM.01.01CM_4412HAL:0.14435832,D.CD.83.ELI:0.07895735):0.00874328):0.02258796):0.01848601,(((A2.CD.97.97CDKTB48:0.10121229,A2.CY.94.94CY017_41:0.07190126):0.06740506,((A1.UG.98.98UG57136:0.10720878,A1.UG.92.92UG037:0.08885861):0.00000071,(A1.SE.94.SE7253:0.11442928,A1.KE.94.Q23_17:0.07284409):0.01689191):0.08949066):0.03111710,((C.ET.86.ETH2220:0.05461217,((C.ZA.04.SK164B1:0.15046138,C.IN.95.95IN21068:0.03822505):0.01386813,C.BR.92.BR025-d:0.08565015):0.01984987):0.16013485,((K.CM.96.MP535:0.09576842,(K.CD.97.EQTB11C:0.06709023,(F2.CM.97.CM53657:0.03565509,(F2.CM.95.MP255:0.03278591,(F2.CM.02.02CM_0016BBY:0.07204736,(F1.FR.96.MP411:0.08718477,(F1.FI.93.FIN9363:0.05749355,(F1.BE.93.VI850:0.01373220,F1.BR.93.93BR020_1:0.02930012):0.00983280):0.01530345):0.01897058):0.00747241):0.00298003):0.10824390):0.00220545):0.09168283,((J.SE.93.SE7887:0.04023373,J.SE.94.SE7022:0.03435116):0.12378022,(H.BE.93.VI991:0.01850956,H.CF.90.056:0.06616632):0.13173779):0.03576426):0.00000080):0.03729957):0.03261191):0.15861282):0.02729253):0.01335749);
+ 
+ 
+* AIC MODEL SELECTION : Selection uncertainty
+ 
+Model             -lnL    K         AIC      delta      weight cumWeight
+------------------------------------------------------------------------ 
+GTR+G        3612.7999   77   7379.5998     0.0000      1.0000    1.0000 
+HKY+G        3628.6740   73   7403.3480    23.7482   6.97e-006    1.0000 
+SYM+G        3656.9590   74   7461.9180    82.3183   1.33e-018    1.0000 
+K80+G        3669.9969   70   7479.9938   100.3941   1.58e-022    1.0000 
+F81+G        3723.6018   72   7591.2037   211.6039   1.12e-046    1.0000 
+JC+G         3775.5754   69   7689.1508   309.5510   6.05e-068    1.0000 
+GTR          3794.9761   76   7741.9521   362.3524   2.07e-079    1.0000 
+HKY          3823.0913   72   7790.1826   410.5829   6.97e-090    1.0000 
+SYM          3860.8475   73   7867.6950   488.0952   1.03e-106    1.0000 
+K80          3867.9845   69   7873.9691   494.3693   4.46e-108    1.0000 
+F81          3905.7283   71   7953.4567   573.8569   2.45e-125    1.0000 
+JC           3961.9307   68   8059.8613   680.2616   1.92e-148    1.0000
+------------------------------------------------------------------------
+-lnL:	negative log likelihod
+ K:	number of estimated parameters
+ AIC:	Akaike Information Criterion
+ delta:	AIC difference
+ weight:	AIC weight
+ cumWeight:	cumulative AIC weight
+ 
+ 
+* AIC MODEL SELECTION : Confidence interval
+ 
+There are 12 models in the 100% confidence interval: [ GTR+G HKY+G SYM+G K80+G F81+G JC+G GTR HKY SYM K80 F81 JC ] 
+ 
+ 
+ 
+---------------------------------------------------------------
+*                                                             *
+*                    MODEL AVERAGED PHYLOGENY                 *
+*                                                             *
+---------------------------------------------------------------
+ 
+Selection criterion: . . . . AIC
+Confidence interval: . . . . 1.00
+Consensus type:. . . . . . . 50% majority rule
+ 
+ 
+Using 12 models in the 1.00 confidence interval = GTR+G HKY+G SYM+G K80+G F81+G JC+G GTR HKY SYM K80 F81 JC  
+ 
+Species in order:
+ 
+    1. G.BE.96.DRCBL
+    2. G.NG.92.92NG083
+    3. G.KE.93.HH8793_12_1
+    4. G.SE.93.SE6165
+    5. B.NL.00.671_00T36
+    6. B.US.98.1058_11
+    7. B.FR.83.HXB2-LAI-IIIB-BRU
+    8. B.TH.90.BK132
+    9. D.UG.94.94UG114
+    10. D.TZ.01.A280
+    11. D.CM.01.01CM_4412HAL
+    12. D.CD.83.ELI
+    13. A2.CD.97.97CDKTB48
+    14. A2.CY.94.94CY017_41
+    15. A1.UG.98.98UG57136
+    16. A1.UG.92.92UG037
+    17. A1.SE.94.SE7253
+    18. A1.KE.94.Q23_17
+    19. C.ET.86.ETH2220
+    20. C.ZA.04.SK164B1
+    21. C.IN.95.95IN21068
+    22. C.BR.92.BR025-d
+    23. K.CM.96.MP535
+    24. K.CD.97.EQTB11C
+    25. F2.CM.97.CM53657
+    26. F2.CM.95.MP255
+    27. F2.CM.02.02CM_0016BBY
+    28. F1.FR.96.MP411
+    29. F1.FI.93.FIN9363
+    30. F1.BE.93.VI850
+    31. F1.BR.93.93BR020_1
+    32. J.SE.93.SE7887
+    33. J.SE.94.SE7022
+    34. H.BE.93.VI991
+    35. H.CF.90.056
+ 
+Bipartitions included in the consensus tree
+ 
+    12345678911111111112222222222333333
+             01234567890123456789012345
+    *********************************** ( 1.0 )
+    --********************************* ( 1.0 )
+    ---******************************** ( 1.0 )
+    ----******************************* ( 1.0 )
+    ----********----------------------- ( 1.0 )
+    ----****--------------------------- ( 1.0 )
+    -----***--------------------------- ( 1.0 )
+    ------**--------------------------- ( 1.0 )
+    --------****----------------------- ( 1.0 )
+    --------**------------------------- ( 0.99999 )
+    ----------**----------------------- ( 0.99999 )
+    ------------*********************** ( 1.0 )
+    ------------******----------------- ( 1.0 )
+    ------------**--------------------- ( 1.0 )
+    --------------****----------------- ( 1.0 )
+    --------------**------------------- ( 0.99999 )
+    ----------------**----------------- ( 1.0 )
+    ------------------***************** ( 1.0 )
+    ------------------****------------- ( 1.0 )
+    -------------------***------------- ( 0.99999 )
+    -------------------**-------------- ( 1.0 )
+    ----------------------************* ( 0.99999 )
+    ----------------------*********---- ( 1.0 )
+    -----------------------********---- ( 1.0 )
+    ------------------------*******---- ( 1.0 )
+    -------------------------******---- ( 1.0 )
+    --------------------------*****---- ( 1.0 )
+    ---------------------------****---- ( 1.0 )
+    ----------------------------***---- ( 1.0 )
+    -----------------------------**---- ( 1.0 )
+    -------------------------------**** ( 1.0 )
+    -------------------------------**-- ( 1.0 )
+    ---------------------------------** ( 1.0 )
+
+ 
+                                 +----35 A1.UG.92.92UG037
+                              +-61
+                              |  +------34 A1.UG.98.98UG57136
+                        +----62
+                        |     |  +---33 A1.KE.94.Q23_17
+                        |     +-60
+                        |        +------32 A1.SE.94.SE7253
+                     +-63
+                     |  |    +---31 A2.CY.94.94CY017_41
+                     |  +---59
+                     |       +-----30 A2.CD.97.97CDKTB48
+                  +-64
+                  |  |                                     +-29 F1.BR.93.93BR020_1
+                  |  |                                  +-49
+                  |  |                                  |  +-28 F1.BE.93.VI850
+                  |  |                               +-50
+                  |  |                               |  +--27 F1.FI.93.FIN9363
+                  |  |                            +-51
+                  |  |                            |  +----26 F1.FR.96.MP411
+                  |  |                         +-52
+                  |  |                         |  +---25 F2.CM.02.02CM_0016BBY
+                  |  |                      +-53
+                  |  |                      |  +-24 F2.CM.95.MP255
+                  |  |              +------54
+                  |  |              |       +-23 F2.CM.97.CM53657
+                  |  |           +-55
+                  |  |           |  +---22 K.CD.97.EQTB11C
+                  |  |     +----56
+                  |  |     |     +-----21 K.CM.96.MP535
+                  |  |  +-57
+                  |  |  |  |           +-20 J.SE.94.SE7022
+                  |  |  |  |  +-------47
+                  |  |  |  |  |        +-19 J.SE.93.SE7887
+                  |  |  |  +-48
+                  |  |  |     |         +---18 H.CF.90.056
+                  |  |  |     +--------46
+                  |  |  |               +-17 H.BE.93.VI991
+                  |  +-58
+                  |     |                 +-16 C.IN.95.95IN21068
+                  |     |              +-43
+                  |     |              |  +---------15 C.ZA.04.SK164B1
+                  |     |           +-44
+                  |     |           |  +----14 C.BR.92.BR025-d
+                  |     +----------45
+                  |                 +--13 C.ET.86.ETH2220
+      +----------65
+      |           |            +-12 B.TH.90.BK132
+      |           |         +-39
+      |           |         |  +-11 B.FR.83.HXB2-LAI-IIIB-BRU
+      |           |      +-40
+      |           |      |  +----10 B.US.98.1058_11
+      |           |  +--41
+      |           |  |   +--9 B.NL.00.671_00T36
+      |           +-42
+      |              |     +-----8 D.CD.83.ELI
+      |              |  +-37
+      |              |  |  +---------7 D.CM.01.01CM_4412HAL
+      |              +-38
+      |                 |  +-----6 D.TZ.01.A280
+      |                 +-36
+      |                    +---5 D.UG.94.94UG114
+   +-66
+   |  +--4 G.SE.93.SE6165
++-67
+|  +---3 G.KE.93.HH8793_12_1
+|
++--2 G.NG.92.92NG083
+|
++--1 G.BE.96.DRCBL
+
+ 
+(G.BE.96.DRCBL:0.030970,G.NG.92.92NG083:0.042914,(G.KE.93.HH8793_12_1:0.059876,(G.SE.93.SE6165:0.018666,((((D.UG.94.94UG114:0.060008,D.TZ.01.A280:0.090050)1.00:0.032723,(D.CM.01.01CM_4412HAL:0.144358,D.CD.83.ELI:0.078957)1.00:0.008743)1.00:0.022588,(B.NL.00.671_00T36:0.043028,(B.US.98.1058_11:0.086662,(B.FR.83.HXB2-LAI-IIIB-BRU:0.042918,B.TH.90.BK132:0.047839)1.00:0.017273)1.00:0.006724)1.00:0.061253)1.00:0.018486,(((C.ET.86.ETH2220:0.054612,(C.BR.92.BR025-d:0.085650,(C.ZA.04.SK164B1:0.150461,C.IN.95.95IN21068:0.038225)1.00:0.013868)1.00:0.019850)1.00:0.160135,(((H.BE.93.VI991:0.018510,H.CF.90.056:0.066166)1.00:0.131738,(J.SE.93.SE7887:0.040234,J.SE.94.SE7022:0.034351)1.00:0.123780)1.00:0.035764,(K.CM.96.MP535:0.095768,(K.CD.97.EQTB11C:0.067090,(F2.CM.97.CM53657:0.035655,(F2.CM.95.MP255:0.032786,(F2.CM.02.02CM_0016BBY:0.072047,(F1.FR.96.MP411:0.087185,(F1.FI.93.FIN9363:0.057494,(F1.BE.93.VI850:0.013732,F1.BR.93.93BR020_1:0.029300)1.00:0.009833)1.00:0.015303)1.00:0.018971)1.00:0.007472)1.00:0.002980)1.00:0.108244)1.00:0.002205)1.00:0.091683)1.00:0.000001)1.00:0.037300,((A2.CD.97.97CDKTB48:0.101212,A2.CY.94.94CY017_41:0.071901)1.00:0.067405,((A1.SE.94.SE7253:0.114429,A1.KE.94.Q23_17:0.072844)1.00:0.016892,(A1.UG.98.98UG57136:0.107209,A1.UG.92.92UG037:0.088859)1.00:0.000001)1.00:0.089491)1.00:0.031117)1.00:0.032612)1.00:0.158613)1.00:0.027293)1.00:0.013357);
+ 
+Note: this tree is unrooted. Branch lengths are the expected number of substitutions per site. Labels next to parentheses represent phylogenetic uncertainty due to model selection (see documentation)
+
+
+
+---------------------------------------------------------------
+*                                                             *
+*             BAYESIAN INFORMATION CRITERION (BIC)            *
+*                                                             *
+---------------------------------------------------------------
+ 
+ Sample size: 392.0
+ 
+ Model selected: 
+   Model = GTR+G
+   partition = 012345
+   -lnL = 3612.7999
+   K = 77
+   freqA = 0.3782 
+   freqC = 0.0997 
+   freqG = 0.2749 
+   freqT = 0.2473 
+   R(a) [AC] =  2.4107
+   R(b) [AG] =  2.8746
+   R(c) [AT] =  0.9484
+   R(d) [CG] =  1.1035
+   R(e) [CT] =  7.0270
+   R(f) [GT] =  1.0000
+   gamma shape = 0.6730 
+ 
+ML tree (NNI) for the best BIC model = (G.BE.96.DRCBL:0.03097013,G.NG.92.92NG083:0.04291394,(G.KE.93.HH8793_12_1:0.05987611,(G.SE.93.SE6165:0.01866564,(((B.NL.00.671_00T36:0.04302759,(B.US.98.1058_11:0.08666180,(B.FR.83.HXB2-LAI-IIIB-BRU:0.04291782,B.TH.90.BK132:0.04783868):0.01727309):0.00672424):0.06125269,((D.UG.94.94UG114:0.06000805,D.TZ.01.A280:0.09005027):0.03272341,(D.CM.01.01CM_4412HAL:0.14435832,D.CD.83.ELI:0.07895735):0.00874328):0.02258796):0.01848601,(((A2.CD.97.97CDKTB48:0.10121229,A2.CY.94.94CY017_41:0.07190126):0.06740506,((A1.UG.98.98UG57136:0.10720878,A1.UG.92.92UG037:0.08885861):0.00000071,(A1.SE.94.SE7253:0.11442928,A1.KE.94.Q23_17:0.07284409):0.01689191):0.08949066):0.03111710,((C.ET.86.ETH2220:0.05461217,((C.ZA.04.SK164B1:0.15046138,C.IN.95.95IN21068:0.03822505):0.01386813,C.BR.92.BR025-d:0.08565015):0.01984987):0.16013485,((K.CM.96.MP535:0.09576842,(K.CD.97.EQTB11C:0.06709023,(F2.CM.97.CM53657:0.03565509,(F2.CM.95.MP255:0.03278591,(F2.CM.02.02CM_0016BBY:0.07204736,(F1.FR.96.MP411:0.08718477,(F1.FI.93.FIN9363:0.05749355,(F1.BE.93.VI850:0.01373220,F1.BR.93.93BR020_1:0.02930012):0.00983280):0.01530345):0.01897058):0.00747241):0.00298003):0.10824390):0.00220545):0.09168283,((J.SE.93.SE7887:0.04023373,J.SE.94.SE7022:0.03435116):0.12378022,(H.BE.93.VI991:0.01850956,H.CF.90.056:0.06616632):0.13173779):0.03576426):0.00000080):0.03729957):0.03261191):0.15861282):0.02729253):0.01335749);
+ 
+ 
+* BIC MODEL SELECTION : Selection uncertainty
+ 
+Model             -lnL    K         BIC      delta      weight cumWeight
+------------------------------------------------------------------------ 
+GTR+G        3612.7999   77   7685.3869     0.0000      0.9808    0.9808 
+HKY+G        3628.6740   73   7693.2501     7.8632      0.0192    1.0000 
+SYM+G        3656.9590   74   7755.7914    70.4045   5.05e-016    1.0000 
+K80+G        3669.9969   70   7757.9821    72.5952   1.69e-016    1.0000 
+F81+G        3723.6018   72   7877.1345   191.7476   2.26e-042    1.0000 
+JC+G         3775.5754   69   7963.1678   277.7809   4.70e-061    1.0000 
+GTR          3794.9761   76   8043.7680   358.3811   1.48e-078    1.0000 
+HKY          3823.0913   72   8076.1135   390.7266   1.40e-085    1.0000 
+K80          3867.9845   69   8147.9861   462.5992   3.46e-101    1.0000 
+SYM          3860.8475   73   8157.5971   472.2102   2.83e-103    1.0000 
+F81          3905.7283   71   8235.4163   550.0293   3.58e-120    1.0000 
+JC           3961.9307   68   8329.9071   644.5202   1.09e-140    1.0000
+------------------------------------------------------------------------
+-lnL:	negative log likelihod
+K:	number of estimated parameters
+BIC:	Bayesian Information Criterion
+delta:	BIC difference
+weight:	BIC weight
+cumWeight:	cumulative BIC weight
+ 
+ 
+* BIC MODEL SELECTION : Confidence interval
+ 
+There are 12 models in the 100% confidence interval: [ GTR+G HKY+G SYM+G K80+G F81+G JC+G GTR HKY K80 SYM F81 JC ] 
+ 
+ 
+ 
+---------------------------------------------------------------
+*                                                             *
+*                    MODEL AVERAGED PHYLOGENY                 *
+*                                                             *
+---------------------------------------------------------------
+ 
+Selection criterion: . . . . BIC
+Confidence interval: . . . . 1.00
+Consensus type:. . . . . . . 50% majority rule
+ 
+ 
+Using 12 models in the 1.00 confidence interval = GTR+G HKY+G SYM+G K80+G F81+G JC+G GTR HKY K80 SYM F81 JC  
+ 
+Species in order:
+ 
+    1. G.BE.96.DRCBL
+    2. G.NG.92.92NG083
+    3. G.KE.93.HH8793_12_1
+    4. G.SE.93.SE6165
+    5. B.NL.00.671_00T36
+    6. B.US.98.1058_11
+    7. B.FR.83.HXB2-LAI-IIIB-BRU
+    8. B.TH.90.BK132
+    9. D.UG.94.94UG114
+    10. D.TZ.01.A280
+    11. D.CM.01.01CM_4412HAL
+    12. D.CD.83.ELI
+    13. A2.CD.97.97CDKTB48
+    14. A2.CY.94.94CY017_41
+    15. A1.UG.98.98UG57136
+    16. A1.UG.92.92UG037
+    17. A1.SE.94.SE7253
+    18. A1.KE.94.Q23_17
+    19. C.ET.86.ETH2220
+    20. C.ZA.04.SK164B1
+    21. C.IN.95.95IN21068
+    22. C.BR.92.BR025-d
+    23. K.CM.96.MP535
+    24. K.CD.97.EQTB11C
+    25. F2.CM.97.CM53657
+    26. F2.CM.95.MP255
+    27. F2.CM.02.02CM_0016BBY
+    28. F1.FR.96.MP411
+    29. F1.FI.93.FIN9363
+    30. F1.BE.93.VI850
+    31. F1.BR.93.93BR020_1
+    32. J.SE.93.SE7887
+    33. J.SE.94.SE7022
+    34. H.BE.93.VI991
+    35. H.CF.90.056
+ 
+Bipartitions included in the consensus tree
+ 
+    12345678911111111112222222222333333
+             01234567890123456789012345
+    *********************************** ( 1.0 )
+    --********************************* ( 1.0 )
+    ---******************************** ( 1.0 )
+    ----******************************* ( 1.0 )
+    ----********----------------------- ( 1.0 )
+    ----****--------------------------- ( 1.0 )
+    -----***--------------------------- ( 1.0 )
+    ------**--------------------------- ( 1.0 )
+    --------****----------------------- ( 1.0 )
+    --------**------------------------- ( 0.98076 )
+    ----------**----------------------- ( 0.98076 )
+    ------------*********************** ( 1.0 )
+    ------------******----------------- ( 1.0 )
+    ------------**--------------------- ( 1.0 )
+    --------------****----------------- ( 1.0 )
+    --------------**------------------- ( 0.98076 )
+    ----------------**----------------- ( 1.0 )
+    ------------------***************** ( 1.0 )
+    ------------------****------------- ( 1.0 )
+    -------------------***------------- ( 0.98076 )
+    -------------------**-------------- ( 1.0 )
+    ----------------------************* ( 0.98076 )
+    ----------------------*********---- ( 1.0 )
+    -----------------------********---- ( 1.0 )
+    ------------------------*******---- ( 1.0 )
+    -------------------------******---- ( 1.0 )
+    --------------------------*****---- ( 1.0 )
+    ---------------------------****---- ( 1.0 )
+    ----------------------------***---- ( 1.0 )
+    -----------------------------**---- ( 1.0 )
+    -------------------------------**** ( 1.0 )
+    -------------------------------**-- ( 1.0 )
+    ---------------------------------** ( 1.0 )
+
+ 
+                                 +----35 A1.UG.92.92UG037
+                              +-61
+                              |  +------34 A1.UG.98.98UG57136
+                        +----62
+                        |     |  +---33 A1.KE.94.Q23_17
+                        |     +-60
+                        |        +------32 A1.SE.94.SE7253
+                     +-63
+                     |  |    +---31 A2.CY.94.94CY017_41
+                     |  +---59
+                     |       +-----30 A2.CD.97.97CDKTB48
+                  +-64
+                  |  |                                     +-29 F1.BR.93.93BR020_1
+                  |  |                                  +-49
+                  |  |                                  |  +-28 F1.BE.93.VI850
+                  |  |                               +-50
+                  |  |                               |  +--27 F1.FI.93.FIN9363
+                  |  |                            +-51
+                  |  |                            |  +----26 F1.FR.96.MP411
+                  |  |                         +-52
+                  |  |                         |  +---25 F2.CM.02.02CM_0016BBY
+                  |  |                      +-53
+                  |  |                      |  +-24 F2.CM.95.MP255
+                  |  |              +------54
+                  |  |              |       +-23 F2.CM.97.CM53657
+                  |  |           +-55
+                  |  |           |  +---22 K.CD.97.EQTB11C
+                  |  |     +----56
+                  |  |     |     +-----21 K.CM.96.MP535
+                  |  |  +-57
+                  |  |  |  |           +-20 J.SE.94.SE7022
+                  |  |  |  |  +-------47
+                  |  |  |  |  |        +-19 J.SE.93.SE7887
+                  |  |  |  +-48
+                  |  |  |     |         +---18 H.CF.90.056
+                  |  |  |     +--------46
+                  |  |  |               +-17 H.BE.93.VI991
+                  |  +-58
+                  |     |                 +-16 C.IN.95.95IN21068
+                  |     |              +-43
+                  |     |              |  +---------15 C.ZA.04.SK164B1
+                  |     |           +-44
+                  |     |           |  +----14 C.BR.92.BR025-d
+                  |     +----------45
+                  |                 +--13 C.ET.86.ETH2220
+      +----------65
+      |           |            +-12 B.TH.90.BK132
+      |           |         +-39
+      |           |         |  +-11 B.FR.83.HXB2-LAI-IIIB-BRU
+      |           |      +-40
+      |           |      |  +----10 B.US.98.1058_11
+      |           |  +--41
+      |           |  |   +--9 B.NL.00.671_00T36
+      |           +-42
+      |              |     +-----8 D.CD.83.ELI
+      |              |  +-37
+      |              |  |  +---------7 D.CM.01.01CM_4412HAL
+      |              +-38
+      |                 |  +-----6 D.TZ.01.A280
+      |                 +-36
+      |                    +---5 D.UG.94.94UG114
+   +-66
+   |  +--4 G.SE.93.SE6165
++-67
+|  +---3 G.KE.93.HH8793_12_1
+|
++--2 G.NG.92.92NG083
+|
++--1 G.BE.96.DRCBL
+
+ 
+(G.BE.96.DRCBL:0.030970,G.NG.92.92NG083:0.042914,(G.KE.93.HH8793_12_1:0.059876,(G.SE.93.SE6165:0.018666,((((D.UG.94.94UG114:0.060008,D.TZ.01.A280:0.090050)0.98:0.032723,(D.CM.01.01CM_4412HAL:0.144358,D.CD.83.ELI:0.078957)0.98:0.008743)1.00:0.022588,(B.NL.00.671_00T36:0.043028,(B.US.98.1058_11:0.086662,(B.FR.83.HXB2-LAI-IIIB-BRU:0.042918,B.TH.90.BK132:0.047839)1.00:0.017273)1.00:0.006724)1.00:0.061253)1.00:0.018486,(((C.ET.86.ETH2220:0.054612,(C.BR.92.BR025-d:0.085650,(C.ZA.04.SK164B1:0.150461,C.IN.95.95IN21068:0.038225)1.00:0.013868)0.98:0.019850)1.00:0.160135,(((H.BE.93.VI991:0.018510,H.CF.90.056:0.066166)1.00:0.131738,(J.SE.93.SE7887:0.040234,J.SE.94.SE7022:0.034351)1.00:0.123780)1.00:0.035764,(K.CM.96.MP535:0.095768,(K.CD.97.EQTB11C:0.067090,(F2.CM.97.CM53657:0.035655,(F2.CM.95.MP255:0.032786,(F2.CM.02.02CM_0016BBY:0.072047,(F1.FR.96.MP411:0.087185,(F1.FI.93.FIN9363:0.057494,(F1.BE.93.VI850:0.013732,F1.BR.93.93BR020_1:0.029300)1.00:0.009833)1.00:0.015303)1.00:0.018971)1.00:0.007472)1.00:0.002980)1.00:0.108244)1.00:0.002205)1.00:0.091683)0.98:0.000001)1.00:0.037300,((A2.CD.97.97CDKTB48:0.101212,A2.CY.94.94CY017_41:0.071901)1.00:0.067405,((A1.SE.94.SE7253:0.114429,A1.KE.94.Q23_17:0.072844)1.00:0.016892,(A1.UG.98.98UG57136:0.107209,A1.UG.92.92UG037:0.088859)0.98:0.000001)1.00:0.089491)1.00:0.031117)1.00:0.032612)1.00:0.158613)1.00:0.027293)1.00:0.013357);
+ 
+Note: this tree is unrooted. Branch lengths are the expected number of substitutions per site. Labels next to parentheses represent phylogenetic uncertainty due to model selection (see documentation)
+ 
+ 
+ 
+---------------------------------------------------------------
+*                                                             *
+*                    SELECTION SUMMARY                        *
+*                                                             *
+---------------------------------------------------------------
+
+::Optimized Topologies Summary::
+
+There are 12 different topologies.
+
+Topology Id: 1
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  1	100.00%		  0	0.00e+00	0.00e+00
+BIC	  1	 98.08%		  0	0.00e+00	0.00e+00
+Models supporting:   1
+                     GTR+G 
+
+Topology Id: 2
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  2	  0.00%		  8	4.30e-01	0.00e+00
+BIC	  2	  0.00%		  8	4.30e-01	0.00e+00
+Models supporting:   1
+                     K80+G 
+
+Topology Id: 3
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  3	  0.00%		 10	4.44e-01	0.00e+00
+BIC	  3	  1.92%		 10	4.44e-01	0.00e+00
+Models supporting:   1
+                     HKY+G 
+
+Topology Id: 4
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  4	  0.00%		 12	4.16e-01	0.00e+00
+BIC	  4	  0.00%		 12	4.16e-01	0.00e+00
+Models supporting:   1
+                     JC+G 
+
+Topology Id: 5
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  5	  0.00%		 12	4.29e-01	0.00e+00
+BIC	  5	  0.00%		 12	4.29e-01	0.00e+00
+Models supporting:   1
+                     SYM+G 
+
+Topology Id: 6
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  6	  0.00%		 16	4.13e-01	0.00e+00
+BIC	  6	  0.00%		 16	4.13e-01	0.00e+00
+Models supporting:   1
+                     F81+G 
+
+Topology Id: 7
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  7	  0.00%		 18	4.10e-01	0.00e+00
+BIC	  7	  0.00%		 18	4.10e-01	0.00e+00
+Models supporting:   1
+                     F81 
+
+Topology Id: 8
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  8	  0.00%		 20	4.07e-01	0.00e+00
+BIC	  8	  0.00%		 20	4.07e-01	0.00e+00
+Models supporting:   1
+                     HKY 
+
+Topology Id: 9
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  9	  0.00%		 22	3.84e-01	0.00e+00
+BIC	  9	  0.00%		 22	3.84e-01	0.00e+00
+Models supporting:   1
+                     JC 
+
+Topology Id: 10
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	 10	  0.00%		 22	4.10e-01	0.00e+00
+BIC	 10	  0.00%		 22	4.10e-01	0.00e+00
+Models supporting:   1
+                     GTR 
+
+Topology Id: 11
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	 11	  0.00%		 24	4.03e-01	0.00e+00
+BIC	 11	  0.00%		 24	4.03e-01	0.00e+00
+Models supporting:   1
+                     K80 
+
+Topology Id: 12
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	 12	  0.00%		 24	3.85e-01	0.00e+00
+BIC	 12	  0.00%		 24	3.85e-01	0.00e+00
+Models supporting:   1
+                     SYM 
+
+ 
+ 
+ 
+::Best Models::
+ 
+	Model 		f(a) 	f(c) 	f(g) 	f(t) 	kappa 	titv 	Ra	Rb	Rc	Rd	Re	Rf	pInv 	gamma
+----------------------------------------------------------------------------------------------------------------------------------------
+AIC 	GTR+G		0.38	0.10	0.27	0.25	0.00	0.00	  2.411   2.875   0.948   1.104   7.027   1.000 N/A	   0.67
+BIC 	GTR+G		0.38	0.10	0.27	0.25	0.00	0.00	  2.411   2.875   0.948   1.104   7.027   1.000 N/A	   0.67
