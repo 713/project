@@ -1,0 +1,2 @@
+java -jar jModelTest.jar -d example-data/HIV_vpu.ref2.fas -g 4 -f -AIC -BIC -a -S BEST
+

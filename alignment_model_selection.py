@@ -2,8 +2,13 @@
 
 import os
 import sys
+#from subprocess import Popen,PIPE,STDOUT,call
+#import cStringIO
 
+
+###############################################################################
 # Fields for user to change.
+###############################################################################
 data_dirpath   = "/Users/lleung/713project/data_sample"
 
 data_backbone  = "/Users/lleung/713project/data_sample/backbone.txt"
@@ -15,13 +20,18 @@ location_mauve = "/Applications/Mauve.app/Contents/MacOS/progressiveMauve"
 location_jModelTest = "/Users/lleung/713project/jmodeltest-2.1.3/jModelTest.jar"
 output_model = "/Users/lleung/713project/output_model_selection.txt"
 
-#Prateek's
-
+###############################################################################
+# ## Prateek's
+#
 #data_backbone = data_dirpath+"/backbone.txt"
 #data_output = data_dirpath+"/output_mauve.txt"
 '''Should we hardcode the things as MacOS?'''
-################################################
+# (LL) Best not to.
+#      Maybe have the user select the path and/or when installing our script,
+#      the settings somehow specify where the paths/dirpath/location_, etc are.
+###############################################################################
 # ## Rebecca's variables
+#
 # data_dirpath   = "/Users/relyanow/Dropbox/pipeline_output"
 # data_backbone  = "/Users/relyanow/Dropbox/pipeline_output/bb_apr7_2.txt"
 # data_file_list = ["SP9BS68.fas","Sp3BS71.fasta"]
@@ -29,17 +39,19 @@ output_model = "/Users/lleung/713project/output_model_selection.txt"
 # 
 # location_mauve = "/Applications/Mauve.app/Contents/MacOS/progressiveMauve"
 #
-# 
+###############################################################################
 # ## Stuti's variables
+#
 # data_dirpath   = "/afs/andrew.cmu.edu/usr23/stutia/private/03713"
 # data_backbone  = "/afs/andrew.cmu.edu/usr23/stutia/private/03713/backbone.txt"
 # data_file_list = ["seq0.txt", "seq1.txt"]
-
-
+# 
+###############################################################################
 ### User do not have to edit anything below. ###
+###############################################################################
 #### For joining the lines the following line is faster.
 #### sequence = ''.join(file.read().splitlines())
-#Function to fetch the sequence for a given strain.
+# Function to fetch the sequence for a given strain.
 def get_sequence(filename, dirpath):
     sequence = ""
     if(os.path.isdir(dirpath)):
@@ -69,20 +81,31 @@ def mauve(dirpath, output, backbone, file_list, location_mauve):
     print systemCall
     os.system(systemCall)
 
-def model_selection(dirpath, file_list, output, location_jModelTest):
+def model_selection(dirpath, file_list, output_filename, location_jModelTest):
     print("Model Selection in progress")
     # Additional option flags will be in a config file later.
     file_list2 = file_list
     for x in xrange(len(file_list2)):
         file_list2[x] = "%s"%(file_list[x])
     systemCallHead = "java -jar %s" %(location_jModelTest)
-    systemCallTail = " -g 4 -f -AIC -BIC -a -S BEST"    # Flags as config file later.
-    # find a way to append the output to .txt
+    systemCallTail = " -g 4 -f -AIC -BIC -a -S BEST -o %s" %(output_filename)
+    # Flags as config file later.
     for x in xrange(len(file_list2)):
         systemCallHead = "%s -d %s" %(systemCallHead, file_list2[x])
     systemCall = systemCallHead + systemCallTail
     print systemCall
-    os.system(systemCall) 
+    os.system(systemCall)
+#    output = cStringIO.StringIO()
+#    f=open(output, 'w')
+#1    print(os.system(systemCall)) >> f  #try to write data
+#2    f.write(os.popen(systemCall).readline()) #writes only one line then stops
+#3    temp=subprocess.Popen(systemCall, shell=True, stdout=subprocess.PIPE).stdin #doesn't work
+#4    temp=subprocess.call([systemCall])    #broke subprocess library
+#5    proc=Popen(systemCall, shell=True, stdout=PIPE, )
+#5    output.write(proc.communicate()[0])
+#5    output.close()
+#    print output >> f
+#    f.close()
 
 def get_concat_seq(sequence, seq_num, backbone):
     bac_file = open("%s"%backbone, "r")
@@ -118,4 +141,7 @@ def aligned_sequence(dirpath, output, backbone, file_list, location_mauve, locat
     out_file.close()
 
 aligned_sequence(data_dirpath, data_output, data_backbone, data_file_list, location_mauve, location_jModelTest, output_model)
+
+# Testing
+# model_selection(data_dirpath, data_file_list, output_model, location_jModelTest)
 

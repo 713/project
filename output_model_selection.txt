@@ -1,84 +1,3 @@
-$ python alignment_model_selection.py 
-/Applications/Mauve.app/Contents/MacOS/progressiveMauve --output=/Users/lleung/713project/output_mauve.txt --backbone-output=/Users/lleung/713project/data_sample/backbone.txt /Users/lleung/713project/data_sample/HIV_vpu.ref2.fas
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Sequence loaded successfully.
-/Users/lleung/713project/data_sample/HIV_vpu.ref2.fas 392 base pairs.
-Using 7-mers for initial seeds
-Creating sorted mer list
-ERROR! gap character encountered at genome sequence position 9
-Input sequences must be unaligned and ungapped!
-libc++abi.dylib: terminate called throwing an exception
-Model Selection in progress
-java -jar /Users/lleung/713project/jmodeltest-2.1.3/jModelTest.jar -d /Users/lleung/713project/data_sample/HIV_vpu.ref2.fas -g 4 -f -AIC -BIC -a -S BEST
-[MPI] Testing MPI environment... (GLaDOS.local)
-[MPI] Proceed without MPI
 ------------------------------- jModeltest 2.1.3 -------------------------------
 (c) 2011-onwards D. Darriba, G.L. Taboada, R. Doallo and D. Posada,
 (1) Department of Biochemistry, Genetics and Immunology
@@ -88,7 +7,7 @@ java -jar /Users/lleung/713project/jmodeltest-2.1.3/jModelTest.jar -d /Users/lle
 e-mail: ddarriba@udc.es, dposada@uvigo.es
 --------------------------------------------------------------------------------
  
-Tue Apr 16 06:57:06 EDT 2013
+Sun Apr 21 19:50:52 EDT 2013
 Mac OS X 10.8.2, arch: x86_64, bits: 64, numcores: 2
  
 --------------------------------------------------------------------------------
@@ -105,7 +24,7 @@ This is free software, and you are welcome to redistribute it under certain cond
 Notice: This program may contain errors. Please inspect results carefully.
  
  
-Arguments = -d /Users/lleung/713project/data_sample/HIV_vpu.ref2.fas -g 4 -f -AIC -BIC -a -S BEST
+Arguments = -d /Users/lleung/713project/data_sample/HIV_vpu.ref2.fas -g 4 -f -AIC -BIC -a -S BEST -o /Users/lleung/713project/output_jModelTest_output.txt
 
 Reading data file "HIV_vpu.ref2.fas"... OK.
   number of sequences: 35
@@ -137,18 +56,18 @@ Reading data file "HIV_vpu.ref2.fas"... OK.
  
 Model 		 Exec. Time 	 Total Time 	 -lnL
 -------------------------------------------------------------------------
-F81+G		00h:00:53:07	00h:00:53:07	    3723.6018	 (1/12)
-HKY+G		00h:00:56:02	00h:00:56:02	    3628.6740	 (2/12)
-JC+G		00h:00:43:05	00h:01:39:06	    3775.5754	 (3/12)
-GTR+G		00h:01:06:07	00h:02:00:04	    3612.7999	 (4/12)
-K80+G		00h:00:54:09	00h:02:34:06	    3669.9969	 (5/12)
-F81		00h:00:11:05	00h:02:46:00	    3905.7283	 (6/12)
-SYM+G		00h:00:53:08	00h:02:54:02	    3656.9590	 (7/12)
-HKY		00h:00:13:06	00h:02:59:06	    3823.0913	 (8/12)
-GTR		00h:00:19:03	00h:03:13:05	    3794.9761	 (9/12)
-JC		00h:00:17:07	00h:03:17:03	    3961.9307	 (10/12)
-K80		00h:00:16:09	00h:03:30:04	    3867.9845	 (11/12)
-SYM		00h:00:13:02	00h:03:30:05	    3860.8475	 (12/12)
+F81+G		00h:01:00:09	00h:01:01:00	    3723.6018	 (1/12)
+HKY+G		00h:01:03:05	00h:01:03:06	    3628.6740	 (2/12)
+JC+G		00h:00:44:04	00h:01:47:09	    3775.5754	 (3/12)
+GTR+G		00h:01:07:06	00h:02:08:06	    3612.7999	 (4/12)
+K80+G		00h:00:56:01	00h:02:44:01	    3669.9969	 (5/12)
+F81		00h:00:11:09	00h:02:56:00	    3905.7283	 (6/12)
+SYM+G		00h:00:55:02	00h:03:03:08	    3656.9590	 (7/12)
+HKY		00h:00:13:08	00h:03:09:07	    3823.0913	 (8/12)
+GTR		00h:00:19:04	00h:03:23:02	    3794.9761	 (9/12)
+JC		00h:00:17:05	00h:03:27:02	    3961.9307	 (10/12)
+K80		00h:00:17:00	00h:03:40:02	    3867.9845	 (11/12)
+SYM		00h:00:13:04	00h:03:40:07	    3860.8475	 (12/12)
  
    Model = JC
    partition = 000000
@@ -270,7 +189,7 @@ SYM		00h:00:13:02	00h:03:30:05	    3860.8475	 (12/12)
  
   Best-fit models should be reoptimized for comparison with unconstrained likelihood
  
-Computation of likelihood scores completed. It took 00h:03:30:05.
+Computation of likelihood scores completed. It took 00h:03:40:07.
  
 
 
