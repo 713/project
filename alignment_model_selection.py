@@ -2,26 +2,25 @@
 
 import os
 import sys
-#from subprocess import Popen,PIPE,STDOUT,call
-#import cStringIO
-
 
 ###############################################################################
 # Fields for user to change.
 ###############################################################################
-data_dirpath   = "/Users/lleung/713project/data_sample"
-
-data_backbone  = "/Users/lleung/713project/data_sample/backbone.txt"
-#data_file_list = ["seq0.txt", "seq1.txt"]
-data_file_list = ["HIV_vpu.ref2.fas"]   #testing jModelTest
-
-data_output    = "/Users/lleung/713project/output_mauve.txt"
-location_mauve = "/Applications/Mauve.app/Contents/MacOS/progressiveMauve"
-location_jModelTest = "/Users/lleung/713project/jmodeltest-2.1.3/jModelTest.jar"
-output_model = "/Users/lleung/713project/output_model_selection.txt"
-
+# ## Luigi's variables
+#
+# data_dirpath   = "/Users/lleung/713project/data_sample"
+# 
+# data_backbone  = "/Users/lleung/713project/data_sample/backbone.txt"
+# #data_file_list = ["seq0.txt", "seq1.txt"]
+# data_file_list = ["HIV_vpu.ref2.fas"]   #testing jModelTest
+# 
+# data_output    = "/Users/lleung/713project/output_mauve.txt"
+# location_mauve = "/Applications/Mauve.app/Contents/MacOS/progressiveMauve"
+# location_jModelTest = "/Users/lleung/713project/jmodeltest-2.1.3/jModelTest.jar"
+# output_model = "/Users/lleung/713project/output_model_selection.txt"
+# 
 ###############################################################################
-# ## Prateek's
+# ## Prateek's variables
 #
 #data_backbone = data_dirpath+"/backbone.txt"
 #data_output = data_dirpath+"/output_mauve.txt"
@@ -51,6 +50,7 @@ output_model = "/Users/lleung/713project/output_model_selection.txt"
 ###############################################################################
 #### For joining the lines the following line is faster.
 #### sequence = ''.join(file.read().splitlines())
+
 # Function to fetch the sequence for a given strain.
 def get_sequence(filename, dirpath):
     sequence = ""
@@ -95,17 +95,6 @@ def model_selection(dirpath, file_list, output_filename, location_jModelTest):
     systemCall = systemCallHead + systemCallTail
     print systemCall
     os.system(systemCall)
-#    output = cStringIO.StringIO()
-#    f=open(output, 'w')
-#1    print(os.system(systemCall)) >> f  #try to write data
-#2    f.write(os.popen(systemCall).readline()) #writes only one line then stops
-#3    temp=subprocess.Popen(systemCall, shell=True, stdout=subprocess.PIPE).stdin #doesn't work
-#4    temp=subprocess.call([systemCall])    #broke subprocess library
-#5    proc=Popen(systemCall, shell=True, stdout=PIPE, )
-#5    output.write(proc.communicate()[0])
-#5    output.close()
-#    print output >> f
-#    f.close()
 
 def get_concat_seq(sequence, seq_num, backbone):
     bac_file = open("%s"%backbone, "r")
