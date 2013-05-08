@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amsfonts, amsthm, amssymb,graphicx,pdfpages}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\pagestyle{empty}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[english]{isodate}
+\usepackage[parfill]{parskip}
+\begin{document}
+\begin{center}
+\textbf{\LARGE{Pipeline for Analysis of Horizontal Gene Transfer in Bacterial Genomes}}\\
+~~~\\
+\Large{Stuti Agrawal}\\
+\Large{Rebecca Elyanow}\\
+\Large{Luigi Leung}\\
+\Large{Prateek Tandon}\\
+\Large{Yiming Xin}
+\end{center}
+\tableofcontents
+
+\includepdf[pages={1}]{/Users/lleung/Desktop/flowchart.pdf}
+
+\section{Running the Pipeline}
+The pipeline can be run by calling:\\
+\\
+aligned\_sequence(data\_dirpath, data\_output, data\_backbone, location\_mauve, location\_jModelTest, output\_model)\\
+
+data\_dirpath = path to directory that holds to sequences you wish to analyze\\
+data\_output = the name of the output alignment file from mauve\\
+data\_backbone = the name of the output backbone file from mauve\\
+location\_mauve = path to mauve program\\
+location\_jModelTest = path to jModelTest program\\
+output\_model = name of model chosen by jModelTest\\
+
+\section{Alignment}
+Use progressive MAUVE \cite{mauve} to align all sequences of the same species in the given directory. The standard defaults of progressive MAUVE are used.\\
+
+\section{Creation of the core genome}
+MAUVE’s .backbone file is used to identify regions that are conserved among all genomes and the regions that are not. The regions conserved among all genomes are extracted using this file and concatentated together to create the core genome (including HGTs). \\
+
+\section{Building the phylogenetic tree}
+1. Select the best model to fit the phylogenetic tree using JModelTest \cite{jModelTest}\\
+2. Generate hundred bootstraps (seqboot) with Phylip \cite{phylip} \\
+3. Create a phylogenetic tree using Phylip (default = Maximum Likelyhood Tree, DNAML)\\\\
+This is done for the core genome (without any HGT regions that are a part
+of the core) to identify the evolutionary relationship between the species
+and for the pool of the HGT regions that are a part of the core as well as
+the distributed genomes so as to identify the relationships between the
+organisms with reference to the HGTs (This enables the identification of
+the current relationship between the species).\\
+
+\section{Identifying HGT regions}
+Regions of Horizontal Gene Transfer will be identified using the distributed genome of each strain and the program Alfy \cite{Alfy}
+
+\section{Annotate the genes within the horizontally transferred regions}
+The sequence regions where HGT has occurred will be queried against the Antibiotic Resistance Gene Database (ARDB),  and for regions that are not in ARDB, they will be queried against the NCBI database.\\
+
+\section{Graphical User Interface}
+The GUI is web based. During development, we hosted it via Apache web server locally and CMU's AFS server remotely.
+\bigskip
+
+\textbf{Setup}\\
+The following instructions apply to OSX and unix-based operating systems. And instead of \texttt{nano}, feel free to use any other text editor.\\
+On OSX, Apache is already installed. On other unix-based OS, if it is not already installed, install it using the OS's packages utility or via terminal command \texttt{\$ sudo apt-get install apache2}\\
+\begin{enumerate}
+	\item To get the GUI running on the local computer, please enable php in Apache by going into its httpd.conf by typing into the terminal:
+		\begin{verbatim}
+		$ sudo nano /etc/apache2/httpd.conf
+		\end{verbatim}
+	\item Uncomment the line (delete the \# character) , save and exit:
+		\begin{verbatim}
+		LoadModule php5_module libexec/apache2/libphp5.so
+		\end{verbatim}
+	\item Enable Apache web server by typing:
+		\begin{verbatim}
+		$ sudo apachectl start
+		\end{verbatim}
+	(To stop the web server, \texttt{\$ sudo apachectl stop})
+	\item Open the \texttt{index.html} in browser by dragging it out of its folder and into a browser
+	\\or by typing its location in the browser's URL box starting with ``\texttt{file://}"
+\end{enumerate}
+\bigskip
+
+\textbf{Web App}\\
+Now that \texttt{index.html} is open in the browser,
+\begin{enumerate}
+	\item Select sequences to process.
+	\item Provide an email address for receiving an email to view the results when job is finished.\\
+		The email is from \texttt{03713.project@gmail.com}\\
+		and with the title ``\texttt{Job Completed: A message from 03-713 Team B's web app}"
+	\item Click on the blue ``Process" button.
+\end{enumerate}
+\bigskip
+
+\textbf{Web App Results}\\
+After the pipeline is done processing, an email is sent. Within the email, there is a link that redirects the user to the results webpage.
+
+\newpage
+\begin{thebibliography}{9}
+\bibitem{mauve}
+Aaron E. Darling, Bob Mau, and Nicole T. Perna. 2010.  progressiveMauve: Multiple Genome Alignment with Gene Gain, Loss, and Rearrangement.  PLoS One.  5(6):e11147. \\
+\bibitem{jModelTest}
+Darriba D, Taboada GL, Doallo R, Posada D. 2012. jModelTest 2: more models, new heuristics and parallel computing. Nature Methods 9(8), 772.\\\\
+Guindon S and Gascuel O (2003). A simple, fast and accurate method to estimate large phylogenies by maximum-likelihood". Systematic Biology 52: 696-704.\\
+\bibitem{phylip}
+Felsenstein, J. 1989. PHYLIP - Phylogeny Inference Package (Version 3.2). Cladistics 5: 164-166. \\
+\bibitem{Alfy}
+Domazet-Lošo M, Haubold B. Alignment-free detection of local similarity among viral and bacterial genomes. Bioinformatics. 2011;27:1466–1472. doi: 10.1093/bioinformatics/btr176.
+\end{thebibliography}
+\end{document}

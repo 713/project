@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amsfonts, amsthm, amssymb,graphicx,pdfpages}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\pagestyle{empty}
+\newcommand{\tab}{\hspace*{3em}}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[english]{isodate}
+\usepackage[parfill]{parskip}
+\begin{document}
+\begin{center}
+\textbf{\LARGE{Pipeline for Analysis of Horizontal Gene Transfer in Bacterial Genomes}}\\
+~~~\\
+\Large{Stuti Agrawal}\\
+\Large{Rebecca Elyanow}\\
+\Large{Luigi Leung}\\
+\Large{Prateek Tandon}\\
+\Large{Yiming Xin}
+\end{center}
+\tableofcontents
+\newpage
+%\includepdf[pages={1}]{/Users/relyanow/Dropbox/Bioinformatics/flowchart.pdf}
+\section{Biological Problem}
+\tab Whole genome sequencing is become more and more available as sequencing tehcnology rapidly advances. With a growing amount of whole genomes becoming available, the task of analyzing these genomes becomes increasingly important. \\
+\tab In bacterial genomes, even very closely related strains can have significant genetic variation due to genomic recombination. Through horizontal gene transfer, bacteria have to ability to transfer genes between neighboring cells, leading to very rapid evolution of the genome. Often, genes that have undergone horizontal transfer are important for the survival and reproduction of the bacterial cells. As such, these regions of recombination can unveil important features about a community of related bacterial strains, such as what genes cause vaccine susceptibility, antibiotic resistance, and pathogenicity. In order to get a complete understanding of a community of bacteria, it is important to study both the vertical descent as well as the lateral transfer of genes from strain to strain.\\
+
+\section{Pipeline Overview}
+\tab The purpose of the pipeline is to take in as input a set of whole genome sequence data, identify the core and distributed genomes as well as regions of horizontal gene transfer, and create phylogenetic trees for the regions of horizontal gene transfer. This is accomplished using four publicly available software packages: MAUVE, Alfy, jModelTest, and Phylip. \\
+\tab Mauve is used to align the sequences as well as to identify the conserved regions among all sequences (after removing HGTs, this makes up the core genome). Alfy is used to identify regions of horizontal gene transfer and input them into a dictionary. For each entry in the dictionary, a phylogenetic tree is constructed. The most appropriate model is chosen using jModelTest and the tree is created using Phylip. \\
+\\
+The pipeline can be summarized as follows:\\
+\begin{enumerate}
+\item Concatenate contigs in each genome (these files will be used for the rest of the pipeline)
+\item Align genomes using Mauve and store the .backbone file (containing start and end positions of the conserved regions amongst all genomes)
+\item for each genome in the set, run Alfy with the selected genome as a reference and every other genome as a comparison. Store the resulting homology regions in a dictionary. If the results are determined significant by kr, then they will be labeled as regions of horizontal gene transfer
+\item Identify the core genome based on the .backbone file produced by Mauve and extract HGT regions identified by Alfy, create a phylogenetic tree of the core genome (using jModelTest and Phylip)
+\item Remove the core to get the distributed genome and create a phylogenetic tree of the core genome
+\item For each HGT region create a phylogenetic tree (using jModelTest and Phylip)
+\end{enumerate}
+
+\subsection{GUI}
+\tab The GUI is a web based environment developed in using Python CGI. We choose to use a web based environment so that our pipeline could be utilized on any computer. It is hosted via an Apache web server locally and on CMU's AFS server remotely. The GUI allows the user to enter the data they wish to analyze and will send the user an email when the job is finished that allows them to view the results. The results are presented as images of phylogenetic trees as well as .fasta files of the core and distributed genomes. 
+
+\section{About Mauve}
+\tab Mauve was used for alignment because it was designed to deal specifically with genomes that may contain regions that are not the result of pure vertical descent. The creators of Mauve write in their paper, "We present methods for identification and alignment of conserved genomic DNA in the presence of rearrangements and horizontal transfer" \cite{mauve}. The Mauve algorithm can be described as follows \cite{mauve}:\\
+\begin{enumerate}
+\item Find local alignments using Multiple Maximal Unique Matches (multi-MUMS)
+\item User multi-MUMs to calculate a phylogenetic guide tree
+\item Select a subset of multi-MUMs to use as anchors (which are partitioned into Locally Collinear Blocks (LCBs)
+\item Perform recursive anchoring to identify additional alignment anchors outside/within each LCB
+\item Perform progressive alignment of each LCB using guide tree
+\end{enumerate}
+\tab This results in a global alignment of each locally collinear block that contains sequence elements which are conserved among all of the analyzed genomes. Information about these conserved sequence elements can be found in the .backbone output file, which is used in our pipeline for identification of the core genome (regions of the genome that are conserved amongst all strains under study).\\ 
+
+\subsection{Testing}
+\tab The creators of Mauve tested their program against other commonly used alignment tols, like Multi-LAGAN and Shuffle-LAGAN. According to their analysis, Multi-LAGAN aligns more divergent genomes better than Mauve, but for closely related sequences that have undergone modest amounts of substitution and inversion, Mauve performs better than both Multi-LAGAN and Shuffle-Lagan \cite{mauve}. \\
+\tab Mauve was also tested with user generated genomes of about 2000kb (about the size of a bacterial genome)  that contained regions that were conserved amongst all genomes. Mauve correctly identified the regions that were conserved amongst all genomes (the core genome.)
+
+\section{About Alfy}
+\tab Alfy was designed to detect horizontal gene transfer in bacterial genomes \cite{Alfy}. This is exactly our intended use of the program. Alfy is able to detect regions of horizontal gene transfer based on the lengths of exact matches between pairs of sequences (with long matches indicating close homology and short matches indicating distant or no homology) \cite{Alfy}. \\
+\tab We Alfy in our pipeline to detect HGT events. If we want to identify the HGT regions of a genome(say seq1), we run the Alfy with seq1 as query and all the other strains genome as subjects. Alfy will output all the potential HGT position intervals with the strains where seq1 might gets HGT from. We run Alfy for all sequences of interest in this way. Then we use kr \cite{kr}, another software package working as an estimator of the pairwise number of substitutions between long DNA sequences, to generate a correlation matrix of all sequences. After that, we form a closest mates group for all the sequences we test by choosing the corresponding sequences in the matrix with a value below the threshold (set to 0.05). Then we filter the output of Alfy by removing the regions whose subject sequences are in the closest group of query sequence.\\
+\subsection{Testing}
+\tab The creators of Alfy tested the program on  HIV-1 recombinant strains and E.coli genomes. According to their tests, Alfy could classify recombinant group M HIV-1 strains as accurately and reliably as the commonly used NCBI tool. Alfy was also tested for identifiation of horizontal gene transfer in E.coli genomes, which is essentially equivalent to our problem. \\
+\tab The accuracy of this method seems acceptable given the result reported in the paper\cite{Alfy},\cite{kr}. However, in the process of testing our pipeline, we found that some sequences have no closest-mates group output, which means the sequence is not close to any of other sequences according to the matrix we generate. In this situation, the whole sequence of such strain would be identified as HGT regions, which is an incorrect conclusion. We propose to avoid this pitfall by choosing sequences which we can assume have relatively high homology as inputs. \\
+\section{About PHYLIP}
+\tab PHYLIP is used to create phylogenetic trees for the core genome and each HGT region. First, the best model is chosen using jModelTest (which takes as in put a sequence and outputs a ranked list of possible models). PHYLIP is then run on using this model. It can implement either parsimony based trees (DNAPARS) and maximum likelyhood trees (DNAML) as chosen by the user. Before estimating phylogenies, it performs 100 bootstraps using SEQBOOT. It can also compute consensus trees (CONSENSE). 
+\subsection{Testing}
+
+\section{Comparison to other software}
+\tab Through our research, we have not found another piece of software that takes in raw sequence data and performs whole genome alignment, HGT identification, tree building, and annotation. There are many programs that solve pieces of the problem (some of which we have implemented in our solution), but none that solve every part of our problem. \\
+\tab For our comparison, we will explore available software packages that offer solutions to parts of our pipeline: whole genome alignment, HGT identification, tree building, and annotation.\\
+\subsection{Whole Genome Alignment}
+There are many software packages that deal with whole genome alignment including: BLAST \cite{Blast}, MUMMER \cite{Mummer}, LAST \cite{Last}, and Mugsy \cite{Mugsy}.\\
+\\
+We choose to use MAUVE \cite{mauve} over these other software for a few reasons:\\
+\tab 1. It runs from the command line on Mac, Linux, and Windows\\
+\tab 2. It does not require a reference sequence\\
+\tab 3. It can take both genbank and fasta files as input\\
+\tab 4. It outputs a .backbone file which can be utilized for identification of the core genome\\
+
+\subsection{HGT identification}
+\tab We looked into two HGT identification packages, RDP and Clonal Frame, before settling on the package we are currently using, Alfy. We decided not to use RDP \cite{RDP} because 1. it only runs on Windows machines and 2. The current version is still unstable.We decided not to use Clonal Frame \cite{Clonal Frame} because 1. it only runs on Mac/Linux machines and 2. it has a history of being very slow and difficult to use (according to discussion with Luisa Hiller). We choose Alfy \cite{Alfy} because it can run on all platforms and, testing with ~15 genomes, it runs in under 5 minutes.
+
+\subsection{Tree building}
+\tab Numerous tree construction algorithms exist including: MEGA, MrBayes, and PAUP. We chose to use PHYLIP \cite{phylip} because it is a geneal-purpose tree building package that is well documented, can run on all operating systems, and is easy to implement from the command line. 
+
+\subsection{GUI}
+\tab Initially, we decided to use Django to serve our web app due to its language similarity with our pipeline scripts. However, though testing and learning more about the framework's offerings, we decided to abandon it in preference to a more server-compatible traditional framework using JavaScript, PHP and CGI.\\
+\bigskip
+
+We choose to abandon Django in preference to the alternative for a few reasons:
+\begin{enumerate}
+	\item We had trouble hosting Django on the school's AFS server due to install permissions
+	\item JavaScript, PHP and CGI had been around for over 18 years and is compatible on almost all commercial servers. This will help lower users' costs if users decide to rent server space.
+\end{enumerate}
+
+\newpage
+\begin{thebibliography}{9}
+\bibitem{mauve}
+Aaron E. Darling, Bob Mau, and Nicole T. Perna. 2010.  progressiveMauve: Multiple Genome Alignment with Gene Gain, Loss, and Rearrangement.  PLoS One.  5(6):e11147. 
+\bibitem{jModelTest}
+Darriba D, Taboada GL, Doallo R, Posada D. 2012. jModelTest 2: more models, new heuristics and parallel computing. Nature Methods 9(8), 772.\\
+Guindon S and Gascuel O (2003). A simple, fast and accurate method to estimate large phylogenies by maximum-likelihood". Systematic Biology 52: 696-704.
+\bibitem{phylip}
+Felsenstein, J. 1989. PHYLIP - Phylogeny Inference Package (Version 3.2). Cladistics 5: 164-166. 
+\bibitem{Alfy}
+Domazet-Lošo M, Haubold B. Alignment-free detection of local similarity among viral and bacterial genomes. Bioinformatics. 2011;27:1466–1472. doi: 10.1093/bioinformatics/btr176.
+\bibitem{Mugsy}
+Angiuoli SV and Salzberg SL. Mugsy: Fast multiple alignment of closely related whole genomes. Bioinformatics 2011 27(3):334-4
+\bibitem{Mummer}
+"Versatile and open software for comparing large genomes." S. Kurtz, A. Phillippy, A.L. Delcher, M. Smoot, M. Shumway, C. Antonescu, and S.L. Salzberg, Genome Biology (2004), 5:R12.
+\bibitem{Last}
+Adaptive seeds tame genomic sequence comparison. SM Kielbasa, R Wan, K Sato, P Horton, MC Frith, Genome Research 2011.
+\bibitem{Blast}
+Stephen F. Altschul, Thomas L. Madden, Alejandro A. Schäffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J. Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of protein database search programs", Nucleic Acids Res. 25:3389-3402.
+\bibitem{RDP}
+Martin DP, Lemey P, Lott M, Moulton V, Posada D, Lefeuvre P. (2010). RDP3: a flexible and fast computer program for analyzing recombination. Bioinformatics 26, 2462-2463.
+\bibitem{Clonal Frame}
+Inference of Bacterial Mi-croevolution Using Multilocus Sequence Data" by X. Didelot and D. Falush, Genetics, Vol. 175,
+1251-1266, March 2007.
+\bibitem{kr}
+Domazet-Lošo M, Haubold B. Alignment-free detection of horizontal gene transfer between closely related bacterial genomes. Mobile Genetic Elements 1:3, 230–235; September/October 2011;G2011 Landes Bioscience.
+\end{thebibliography}
+\end{document}

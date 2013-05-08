@@ -1,0 +1,4 @@
+# Need to give permission
+
+chmod 777 ../upload/
+chmod u+rwx,g+rw ../upload_file.php

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+function IsValidEmail(email) {
+    // the regex works in IE but should be a string (see nnnnn's answer) 
+    // var em= new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i);
+    var em=/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i; // simpler
+    return em.test(email);
+}
+$(document).ready(function() {
+  $("#form1").submit(function() {
+    var em=$('#email').val();
+    if(!IsValidEmail(em))
+    {
+        if($.browser.msie)
+        {
+        alert("Wrong email");
+            $("#e-valid").css({'color':'red','padding-left':'5px', 'font-style':'italic'});
+            $("#e-valid").html("Please enter a valid email address");
+            return false;
+        }
+    }
+    return true;
+  });
+});
+
+</script>
+
+</head>
+<body>
+<form id="form1">
+<input id="email" type="email" value="" /><span id="e-valid"></span><br/>
+<input type="submit" />
+</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+Django Multiuploader Plugin
+----------------------------------------------------------------------
+
+Readme for Example usage of plugin - Django Multiuploader using jQuery Plugin by Sebastian Tschan(https://blueimp.net/).
+
+It's posted to upstream at github to make life of my plugin's users easier)
+Feel free to comment or send me a email about your usage...
+
+This is a plugin, made using multiupload form from Sebastian Tschan.
+It uses jQuey UI and jQuery instead of Flash uploader.
+On Django side it uses sorl-thumbnails and PIL.
+You can use it in your applications with simple inclusion tag
+
+Requirements:
+----------------------------------------------------------------------
+
+    - PIL(Python Imaging Library) (for sorl)
+    - sorl-thumbnail's(http://thumbnail.sorl.net/) (for thumbnails generation)
+    - Django 1.2.5 +
+
+Acess:
+----------------------------------------------------------------------
+Test database provided uses sqlite3, as mai gear,
+however you can try to use MySQL or some other database of your choice, but 
+in this case config changes are up to you :).
+Anyway this database access data afre:
+
+    login: admin
+    password: admin
+    
+Fell free to contact me with any issues or errors you're getting while using this demo.
+i'll try to close issues you'll provide with bugfixes and new versions as soon as possible.

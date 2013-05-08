@@ -1,0 +1,9 @@
+MAUVE (14MB)
+http://gel.ahabs.wisc.edu/mauve/download.php
+
+JModelTest2 (8MB)
+https://jmodeltest2.googlecode.com/files/jmodeltest-2.1.1-src.tar.gz
+
+PHYLIP (7MB)
+http://evolution.genetics.washington.edu/phylip/getme.html
+

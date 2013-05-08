@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Team B's 03-713 project</title>
+  <meta name="description" content="713 bioinformatics data integration" />
+  <meta name="author" content="Luigi, Prateek, Rebecca, Stuti, Yiming" />
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+
+<body>
+  <br>
+  <div class="container">
+    <div class="hero-unit">
+      <h1>Team B's 03-713 project</h1>
+      <p class="lead">03-713: Bioinformatics Data Integration Practicum</p>
+
+      <div class="row-fluid">
+        <!-- "text-warning" is just a text color. yellow. -->
+        <p class="text-warning">Input Sequences:</p>
+        <!-- Upload limitation on Google Chrome -->
+        <!-- "text-error" is just a text color. red. -->
+        <!--
+        <p class="text-error">Maximum total upload size is 1GB (on Google Chrome).
+                              <br>If you have over 1GB of sequences, please
+                              download our program and use the commandline 
+                              method.</p>
+        -->
+        <div class="controls">
+          <form action="upload_file.php" method="post"
+               enctype="multipart/form-data" target="_self" id="form1">
+            <div class="mc-field-group">
+              
+              <!-- Select input sequence -->
+                <!-- accept="" attribute not consistently implemented in all browswers
+                     might need a javascript to check for file type
+                     Chrome works. Safari does not. -->
+                <input type="file" id="file" name="file[]"
+                       accept=".fasta, .fas, .fa, .ffn, .frn, .txt"
+                       multiple="multiple" />
+
+                <output id="list"></output>
+            </div> <!-- mc-field-group -->
+            <small class="text-error">( filetypes: .fasta, .fas, .fa, ffn, .frn, .txt )</small>
+            <br><br>
+            <p class="text-warning">Email address:</p> 
+            <div class="controls">
+              <div id="mce-responses" class="clear">
+                <div class="mc-field-group">
+                  <form action="gmail.php" method="post"
+                        enctype="multipart/form-data" target="_blank">
+                  <input class="input-block-level" type="email" value=""
+                         name="user_email" id="mce-EMAIL"
+                         placeholder="You'll receive an email when job is complete.">
+                  <span id="e-valid"></span>
+                </div> <!-- mc-field-group -->
+                <!-- show error if incorrect/missing input: disabled for now; using next page -->
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>	
+              <div class="clear">
+                <button class="btn btn-large btn-block btn-primary" type="submit"
+                        name="submit" onclick="uploadingMessage()">
+                  Process
+                </button>
+              </div>
+              <output id="uploadingMessage"></output>
+            </div> <!-- controls; under text-warning; email -->
+          </form>
+        </div> <!-- controls; under row-fluid, text-warning; input seq -->
+      </div> <!-- row-fluid -->
+      <hr>
+      <p><a href="https://github.com/713/project/">Link to our backends on Github</a>
+        <small class="text-warning pull-right">( Team B members: Stuti A.,
+          Rebecca E., Luigi L., Prateek T., Yiming X. )</small>
+      </p>
+    </div> <!-- hero-unit -->
+  </div> <!-- container -->
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script>
+//============================================================================= 
+    //<!-- Displays user's input file selections --> 
+    //<!-- possible to do: add delete button on selected files.
+    //                     Currently, user has to re-select files.  -->
+//============================================================================= 
+    function handleFileSelect(evt) {
+      var files = evt.target.files; // FileList object
+  
+      // files is a FileList of File objects. List some properties.
+      var output = [];
+      for (var i = 0, f; f = files[i]; i++) {
+        output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                    f.size, ' bytes, last modified: ',
+                    f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
+                    '</li>');
+      }
+      document.getElementById('list').innerHTML = '<ol>' + output.join('') + '</ol>';
+    }
+    document.getElementById('file').addEventListener('change', handleFileSelect, false);
+
+//============================================================================= 
+    //<!-- Displays message during uploading -->
+//============================================================================= 
+    function uploadingMessage() {
+      document.getElementById("uploadingMessage").innerHTML=" \
+        <div class='alert alert-warning'> \
+          <h1>Uploading...</h1><br> \
+          <h3>Please wait until a green-colored<br>\"You may close this window \
+              and wait for email.\" <br> message appears.</h3> \
+        </div> \
+      ";
+    }
+
+//============================================================================= 
+    //<!-- Validates email -->
+//============================================================================= 
+    function IsValidEmail(email) {
+      // regex checks for valid email
+      // flaw: ^$| is not responding to empty field 
+      var em=/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+      return em.test(email);
+    }
+    $(document).ready(function() {
+      $("#form1").submit(function() {
+        var em=$('#email').val();
+        if(!IsValidEmail(em))
+        {
+          if($.browser.msie)
+          {
+          alert("Wrong email");
+            $("#e-valid").css({'color':'red','padding-left':'5px', 'font-style':'italic'});
+            $("#e-valid").html("Please enter a valid email address");
+            return false;
+          }
+        }
+        return true;
+      });
+    });
+  </script>
+
+</body>
+</html>
+
