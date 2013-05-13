@@ -7,5 +7,5 @@ print(user_email)
 print(user_email + "this is user's email")
 
 # Removes newline
-for each user_email:
+#for each user_email:
   
