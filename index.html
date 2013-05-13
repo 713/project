@@ -6,20 +6,24 @@
   <title>Team B's 03-713 project</title>
   <meta name="description" content="713 bioinformatics data integration" />
   <meta name="author" content="Luigi, Prateek, Rebecca, Stuti, Yiming" />
-  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" type="text/css" />
+  <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" />	
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
+  <link href="css/bootstrap.css" rel="stylesheet" media="screen" type="text/css" />
+  <link href="css/style.css" rel="stylesheet" media="screen" type="text/css" />
 </head>
 
 <body>
   <br>
   <div class="container">
     <div class="hero-unit">
-      <h1>Team B's 03-713 project</h1>
+      <h1 style="color: #468847">Team B's 03-713 project</h1>
       <p class="lead">03-713: Bioinformatics Data Integration Practicum</p>
 
       <div class="row-fluid">
         <!-- "text-warning" is just a text color. yellow. -->
         <p class="text-warning">Input Sequences:</p>
-        <!-- Upload limitation on Google Chrome -->
+        <!-- Upload limitation of 1GB on Google Chrome -->
+        <!-- Bypassed limitation using streaming upload. -->
         <!-- "text-error" is just a text color. red. -->
         <!--
         <p class="text-error">Maximum total upload size is 1GB (on Google Chrome).
@@ -32,17 +36,21 @@
                enctype="multipart/form-data" target="_self" id="form1">
             <div class="mc-field-group">
               
-              <!-- Select input sequence -->
-                <!-- accept="" attribute not consistently implemented in all browswers
-                     might need a javascript to check for file type
-                     Chrome works. Safari does not. -->
+                <!-- Select input sequence -->
+                <!-- accept="" attribute not consistently implemented in
+                     different browsers: Chrome works. Safari does not.
+                -->
+                <!-- Solution: using PHP in line 106 of upload_file.php
+                               to check for extensions.
+                -->
                 <input type="file" id="file" name="file[]"
-                       accept=".fasta, .fas, .fa, .ffn, .frn, .txt"
+                       accept=".fasta, .fas, .fa, .ffn, .frn, .gbk, .gb, .txt"
                        multiple="multiple" />
 
                 <output id="list"></output>
             </div> <!-- mc-field-group -->
-            <small class="text-error">( filetypes: .fasta, .fas, .fa, ffn, .frn, .txt )</small>
+            <small class="text-error">( filetypes: .fasta, .fas, .fa, ffn, 
+                                        .frn, .gbk, .gb, .txt )</small>
             <br><br>
             <p class="text-warning">Email address:</p> 
             <div class="controls">
@@ -55,13 +63,11 @@
                          placeholder="You'll receive an email when job is complete.">
                   <span id="e-valid"></span>
                 </div> <!-- mc-field-group -->
-                <!-- show error if incorrect/missing input: disabled for now; using next page -->
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
               </div>	
               <div class="clear">
-                <button class="btn btn-large btn-block btn-primary" type="submit"
-                        name="submit" onclick="uploadingMessage()">
+                <!-- CHECK onClick WHY IT IS NOT WORKING -->
+                <button class="btn btn-large btn-block btn-primary"
+                        type="submit" name="submit" onClick="uploadingMessage()">
                   Process
                 </button>
               </div>
@@ -71,7 +77,7 @@
         </div> <!-- controls; under row-fluid, text-warning; input seq -->
       </div> <!-- row-fluid -->
       <hr>
-      <p><a href="https://github.com/713/project/">Link to our backends on Github</a>
+      <p><a href="https://github.com/713/project/">Link to this project on Github</a>
         <small class="text-warning pull-right">( Team B members: Stuti A.,
           Rebecca E., Luigi L., Prateek T., Yiming X. )</small>
       </p>
@@ -82,11 +88,11 @@
   <script src="js/bootstrap.min.js"></script>
 
   <script>
-//============================================================================= 
-    //<!-- Displays user's input file selections --> 
-    //<!-- possible to do: add delete button on selected files.
-    //                     Currently, user has to re-select files.  -->
-//============================================================================= 
+    //========================================================================= 
+    // Displays user's input file selections
+    // Possible to do: Add delete button next to each selected files.
+    //                 Currently, user has to re-select files.
+    //========================================================================= 
     function handleFileSelect(evt) {
       var files = evt.target.files; // FileList object
   
@@ -102,9 +108,9 @@
     }
     document.getElementById('file').addEventListener('change', handleFileSelect, false);
 
-//============================================================================= 
-    //<!-- Displays message during uploading -->
-//============================================================================= 
+    //========================================================================= 
+    // Displays message during uploading.
+    //========================================================================= 
     function uploadingMessage() {
       document.getElementById("uploadingMessage").innerHTML=" \
         <div class='alert alert-warning'> \
@@ -115,12 +121,13 @@
       ";
     }
 
-//============================================================================= 
-    //<!-- Validates email -->
-//============================================================================= 
+    //========================================================================= 
+    // Validates email by checking formatting.
+    //========================================================================= 
     function IsValidEmail(email) {
-      // regex checks for valid email
-      // flaw: ^$| is not responding to empty field 
+      // regex checks for valid email.
+      // Flaw: ^$| is not responding to empty field.
+      // Solution to flaw: give error message in the next page if no email
       var em=/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
       return em.test(email);
     }

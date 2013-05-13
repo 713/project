@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Results page</title>
+	<meta name="description" lang="en" content="Results" />
+  <meta name="author" content="Team B">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" type="image/ico" href="../img/favicon.ico" />	
+	<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div id="sidebar">
+	<h1>Results</h1>
+	<p class="author">Team B<br />
+
+	<ul id="nav">
+		<li><a href="#trees" class="first">Trees</a></li>
+		<li><a href="#HGT">HGT</a></li>
+		<li><a href="#other" class="last">Other outputs</a></li>
+	</ul>
+</div>
+
+<div id="content">
+
+<div class="section" id="overview">
+	<p class="lead">Click on the images to enlarge.<br />When enlarged, use
+                  arrow keys to go to the next/previous image.</p>
+</div>
+
+<hr />
+
+<div class="section" id="trees">
+	<h2>Trees</h2>
+	<h3 style="clear: both;">Image set</h3>
+
+  <div class="imageRow">
+  	<div class="set">
+  	  <div class="single first">
+  		  <a href="images/examples/image-3.jpg" rel="lightbox[plants]" title="Click on the right side of the image to move forward."><img src="images/examples/thumb-3.jpg" alt="Plants: image 1 0f 4 thumb" /></a>
+  		</div>
+      <div class="single">
+  		  <a href="images/examples/image-4.jpg" rel="lightbox[plants]" title="Alternately you can press the right arrow key." ><img src="images/examples/thumb-4.jpg" alt="Plants: image 2 0f 4 thumb" /></a>
+      </div>
+      <div class="single">
+  		  <a href="images/examples/image-5.jpg" rel="lightbox[plants]" title="The script preloads the next image in the set as you're viewing."><img src="images/examples/thumb-5.jpg" alt="Plants: image 3 0f 4 thumb" /></a>
+      </div>
+      <div class="single last">
+  		  <a href="images/examples/image-6.jpg" rel="lightbox[plants]" title="Click the X or anywhere outside the image to close"><img src="images/examples/thumb-6.jpg" alt="Plants: image 4 0f 4 thumb" /></a>
+      </div>
+  	</div>
+  </div>
+</div>
+
+<hr />
+
+<div class="section" id="HGT">
+	<h2>HGT</h2>
+	<h3 style="clear: both;">Image set</h3>
+
+  <div class="imageRow">
+  	<div class="set">
+  	  <div class="single first">
+  		  <a href="images/examples/image-3.jpg" rel="lightbox[plants]" title="Click on the right side of the image to move forward."><img src="images/examples/thumb-3.jpg" alt="Plants: image 1 0f 4 thumb" /></a>
+  		</div>
+      <div class="single">
+  		  <a href="images/examples/image-4.jpg" rel="lightbox[plants]" title="Alternately you can press the right arrow key." ><img src="images/examples/thumb-4.jpg" alt="Plants: image 2 0f 4 thumb" /></a>
+      </div>
+      <div class="single">
+  		  <a href="images/examples/image-5.jpg" rel="lightbox[plants]" title="The script preloads the next image in the set as you're viewing."><img src="images/examples/thumb-5.jpg" alt="Plants: image 3 0f 4 thumb" /></a>
+      </div>
+      <div class="single last">
+  		  <a href="images/examples/image-6.jpg" rel="lightbox[plants]" title="Click the X or anywhere outside the image to close"><img src="images/examples/thumb-6.jpg" alt="Plants: image 4 0f 4 thumb" /></a>
+      </div>
+  	</div>
+  </div>
+</div>
+
+<hr />
+
+<div class="section" id="other">
+<h2>Other outputs</h2>
+Other outputs<br />
+On OSX and Linux, the downloaded file is "download.zip"<br />
+On Windows, it is "download"<br />
+<a id="downloadZip" onClick="">Download outputs as .zip</a>
+<br />
+<a href="../outputs/">See outputs folder</a>
+</div>
+
+<hr />
+
+Team B
+
+</div><!-- end #content -->
+
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="js/jquery.smooth-scroll.min.js"></script>
+<script src="js/lightbox.js"></script>
+
+<script>
+  jQuery(document).ready(function($) {
+      $('a').smoothScroll({
+        speed: 1000,
+        easing: 'easeInOutCubic'
+      });
+
+      $('.showOlderChanges').on('click', function(e){
+        $('.changelog .old').slideDown('slow');
+        $(this).fadeOut();
+        e.preventDefault();
+      })
+  });
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2196019-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>

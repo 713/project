@@ -7,8 +7,8 @@ import cgitb; cgitb.enable()
 import cgi
 import os, urllib, subprocess as sub
 
-
-print "Content-Type: text/plain;charset=utf-8"
+print "Content-Type: test/html\r\n\r\n"   # Header sent to broswer
+#print "Content-Type: text/plain;charset=utf-8"
 print
 name = "Luigi"
 print "Hello World!"
