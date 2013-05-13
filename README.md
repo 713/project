@@ -22,10 +22,11 @@ For your convienence, instead of `$ python`, execute:
 
     $ ./afs/andrew.cmu.edu/usr23/lleung/epd_free-7.3-2-rh5-x86_64/bin/python
 
-This Python version 2.7  
+This is Python version 2.7.3  
 
-To allow automated emailing when requested job is complete, a solution is to  
-add an alias to your .bashrc to execute this path when calling `$ python`:
+To allow automated emailing when requested job is completed, a possible
+solution is to add an alias to your .bashrc to execute this path when calling
+`$ python`:
 
     $ echo 'alias python="./afs/andrew.cmu.edu/usr23/lleung/epd_free-7.3-2-rh5-x86_64/bin/python"' >> ~/.bashrc
     $ source ~/.bashrc
