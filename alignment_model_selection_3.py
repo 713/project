@@ -3,41 +3,52 @@
 import os
 import sys
 import shutil
+from config import *
 
-# Fields for user to change.
-#data_dirpath   = "/Users/lleung/713project/data_sample"
-
-#data_backbone  = "/Users/lleung/713project/data_sample/backbone.txt"
-#data_file_list = ["seq0.txt", "seq1.txt"]
-#data_file_list = ["HIV_vpu.ref2.fas"]   #testing jModelTest
-
-#data_output    = "/Users/lleung/713project/output_mauve.txt"
-#location_mauve = "/Applications/Mauve.app/Contents/MacOS/progressiveMauve"
-#location_jModelTest = "/Users/lleung/713project/jmodeltest-2.1.3/jModelTest.jar"
-#output_model = "/Users/lleung/713project/output_model_selection.txt"
-
-#Prateek's
-
-#data_backbone = data_dirpath+"/backbone.txt"
-#data_output = data_dirpath+"/output_mauve.txt"
-'''Should we hardcode the things as MacOS?'''
-################################################
- ## Rebecca's variables
-data_dirpath   = "/Users/relyanow/Dropbox/pipeline_output"
-data_backbone  = "/Users/relyanow/Dropbox/pipeline_output/backbone"
-data_output    = "/Users/relyanow/Dropbox/pipeline_output/output"
- 
-location_mauve = "/Applications/Mauve.app/Contents/MacOS/progressiveMauve"
-location_jModelTest = "/Users/relyanow/Downloads/jmodeltest-2.1.3/jModelTest.jar"
-output_model = "/Users/relyanow/Dropbox/pipeline_output/output_model_selection.txt"
-
+#===============================================================================
+# Using config.py file instead.
+# Commented variables for reference.
+#===============================================================================
+# Luigi's variables
+#===============================================================================
+##data_dirpath   = "/Users/lleung/713project/data_sample"
 #
+##data_backbone  = "/Users/lleung/713project/data_sample/backbone.txt"
+##data_file_list = ["seq0.txt", "seq1.txt"]
+##data_file_list = ["HIV_vpu.ref2.fas"]   #testing jModelTest
+#
+##data_output    = "/Users/lleung/713project/output_mauve.txt"
+##location_mauve = "/Applications/Mauve.app/Contents/MacOS/progressiveMauve"
+##location_jModelTest = "/Users/lleung/713project/jmodeltest-2.1.3/jModelTest.jar"
+##output_model = "/Users/lleung/713project/output_model_selection.txt"
+#
+#===============================================================================
+# Prateek's
+#===============================================================================
+#
+##data_backbone = data_dirpath+"/backbone.txt"
+##data_output = data_dirpath+"/output_mauve.txt"
+#'''Should we hardcode the things as MacOS?'''
+#
+#===============================================================================
+# Rebecca's variables
+#===============================================================================
+#data_dirpath   = "/Users/relyanow/Dropbox/pipeline_output"
+#data_backbone  = "/Users/relyanow/Dropbox/pipeline_output/backbone"
+#data_output    = "/Users/relyanow/Dropbox/pipeline_output/output"
 # 
-# ## Stuti's variables
+#location_mauve = "/Applications/Mauve.app/Contents/MacOS/progressiveMauve"
+#location_jModelTest = "/Users/relyanow/Downloads/jmodeltest-2.1.3/jModelTest.jar"
+#output_model = "/Users/relyanow/Dropbox/pipeline_output/output_model_selection.txt"
+#
+#===============================================================================
+# Stuti's variables
+#===============================================================================
 # data_dirpath   = "/afs/andrew.cmu.edu/usr23/stutia/private/03713"
 # data_backbone  = "/afs/andrew.cmu.edu/usr23/stutia/private/03713/backbone.txt"
 # data_file_list = ["seq0.txt", "seq1.txt"]
-
+# 
+#===============================================================================
 
 ### User do not have to edit anything below. ###
 #### For joining the lines the following line is faster.

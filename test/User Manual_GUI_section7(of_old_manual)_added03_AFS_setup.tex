@@ -1,0 +1,151 @@
+\documentclass[11pt]{article}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amsfonts, amsthm, amssymb,graphicx,pdfpages}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\pagestyle{empty}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[english]{isodate}
+\usepackage[parfill]{parskip}
+\begin{document}
+\begin{center}
+\textbf{\LARGE{Pipeline for Analysis of Horizontal Gene Transfer in Bacterial Genomes}}\\
+~~~\\
+\Large{Stuti Agrawal}\\
+\Large{Rebecca Elyanow}\\
+\Large{Luigi Leung}\\
+\Large{Prateek Tandon}\\
+\Large{Yiming Xin}
+\end{center}
+\tableofcontents
+
+%\includepdf[pages={1}]{/Users/lleung/Desktop/flowchart.pdf}
+
+\section{Running the Pipeline}
+
+
+\section{Alignment}
+
+
+\section{Creation of the core genome}
+
+
+\section{Building the phylogenetic tree}
+
+
+\section{Identifying HGT regions}
+
+
+\section{Annotate the genes within the horizontally transferred regions}
+
+
+
+\section{Graphical User Interface}
+The GUI is web based. The following are instructions for setting up to locally host the GUI via Apache web server, as well as, instructions for hosting on CMU's AFS server with limited permissions and access.
+
+\subsection{Hosting Locally}
+\textbf{Setup}\\
+The following instructions apply to OSX and unix-based operating systems. Windows instructions will be in $[$brackets$]$. And instead of \texttt{nano} $[$or notepad$]$, feel free to use any other text editor.\\
+On OSX, Apache is already installed. On other unix-based OS, if it is not already installed, install it using the OS's packages utility or via terminal command \texttt{\$ sudo apt-get install apache2}.\\
+$[$For Windows, install with the downloaded \texttt{httpd-versionNumber-win32-src.zip}\\
+ from \texttt{http://httpd.apache.org/docs/2.2/platform/windows.html}$]$\\
+\begin{enumerate}
+	\item To get the GUI running on the local computer, please enable php in Apache by going into its httpd.conf by typing into the terminal:
+		\begin{verbatim}
+		$ sudo nano /etc/apache2/httpd.conf
+		
+		[ Open C:\\Program Files\Apache Software Foundataion\Apache2.2\
+		  and open the httpd.conf in notepad. ]
+		\end{verbatim}
+	\item Uncomment the line (delete the \# character) , save and exit:
+		\begin{verbatim}
+		LoadModule php5_module libexec/apache2/libphp5.so
+		\end{verbatim}
+	\item Enable Apache web server by typing:
+		\begin{verbatim}
+		$ sudo apachectl start
+		(To stop the web server, $ sudo apachectl stop )
+			
+		[ Click on the httpd.exe in \Apache 2.2\bin\ folder to start the service. ]
+		\end{verbatim}
+\end{enumerate}
+\bigskip
+
+\subsection{Hosting on AFS}
+\textbf{Setup}\\
+The following instructions apply to hosting on Carnegie Mellon University's server as a student.
+
+To enable CGI and PHP scripts, open in the internet browser:\\
+\texttt{https://my.contrib.andrew.cmu.edu/index.cgi}
+\smallskip
+
+Enter your AndrewID and password, then under ``\texttt{CGI services}" click on:\\
+\texttt{(Re)enable authenticated AFS (CGI AFS-write) support}\\
+
+Upload the .zip contents that you downloaded previously to the \texttt{www} folder in your afs space, or, for your convenience, we have a Github repository for easier uploading and for syncing any possible future updates. To do this, type the following:
+\bigskip
+
+Connect to school's clusters (afs):t
+	\begin{verbatim}
+	$ ssh unix.andrew.cmu.edu}
+	\end{verbatim}
+\bigskip
+
+Clone the Github repository to your \texttt{www} directory:
+	\begin{verbatim}
+	$ git clone git://github.com/713/project.git ~/www/teamB
+	\end{verbatim}
+\bigskip
+
+Give permission to contrib web server to run CGI scripts:
+	\begin{verbatim}
+		$ cd ~/www/teamB/
+		$ fs sa . contrib.[Your AndrewID]@club.cc.cmu.edu rlidwk
+	\end{verbatim}
+\bigskip
+
+Give write permissions to the CGI, PHP scripts, and output folder:
+	\begin{verbatim}
+	$ chmod +rw user_email.txt
+	$ chmod 755 upload_file.php
+	$ chmod 755 user_results
+	$ chmod 755 *.cgi
+	\end{verbatim}
+\bigskip
+
+Edit the location of your server URL in \texttt{config.py}:
+	\begin{verbatim}
+	$ nano ~/www/teamB/config.py
+	\end{verbatim}
+In the ``\texttt{host=}" variable, change it to:
+	\begin{verbatim}
+	host="http://www.contrib.cmu.edu/~YourAndrewID/teamB/"
+	\end{verbatim}
+\subsection{Accessing Web App}
+
+\begin{enumerate}
+	\item If hosting locally, open the \texttt{index.html} in browser by dragging it out of its folder and into a browser
+	\\or by typing its location in the browser's URL box starting with ``\texttt{file://}"\\
+	If hosting on AFS, type into the URL box:
+	\begin{verbatim}http://www.contrib.cmu.edu/~YourAndrewID/teamB/
+	\end{verbatim}
+	\item Select sequences to process.
+	\item Provide an email address for receiving an email to view the results when job is finished.\\
+		The email is from \texttt{03713.project@gmail.com}\\
+		and with the title ``\texttt{Job Completed: A message from 03-713 Team B's web app}"
+	\item Click on the blue ``Process" button.
+\end{enumerate}
+\bigskip
+
+\textbf{Web App Results}\\
+After the pipeline is done processing, an email is sent. Within the email, there is a link that redirects the user to the results webpage.
+
+\newpage
+\begin{thebibliography}{9}
+
+\end{thebibliography}
+\end{document}

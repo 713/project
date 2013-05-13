@@ -6,7 +6,7 @@ import string
 # =============================================================================
 # temp variable
 # =============================================================================
-TO = "ruanyuxian2008@gmail.com"
+TO = "luigileung@outlook.com"
 completed_job_link = "http://www.contrib.andrew.cmu.edu/~lleung/project713/user_results/"
 # =============================================================================
 

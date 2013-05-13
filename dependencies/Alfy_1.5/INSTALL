@@ -1,0 +1,25 @@
+============================= alfy INSTALLATION README =====================
+
+1) Extracting the tarfile:
+
+"tar -xvzf alfy_xxx.tgz"
+
+2) switch to Alfy_XXX:
+
+cd Alfy_XXX
+
+3) Generate program
+
+make
+
+This command builds the libraries and two executables: "alfy" and "alfy64".
+"alfy" is a 32-bit program and "alfy64" is a 64-bit program. In general, 
+"alfy64" is used for large-scale data sets containing more than 5 x 10^8 bp, 
+and "alfy" from smaller data sets.
+
+5) If you would like to use "alfy" or "alfy64" from any directory without referring to
+"Alfy_XXX/alfy", simply include the path to these executables in you PATH variable, e.g:
+
+PATH=${PATH}:$(HOME)/some-path/Alfy_XXX
+
+or copy the executables to your bin directory.

@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: alfyDoc.aux
+The style file: plain.bst
+Database file #1: /home/haubold/References/references.bib
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            524 strings with 4674 characters,
+and the built_in function-call counts, 1530 in all, are:
+= -- 163
+> -- 56
+< -- 1
++ -- 22
+- -- 18
+* -- 106
+:= -- 249
+add.period$ -- 13
+call.type$ -- 4
+change.case$ -- 21
+chr.to.int$ -- 0
+cite$ -- 4
+duplicate$ -- 56
+empty$ -- 122
+format.name$ -- 18
+if$ -- 323
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 4
+newline$ -- 23
+num.names$ -- 8
+pop$ -- 17
+preamble$ -- 1
+purify$ -- 17
+quote$ -- 0
+skip$ -- 41
+stack$ -- 0
+substring$ -- 139
+swap$ -- 13
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 16
+warning$ -- 0
+while$ -- 17
+width$ -- 5
+write$ -- 48

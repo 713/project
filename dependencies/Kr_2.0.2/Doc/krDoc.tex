@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage{graphics,eurosym,latexsym}
+\usepackage{times}
+\usepackage{listings}
+\lstset{numbers=left,numberstyle=\tiny,stepnumber=5,breaklines=true}
+\bibliographystyle{plain}
+\oddsidemargin=0cm
+\evensidemargin=0cm
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\I}{\item}
+\newcommand{\ty}{\texttt}
+\newcommand{\kr}{K_{\rm r}}
+\newcommand{\version}{2.0.2}
+\textwidth=16cm
+\textheight=23cm
+\begin{document}
+
+\title{\ty{kr} version \version: Efficient Estimation of Pairwise
+  Distances between Genomes}
+\author{Mirjana Domazet-Lo\u{s}o$^{1,2}$ and Bernhard Haubold$^1$\\
+\small
+$^{1}$Max-Planck-Institute for Evolutionary Biology
+  Department of Evolutionary Genetics, 24306 Pl\"on, Germany\\
+\small
+$^{2}$University of Zagreb, Faculty of Electrical Engineering and
+  Computing, Zagreb, Croatia}                                   
+\maketitle
+
+\section{Introduction}
+\ty{kr} is a program for efficiently computing the statistic $\kr$, an
+estimator of the pairwise number of
+substitutions between long DNA sequences. For details on this statistic see~\cite{hau09:est},
+which also accompanies version 1 of \ty{kr}. The algorithmic
+improvements implemented in version 2 are described
+in~\cite{dom09:eff}. 
+
+\section{Input and Output Formats}
+The input consists of DNA sequences in FASTA format. The alphabet of
+these sequences is restricted to the four canonical bases \ty{A},
+\ty{C}, \ty{G}, and \ty{T}. The output is a
+distance matrix in PHYLIP format.
+
+\section{Getting Started}
+\ty{kr} is written in C and is
+intended to run on any UNIX system with a C compiler and the GNU
+Scientific Library installed~\cite{gal05:gnu}. However, please contact
+MDL at \ty{mdomazet@evolbio.mpg.de} if you have problems with the
+program.
+\bi
+\I Unpack the software
+\begin{verbatim}
+tar -xvzf kr_XXX.tgz
+\end{verbatim}
+where \ty{XXX} indicates the version.
+\I Change into the newly created directory
+\begin{verbatim}
+cd Kr_XXX/Src/Kr
+\end{verbatim}
+and list its contents
+\begin{verbatim}
+ls
+\end{verbatim}
+\I Users of Mac OSX need to edit the file \ty{Makefile} such that the
+assignments to the variables \ty{CFLAGS} and \ty{CFLAGS64} are changed
+to
+\begin{verbatim}
+CFLAGS= -O3 -Wall -Wshadow -pedantic -D_GNU_SOURCE                    \
+-D_FILE_OFFSET_BITS=64 -std=c99 -DVER32 -DUNIX -I/opt/local/include/  \
+-L/opt/local/lib 
+\end{verbatim}
+and
+\begin{verbatim}
+CFLAGS64= -O3 -Wall -Wshadow -pedantic -D_GNU_SOURCE          \
+-D_FILE_OFFSET_BITS=64 -std=c99 -DUNIX -I/opt/local/include/  \
+-L/opt/local/lib 
+\end{verbatim}
+\I Generate \ty{kr}
+\begin{verbatim}
+make
+\end{verbatim}
+\I List its options
+\begin{verbatim}
+./kr -h
+\end{verbatim}
+\I Test the program and record its run time
+\begin{verbatim}
+time ./kr ../../Data/hiv42.fasta
+\end{verbatim}
+This carries out the standard distance computation. In the case of HIV
+sequences, however, it is safe to assume that the GC content does not
+vary greatly between sequences. By telling the program to use a global
+GC content rather than the GC content of each pair of sequences, the
+computation of $\kr$ can be sped up:
+\begin{verbatim}
+time ./kr -g ../../Data/hiv42.fasta
+\end{verbatim}
+The difference in run time becomes particularly pronounced for large
+data sets.
+\ei
+
+
+\section{Listings}
+\lstset{language=c}
+The following listings document central parts of the code for \ty{kr}.
+\subsection{The Driver Program: \ty{mainKr.c}}
+\lstinputlisting{../Src/Kr/mainKr.c}
+\subsection{Traverse Suffix Tree: \ty{lcpSubjectTree.c}}
+\lstinputlisting{../Src/Kr/lcpSubjectTree.c}
+\subsection{Estimate Divergence: \ty{divergence.c}}
+\lstinputlisting{../Src/Kr/divergence.c}
+
+\section{Change Log}
+\bi
+\I Version 2.0.0 (June 27, 2009)
+\bi
+\I First running version
+\ei
+\I Version 2.0.1 (July 28, 2009)
+\bi
+\I Implemented shortcut for $\kr$ computation (\ty{-g})
+\ei
+\I Version 2.0.2 (October 5, 2009)
+\bi
+\I Added more detailed error messages
+\ei
+\ei
+
+
+\bibliography{references}
+
+\end{document}
+

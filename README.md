@@ -1,6 +1,6 @@
 Team B's Project
 ================
-Please see manual for more information (Team B - User Manual.pdf)
+Please see manual for more information (README - User Manual.pdf)
 
 ## Git Usage
 Click on that download ("ZIP") button on the top of this github page.  
