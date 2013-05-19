@@ -1,0 +1,16 @@
+================== alfy 1.x.x ACKNOWLEDGEMENTS ===================================
+
+alfy 1.x.x [1] computes mosaic structure of a query sequence, i.e., computes a list of query fragments
+and corresponding parental sequences
+
+alfy 1.x.x code contributors:
+	Mirjana Domazet-Loso [*],[**] 
+	Bernhard Haubold [*]
+
+[*] Max-Planck-Institute for Evolutionary Biology, 
+		Department of Evolutionary Genetics, Ploen, Germany
+
+[**] University of Zagreb, Faculty of Electrical Engineering and Computing, 
+		Zagreb, Croatia
+
+References:

@@ -1,0 +1,80 @@
+============================= kr 2.0 README ===================================
+
+** NOTE **
+For pretty documentation see Doc/krDoc.pdf
+
+The program kr 2.x.x is free software, based on the GNU General Public License.
+Please refer to the "COPYRIGHT" and the "COPYRIGHT.GPL.txt" files 
+for more information.
+
+-- DESCRIPTION kr 2.0 --
+kr version 2 rapidly computes a distance matrix based on shortest unique 
+substring using a new algorithmic approach described in [1]. 
+The program uses a recently developed alignment-free estimator of the rate 
+of substitution, Kr [2]. 
+In contrast to the implementation kr version 1 [2], where a suffix tree 
+was constructed and traversed for each pair of sequences from the data set, 
+kr version 2 is implemented by building a single suffix tree for all sequences 
+from the data set, which is then traversed only once. 
+This significantly reduces the runtime (for the speed comparison of kr 2 and 
+kr 1 refer to [1]), while memory usage stays linear in the size of the data set.
+
+If you use results obtained by kr 2.x.x in your publications, please 
+cite our most recent paper:
+
+kr version 2.0 is described in:
+[1] Domazet-Lošo, M., and Haubold, B. 2009.
+    Efficient Alignment-Free Distance Computation Between Genomes
+    (in preparation)
+  
+kr version 1.0 is described in:
+[2] Haubold, B., Pfaffelhuber, P., Domazet-Lošo, M., and Wiehe, T. 2009. 
+    Estimating mutation distances from unaligned genomes, J. Comput. Biol. 
+    (in press)
+    
+-- RUNNING kr 2.0 --
+Please, refer to the INSTALL file for installation instructions.
+
+Using 32-bit version ("kr"):
+Usage: kr [options] <FILES(s)>
+   or: kr [options] -j <FILE(s)>
+   or: kr [options] -d <DIRECTORY>
+
+Using 64-bit version ("kr64"):
+Usage: kr64 [options] <FILES(s)>
+   or: kr64 [options] -j <FILE(s)>
+   or: kr64 [options] -d <DIRECTORY>
+
+Options (same for both versions):
+   [-j <FILE> read subject sequence(s) from FILE(s)
+   [-d <DIRECTORY> read subject sequence(s) from file(s) located in DIRECTORY
+   [-o <FILE> write output to FILE; default: FILE=stdout]
+   [-n <FILE> write output to FILE in the input format of phylip/neighbor]
+   [-t print run-time]
+   [-D <NUM> maximum depth of suffix tree; default: 1000000]
+   [-P <NUM> fraction of random shustrings excluded from analysis; 
+             P e [0, 1]; default: 0.5
+   [-E <NUM> relative divergence error; default: 0.001000]
+   [-T <NUM> relative error of the average shustring length; default: 0.000010]
+   [-M <NUM> threshold for small values of logarithm; default: 0.000000]
+   [-g use global GC content (fast); default: use pairwise GC content (slower, accurate)]
+   [-p print information about program]
+   [-h print this help message]
+
+Note, all sequences must be provided in fasta format.
+
+-- EXAMPLE kr 2.0 --
+
+Running the test data set (a data set consisting of 42 HIV-1 genomes; 
+for the reference, please check Doc/krDoc.pdf). 
+
+Example:
+1) switch to "Kr_2.x.x/Src/Kr" directory
+	
+2) run "kr" on the data set of sequences located in a single file, "hiv42.fasta":
+	./kr ../../Data/hiv42.fasta
+
+-- CONTACT INFORMATION --
+Please address questions and bug reports to: <mdomazet@evolbio.mpg.de>
+
+Last Revised September 22, 2009

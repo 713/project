@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{dom09:eff}
+M.~Domazet-Lo\u{s}o and B.~Haubold.
+\newblock Efficient estimation of pairwise distances between genomes.
+\newblock {\em Bioinformatics}, submitted, 2009.
+
+\bibitem{gal05:gnu}
+M.~Galassi, J.~Davies, J.~Theiler, B.~Gough, G.~Jungman, M.~Booth, and
+  F.~Rossi.
+\newblock Gnu scientific library reference manual.
+\newblock Network Theory Ltd 1.6, for gsl version 1.6, 17 March 2005 edition,
+  2005.
+
+\bibitem{hau09:est}
+B.~Haubold, P.~Pfaffelhuber, M.~Domazet-Lo\u{s}o, and T.~Wiehe.
+\newblock Estimating mutation distances from unaligned genomes.
+\newblock {\em Journal of Computational Biology}, in press, 2009.
+
+\end{thebibliography}

@@ -1,0 +1,706 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://gmpg.org/xfn/11">
+	<title>jModelTest Output</title>
+
+	<link rel="stylesheet" href="resources/style.css" type="text/css" media="screen" />
+	<!--[if IE]>
+	<style type="text/css">
+	  .clearfix {
+		zoom: 1;
+		display: block; 
+		} 
+	</style>
+	<![endif]-->
+
+</head>
+
+<body>
+
+<div id="container1">
+<div id="container2">
+ 
+	<div id="header">
+		<div id="logo">
+			<a href="http://code.google.com/p/jmodeltest2">
+				<img src="resources/logo0.png" style="width:129px; height:80px;"/>
+			</a>
+		</div>
+		<div id="header-links">
+			<ul>
+				<li  class="header_button"><a href="http://code.google.com/p/jmodeltest2" title="Home">Home</a></li>
+				<li  class="header_button_span"><a href="https://groups.google.com/group/jmodeltest" title="Group">Discussion group</a></li>
+				<li  class="header_button"><a href="https://groups.google.com/forum/#!forum/jmodeltest" title="Forum">Forum</a></li>
+				<li  class="header_button"><a href="mailto:ddarriba@udc.es" title="Contact">Contact</a></li>
+			</ul>
+		</div>
+		<div id="menul1">
+			<ul>
+				<li  class="selection_button"><a href="#program-meta" title="Meta">Meta</a></li>
+				<li  class="selection_button"><a href="#settings" title="Settings">Settings</a></li>
+				<li  class="selection_button"><a href="#results" title="Input Data">Results</a></li>
+					<li class="selection_button_span"><a>Selection</a></li>
+
+			</ul>
+		</div>
+		<div id="menul2">
+			<ul>
+									<li  class="selection_button">
+					<a href="#aic" title="AIC">AIC</a></li>
+					<li  class="selection_button_na">
+					<a href="#aicc" title="AICc">AICc</a></li>
+					<li  class="selection_button">
+					<a href="#bic" title="BIC">BIC</a></li>
+					<li  class="selection_button_na">
+					<a href="#dt" title="DT">DT</a></li>
+			</ul>
+		</div><!--menu-->
+		<div style="clear:both;"></div>
+	</div><!--header-->
+
+<div id="clearfix">
+
+<div id="page">
+		<div id="content">
+
+<div id="program-meta">
+	<h1><a name="program-meta"></a>Application Meta</h1>
+	<h3>jModeltest 2.1</h3>
+	(c) 2011-onwards D. Darriba, G.L. Taboada, R. Doallo and D. Posada,<br/>
+    (1) Department of Biochemistry, Genetics and Immunology<br/>
+        University of Vigo, 36310 Vigo, Spain.<br/>
+    (2) Department of Electronics and Systems<br/>
+        University of A Coruna, 15071 A Coruna, Spain.<br/>
+    e-mail: ddarriba@udc.es, dposada@uvigo.es<br/>
+<br/>
+	<hr/>
+	Tue May 14 03:35:29 EDT 2013 <br/> Linux 2.6.32-279.22.1.el6.x86_64, arch: amd64, bits: 64, numcores: 8<br/>
+	
+	<p></p> 
+	<table align="center">
+	<tr valign="top"><td>Citation:</td><td align="left"> Darriba D, Taboada GL, Doallo R and Posada D. 2012. "jModelTest 2: more models, new heuristics and parallel computing". Nature Methods 9, 772.</td></tr>
+    </table>
+	<p></p>
+
+	 
+	Notice: This program may contain errors. Please inspect results carefully.<br/>
+	 <br/>
+ 
+</div>
+
+<p class="back-to-top"><a href="#" onclick="scrollTo(0,0);return false;" title="Back to top" class="top"><img src="resources/topIcon.gif" alt="Back to top" class="top" /> Back to top <img src="resources/topIcon.gif" alt="Back to top" class="top" /></a></p>
+
+	<h1><a name="settings"></a>Settings </h1>
+
+		 Arguments = -d aligned.fasta -g 4 -f -AIC -BIC -a -S BEST <br/>
+		 Input Alignment: "aligned.fasta"<br/>
+		 NumTaxa = 11<br/>
+		 Length = 711<br/> 
+		 Phyml version = 3.0<br/>
+		 Phyml binary = PhyML_3.0_linux64<br/>
+		 Candidate models = 12<br/>
+		  number of substitution schemes = 3<br/>
+		  including models with equal/unequal base frequencies (+F)<br/>
+		  including only models without a proportion of invariable sites<br/>
+		  including models with/without rate variation among sites (+G) (nCat = 4)<br/>
+		 Optimized free parameters (K) = Substitution parameters + 19 branch lengths + topology<br/>
+		 
+		 Base tree for likelihood calculations = Maximum Likelihood<br/>
+		 Tree topology search operation = Best of {NNI, SPR}<br/>
+
+<p class="back-to-top"><a href="#" onclick="scrollTo(0,0);return false;" title="Back to top" class="top"><img src="resources/topIcon.gif" alt="Back to top" class="top" /> Back to top <img src="resources/topIcon.gif" alt="Back to top" class="top" /></a></p>
+
+<h1> <a name="results"></a>Model Optimization Results </h1>
+
+<div id="sorted-models">
+<table class="model-info">
+<tr><th> ID </th><th> Name </th><th> Partition </th><th> -lnL </th><th> p </th><th> fA </th><th> fC </th><th> fG </th><th> fT </th><th> ti/tv </th><th> R(a) </th><th> R(b) </th><th> R(c) </th><th> R(d) </th><th> R(e) </th><th> R(f) </th><th> p-inv </th><th> shape </th></tr>
+<tr><td> 1</td><td><a href="http://www.phylowidget.org/full/?tree=(Loach:0.13667972,Carp:0.10431863,(Frog:0.12874077,(Chicken:0.19370431,(Human:0.23295675,((Mouse:0.08317545,Rat:0.08426166):0.06861686,(Seal:0.12343151,(Cow:0.10742847,(Whale:0.06815730,seq1:0.65904754):0.02535363):0.02072361):0.03200081):0.04936322):0.05678673):0.05309909):0.08189788);&useBranchLengths=true">JC</a></td><td> 000000 </td><td> 5566.1445 </td><td> 20 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td></tr>
+<tr><td> 2</td><td><a href="http://www.phylowidget.org/full/?tree=(Loach:0.17066129,Carp:0.11429777,(Frog:0.15340357,(Chicken:0.27447262,(Human:0.33089745,((Rat:0.08450378,(seq1:3.13267258,Mouse:0.05703608):0.04146695):0.08175642,(Whale:0.10412828,(Seal:0.14581827,Cow:0.11153577):0.02153519):0.03358913):0.05212480):0.08124271):0.04132743):0.10836007);&useBranchLengths=true">JC+G</a></td><td> 000000 </td><td> 5332.8583 </td><td> 21 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> 0.5190 </td></tr>
+<tr><td> 3</td><td><a href="http://www.phylowidget.org/full/?tree=(Loach:0.13627088,Carp:0.10448048,(Frog:0.13048482,(Chicken:0.19429835,(Human:0.23256106,((Mouse:0.08368173,Rat:0.08406735):0.06970546,(Seal:0.12294223,(Cow:0.10761466,(Whale:0.06632655,seq1:0.66629850):0.02783303):0.02040667):0.03271106):0.04985800):0.05683446):0.05308650):0.08092272);&useBranchLengths=true">F81</a></td><td> 000000 </td><td> 5499.9412 </td><td> 23 </td><td> 0.2621 </td><td> 0.2849 </td><td> 0.1474 </td><td> 0.3056 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td></tr>
+<tr><td> 4</td><td><a href="http://www.phylowidget.org/full/?tree=((seq1:3.29520015,Loach:0.00001026):0.17977126,Carp:0.12015110,(Frog:0.16243057,(Chicken:0.31929319,(Human:0.36709134,((Mouse:0.10452038,Rat:0.08957716):0.09400695,(Whale:0.10834597,(Seal:0.15742789,Cow:0.11854628):0.02424728):0.03510651):0.06428024):0.09724933):0.04102109):0.11872069);&useBranchLengths=true">F81+G</a></td><td> 000000 </td><td> 5239.8846 </td><td> 24 </td><td> 0.2849 </td><td> 0.2987 </td><td> 0.1326 </td><td> 0.2839 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> 0.4830 </td></tr>
+<tr><td> 5</td><td><a href="http://www.phylowidget.org/full/?tree=(Loach:0.13820748,Carp:0.10256633,(Frog:0.12959169,(Chicken:0.19693242,(Human:0.22914128,(seq1:0.65813056,((Mouse:0.08564842,Rat:0.08074631):0.07637853,(Whale:0.09184611,(Seal:0.12709774,Cow:0.10213797):0.02398801):0.03205836):0.02451062):0.02848497):0.06419645):0.05905513):0.08311946);&useBranchLengths=true">K80</a></td><td> 010010 </td><td> 5482.5112 </td><td> 21 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> 1.2290 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td></tr>
+<tr><td> 6</td><td><a href="http://www.phylowidget.org/full/?tree=(Carp:0.12578062,(Frog:0.17596582,(Chicken:0.33695495,(Human:0.38519289,((Mouse:0.10528440,Rat:0.09201282):0.09732153,(Whale:0.11586411,(Seal:0.16748781,Cow:0.11309116):0.02984150):0.04191734):0.06880796):0.10713728):0.05789322):0.12357932,(Loach:0.00000661,seq1:2.92338979):0.18598786);&useBranchLengths=true">K80+G</a></td><td> 010010 </td><td> 5224.3899 </td><td> 22 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> 1.6522 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> 0.4840 </td></tr>
+<tr><td> 7</td><td><a href="http://www.phylowidget.org/full/?tree=(Loach:0.13894092,Carp:0.10380196,(Frog:0.13322584,(Chicken:0.20059124,(Human:0.23236526,(seq1:0.68418450,((Mouse:0.08727366,Rat:0.08242839):0.07975452,(Whale:0.09388694,(Seal:0.12994555,Cow:0.10421640):0.02485603):0.03293815):0.02195157):0.03250768):0.06639508):0.05962384):0.08399625);&useBranchLengths=true">HKY</a></td><td> 010010 </td><td> 5407.7243 </td><td> 24 </td><td> 0.2808 </td><td> 0.2821 </td><td> 0.1406 </td><td> 0.2965 </td><td> 1.3085 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td></tr>
+<tr><td> 8</td><td><a href="http://www.phylowidget.org/full/?tree=(Carp:0.17654327,(Frog:0.28185555,(Chicken:0.64731721,(Human:0.68687629,((Mouse:0.15062594,Rat:0.13550091):0.19143613,(Whale:0.17757206,(Cow:0.15882401,Seal:0.26589454):0.04862517):0.06181962):0.14336528):0.23445795):0.07974109):0.21363677,(seq1:7.09553425,Loach:0.00003171):0.27067722);&useBranchLengths=true">HKY+G</a></td><td> 010010 </td><td> 5086.6743 </td><td> 25 </td><td> 0.3343 </td><td> 0.2961 </td><td> 0.1104 </td><td> 0.2593 </td><td> 2.6853 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> 0.3380 </td></tr>
+<tr><td> 9</td><td><a href="http://www.phylowidget.org/full/?tree=(Loach:0.12858018,Carp:0.10407496,(Frog:0.12597985,(Chicken:0.19147943,(seq1:0.69327944,(Human:0.22599340,((Mouse:0.07821089,Rat:0.07865123):0.06781742,(Seal:0.11957412,(Whale:0.08994310,Cow:0.10334745):0.01684025):0.02681731):0.04168572):0.02300012):0.03336129):0.05447437):0.07570539);&useBranchLengths=true">SYM</a></td><td> 012345 </td><td> 5371.8555 </td><td> 25 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> 6.6481 </td><td> 6.6319 </td><td> 4.7157 </td><td> 1.0600 </td><td> 11.8361 </td><td> 1.0000 </td><td> - </td><td> - </td></tr>
+<tr><td> 10</td><td><a href="http://www.phylowidget.org/full/?tree=(Loach:0.18914220,Carp:0.14766801,(Frog:0.18823051,(Chicken:0.35337628,(Human:0.39266831,((seq1:4.23365400,(Mouse:0.10099488,Rat:0.08909406):0.09747308):0.00045362,(Whale:0.11611248,(Cow:0.12243105,Seal:0.16767317):0.01988229):0.03440759):0.06466866):0.10203181):0.06113203):0.11722666);&useBranchLengths=true">SYM+G</a></td><td> 012345 </td><td> 5125.0478 </td><td> 26 </td><td> - </td><td> - </td><td> - </td><td> - </td><td> - </td><td> 5.4773 </td><td> 5.3993 </td><td> 3.9383 </td><td> 0.4003 </td><td> 18.0015 </td><td> 1.0000 </td><td> - </td><td> 0.4640 </td></tr>
+<tr><td> 11</td><td><a href="http://www.phylowidget.org/full/?tree=(Loach:0.13309640,Carp:0.10860237,(Frog:0.13530068,(Chicken:0.19692235,(seq1:0.74112893,(Human:0.23414666,((Mouse:0.08201595,Rat:0.08250021):0.07246105,(Seal:0.12322153,(Whale:0.09396277,Cow:0.10883033):0.01834268):0.02758057):0.04351442):0.02273184):0.03640059):0.05676381):0.07784709);&useBranchLengths=true">GTR</a></td><td> 012345 </td><td> 5354.1880 </td><td> 28 </td><td> 0.2596 </td><td> 0.2591 </td><td> 0.1798 </td><td> 0.3015 </td><td> - </td><td> 5.7195 </td><td> 7.3582 </td><td> 3.6211 </td><td> 1.1761 </td><td> 9.2648 </td><td> 1.0000 </td><td> - </td><td> - </td></tr>
+<tr><td> 12</td><td><a href="http://www.phylowidget.org/full/?tree=((seq1:5.96360089,Loach:0.00001245):0.24141407,Carp:0.17418402,(Frog:0.24658962,(Chicken:0.54432226,(Human:0.57014623,((Mouse:0.12966600,Rat:0.11622730):0.14588055,(Whale:0.14893035,(Seal:0.23048836,Cow:0.15240757):0.03858194):0.05415103):0.11334010):0.17887556):0.07418689):0.17958370);&useBranchLengths=true">GTR+G</a></td><td> 012345 </td><td> 5080.3354 </td><td> 29 </td><td> 0.3296 </td><td> 0.2850 </td><td> 0.1368 </td><td> 0.2487 </td><td> - </td><td> 1.7632 </td><td> 4.6569 </td><td> 1.6804 </td><td> 0.5010 </td><td> 9.5802 </td><td> 1.0000 </td><td> - </td><td> 0.3770 </td></tr>
+</table>
+</div><!--sorted-models-->
+  <div id="topologies">
+  <p>
+  There are 6 different topologies. The following table shows the models supporting each topology and the rank according to each Information Criterion, as well as Robinson-Foulds and Euclidean distances with the tree of the best-fit model.
+  </p>
+  <table class="topologies-info">
+  <tr><th class="col-id"> ID </th>
+      <th class="col-models"> Models </th>
+      <th class="col-topo"> Topology </th>
+      <th/>
+      <th> AIC </th>
+      <th> BIC </th>
+      <th> AICc </th>
+      <th> DT </th>
+  </tr>
+  <tr>
+    <td rowspan="5" class="col-id"> 0</td>
+    <td rowspan="5" class="col-models">
+    <div class="topo-scroll"> 
+      F81+G K80+G HKY+G GTR+G 
+    </div>
+    </td>
+    <td rowspan="5" class="col-topo">
+    <div class="topo-scroll">
+      <a href="http://www.phylowidget.org/full/?tree=((seq1,Loach),Carp,(Frog,(Chicken,(Human,((Mouse,Rat),(Whale,(Seal,Cow)))))));">((seq1,Loach),Carp,(Frog,(Chicken,(Human,((Mouse,Rat),(Whale,(Seal,Cow)))))));</a>
+    </div>
+    </td>
+    <th>RANK</th>
+      <td class="topo-rank">0</td>
+      <td class="topo-rank">0</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Weight</th>
+      <td class="topo-rank">1.0000</td>
+      <td class="topo-rank">1.0000</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>RF</th>
+      <td class="topo-rank">0</td>
+      <td class="topo-rank">0</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>AVG Distance</th>
+      <td class="topo-rank">4.5584e+00</td>
+      <td class="topo-rank">6.0968e+00</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Distance VAR</th>
+      <td class="topo-rank">1.2019e+01</td>
+      <td class="topo-rank">1.2696e+01</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+  <tr>
+    <td rowspan="5" class="col-id"> 1</td>
+    <td rowspan="5" class="col-models">
+    <div class="topo-scroll"> 
+      K80 HKY 
+    </div>
+    </td>
+    <td rowspan="5" class="col-topo">
+    <div class="topo-scroll">
+      <a href="http://www.phylowidget.org/full/?tree=(Loach,Carp,(Frog,(Chicken,(Human,(seq1,((Mouse,Rat),(Whale,(Seal,Cow))))))));">(Loach,Carp,(Frog,(Chicken,(Human,(seq1,((Mouse,Rat),(Whale,(Seal,Cow))))))));</a>
+    </div>
+    </td>
+    <th>RANK</th>
+      <td class="topo-rank">1</td>
+      <td class="topo-rank">1</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Weight</th>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>RF</th>
+      <td class="topo-rank">8</td>
+      <td class="topo-rank">8</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>AVG Distance</th>
+      <td class="topo-rank">5.8434e+00</td>
+      <td class="topo-rank">7.0395e+00</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Distance VAR</th>
+      <td class="topo-rank">1.6511e-07</td>
+      <td class="topo-rank">6.3044e-07</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+  <tr>
+    <td rowspan="5" class="col-id"> 2</td>
+    <td rowspan="5" class="col-models">
+    <div class="topo-scroll"> 
+      SYM GTR 
+    </div>
+    </td>
+    <td rowspan="5" class="col-topo">
+    <div class="topo-scroll">
+      <a href="http://www.phylowidget.org/full/?tree=(Loach,Carp,(Frog,(Chicken,(seq1,(Human,((Mouse,Rat),(Seal,(Whale,Cow))))))));">(Loach,Carp,(Frog,(Chicken,(seq1,(Human,((Mouse,Rat),(Seal,(Whale,Cow))))))));</a>
+    </div>
+    </td>
+    <th>RANK</th>
+      <td class="topo-rank">2</td>
+      <td class="topo-rank">2</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Weight</th>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>RF</th>
+      <td class="topo-rank">8</td>
+      <td class="topo-rank">8</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>AVG Distance</th>
+      <td class="topo-rank">5.8562e+00</td>
+      <td class="topo-rank">7.0787e+00</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Distance VAR</th>
+      <td class="topo-rank">4.1929e-06</td>
+      <td class="topo-rank">6.1073e-07</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+  <tr>
+    <td rowspan="5" class="col-id"> 3</td>
+    <td rowspan="5" class="col-models">
+    <div class="topo-scroll"> 
+      SYM+G 
+    </div>
+    </td>
+    <td rowspan="5" class="col-topo">
+    <div class="topo-scroll">
+      <a href="http://www.phylowidget.org/full/?tree=(Loach,Carp,(Frog,(Chicken,(Human,((seq1,(Mouse,Rat)),(Whale,(Cow,Seal)))))));">(Loach,Carp,(Frog,(Chicken,(Human,((seq1,(Mouse,Rat)),(Whale,(Cow,Seal)))))));</a>
+    </div>
+    </td>
+    <th>RANK</th>
+      <td class="topo-rank">3</td>
+      <td class="topo-rank">3</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Weight</th>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>RF</th>
+      <td class="topo-rank">10</td>
+      <td class="topo-rank">10</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>AVG Distance</th>
+      <td class="topo-rank">6.8477e+00</td>
+      <td class="topo-rank">8.1228e+00</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Distance VAR</th>
+      <td class="topo-rank">0.0000e+00</td>
+      <td class="topo-rank">0.0000e+00</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+  <tr>
+    <td rowspan="5" class="col-id"> 4</td>
+    <td rowspan="5" class="col-models">
+    <div class="topo-scroll"> 
+      JC+G 
+    </div>
+    </td>
+    <td rowspan="5" class="col-topo">
+    <div class="topo-scroll">
+      <a href="http://www.phylowidget.org/full/?tree=(Loach,Carp,(Frog,(Chicken,(Human,((Rat,(seq1,Mouse)),(Whale,(Seal,Cow)))))));">(Loach,Carp,(Frog,(Chicken,(Human,((Rat,(seq1,Mouse)),(Whale,(Seal,Cow)))))));</a>
+    </div>
+    </td>
+    <th>RANK</th>
+      <td class="topo-rank">4</td>
+      <td class="topo-rank">4</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Weight</th>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>RF</th>
+      <td class="topo-rank">12</td>
+      <td class="topo-rank">12</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>AVG Distance</th>
+      <td class="topo-rank">6.5537e+00</td>
+      <td class="topo-rank">7.5950e+00</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Distance VAR</th>
+      <td class="topo-rank">0.0000e+00</td>
+      <td class="topo-rank">0.0000e+00</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+  <tr>
+    <td rowspan="5" class="col-id"> 5</td>
+    <td rowspan="5" class="col-models">
+    <div class="topo-scroll"> 
+      JC F81 
+    </div>
+    </td>
+    <td rowspan="5" class="col-topo">
+    <div class="topo-scroll">
+      <a href="http://www.phylowidget.org/full/?tree=(Loach,Carp,(Frog,(Chicken,(Human,((Mouse,Rat),(Seal,(Cow,(Whale,seq1))))))));">(Loach,Carp,(Frog,(Chicken,(Human,((Mouse,Rat),(Seal,(Cow,(Whale,seq1))))))));</a>
+    </div>
+    </td>
+    <th>RANK</th>
+      <td class="topo-rank">5</td>
+      <td class="topo-rank">5</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Weight</th>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank">0.0000</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>RF</th>
+      <td class="topo-rank">14</td>
+      <td class="topo-rank">14</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>AVG Distance</th>
+      <td class="topo-rank">5.8881e+00</td>
+      <td class="topo-rank">7.1099e+00</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+    <tr>
+    <th>Distance VAR</th>
+      <td class="topo-rank">2.3669e-07</td>
+      <td class="topo-rank">1.3062e-06</td>
+      <td class="topo-rank"> - </td>
+      <td class="topo-rank"> - </td>
+    </tr>
+  </table>
+  </div><!--sorted-models-->
+<p class="back-to-top"><a href="#" onclick="scrollTo(0,0);return false;" title="Back to top" class="top"><img src="resources/topIcon.gif" alt="Back to top" class="top" /> Back to top <img src="resources/topIcon.gif" alt="Back to top" class="top" /></a></p>
+
+
+
+
+
+
+<div class="selection"> 
+<h1> <a name="aic"></a>AIC Selection Results </h1>
+<div class="selection-upper"> 
+	<div class="selection_best_model">
+		<h2 style="text-align: center;"> Model selected </h2>
+		<table class="model_info">
+		<tr><th>   Model </th><td colspan="2">GTR+G</tr>
+		<tr><th>   partition </th><td colspan="2"> 012345</tr>
+		<tr><th>   -lnL </th><td colspan="2"> 5080.3354</tr>
+		<tr><th>   K </th><td colspan="2"> 29</tr>
+		<tr><th>   freqA </th><td> 0.3296</td><th>   R(a) </th><td> 1.7632 </td></tr>
+		<tr><th>   freqC </th><td> 0.2850</td><th>   R(b) </th><td> 4.6569 </td></tr>
+		<tr><th>   freqG </th><td> 0.1368</td><th>   R(c) </th><td> 1.6804 </td></tr>
+		<tr><th>   freqT </th><td> 0.2487</td><th>   R(d) </th><td> 0.5010 </td></tr>
+		<tr><th>   ti/tv </th><td> - </td><th>   R(e) </th><td> 9.5802 </td></tr>
+		<tr><th></th><td></td><th>   R(f) </th><td> 1.0000 </td></tr>
+		<tr><th>   p-inv </th><td> -</td><th>   gamma </th><td> 0.3770 </td></tr>
+		</table>
+	</div> <!--selection_best_model-->
+<div class="selection_best_tree">
+
+	<h2 style="text-align: center;"> Best model tree </h2>
+	
+		<div class="newick-tree">
+		((seq1:5.96360089,Loach:0.00001245):0.24141407,Carp:0.17418402,(Frog:0.24658962,(Chicken:0.54432226,(Human:0.57014623,((Mouse:0.12966600,Rat:0.11622730):0.14588055,(Whale:0.14893035,(Seal:0.23048836,Cow:0.15240757):0.03858194):0.05415103):0.11334010):0.17887556):0.07418689):0.17958370);
+		</div><!--best-tree-newick-->
+	<a href="http://www.phylowidget.org/full/?tree=((seq1:5.96360089,Loach:0.00001245):0.24141407,Carp:0.17418402,(Frog:0.24658962,(Chicken:0.54432226,(Human:0.57014623,((Mouse:0.12966600,Rat:0.11622730):0.14588055,(Whale:0.14893035,(Seal:0.23048836,Cow:0.15240757):0.03858194):0.05415103):0.11334010):0.17887556):0.07418689):0.17958370);&useBranchLengths=true">Display best model tree in PhyloWidget</a>
+	</div><!--selection_best_tree-->
+</div><!--selection-upper-->
+
+<div class="selection-lower">
+<div class="selection_results">
+	<table class="selection_table">
+		<tr>
+		<th>Model</th><th> -lnL  </th><th>  K      </th><th>   AIC </th><th>delta</th><th>   weight</th><th> cumWeight</th>
+		</tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=((seq1:5.96360089,Loach:0.00001245):0.24141407,Carp:0.17418402,(Frog:0.24658962,(Chicken:0.54432226,(Human:0.57014623,((Mouse:0.12966600,Rat:0.11622730):0.14588055,(Whale:0.14893035,(Seal:0.23048836,Cow:0.15240757):0.03858194):0.05415103):0.11334010):0.17887556):0.07418689):0.17958370);&useBranchLengths=true">GTR+G</a> </td><td>5080.3354</td><td>29</td><td>10218.6707</td><td>0.0000</td><td>0.9121</td><td>0.9121</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Carp:0.17654327,(Frog:0.28185555,(Chicken:0.64731721,(Human:0.68687629,((Mouse:0.15062594,Rat:0.13550091):0.19143613,(Whale:0.17757206,(Cow:0.15882401,Seal:0.26589454):0.04862517):0.06181962):0.14336528):0.23445795):0.07974109):0.21363677,(seq1:7.09553425,Loach:0.00003171):0.27067722);&useBranchLengths=true">HKY+G</a> </td><td>5086.6743</td><td>25</td><td>10223.3487</td><td>4.6779</td><td>0.0879</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.18914220,Carp:0.14766801,(Frog:0.18823051,(Chicken:0.35337628,(Human:0.39266831,((seq1:4.23365400,(Mouse:0.10099488,Rat:0.08909406):0.09747308):0.00045362,(Whale:0.11611248,(Cow:0.12243105,Seal:0.16767317):0.01988229):0.03440759):0.06466866):0.10203181):0.06113203):0.11722666);&useBranchLengths=true">SYM+G</a> </td><td>5125.0478</td><td>26</td><td>10302.0955</td><td>83.4248</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Carp:0.12578062,(Frog:0.17596582,(Chicken:0.33695495,(Human:0.38519289,((Mouse:0.10528440,Rat:0.09201282):0.09732153,(Whale:0.11586411,(Seal:0.16748781,Cow:0.11309116):0.02984150):0.04191734):0.06880796):0.10713728):0.05789322):0.12357932,(Loach:0.00000661,seq1:2.92338979):0.18598786);&useBranchLengths=true">K80+G</a> </td><td>5224.3899</td><td>22</td><td>10492.7797</td><td>274.1090</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=((seq1:3.29520015,Loach:0.00001026):0.17977126,Carp:0.12015110,(Frog:0.16243057,(Chicken:0.31929319,(Human:0.36709134,((Mouse:0.10452038,Rat:0.08957716):0.09400695,(Whale:0.10834597,(Seal:0.15742789,Cow:0.11854628):0.02424728):0.03510651):0.06428024):0.09724933):0.04102109):0.11872069);&useBranchLengths=true">F81+G</a> </td><td>5239.8846</td><td>24</td><td>10527.7691</td><td>309.0984</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.17066129,Carp:0.11429777,(Frog:0.15340357,(Chicken:0.27447262,(Human:0.33089745,((Rat:0.08450378,(seq1:3.13267258,Mouse:0.05703608):0.04146695):0.08175642,(Whale:0.10412828,(Seal:0.14581827,Cow:0.11153577):0.02153519):0.03358913):0.05212480):0.08124271):0.04132743):0.10836007);&useBranchLengths=true">JC+G</a> </td><td>5332.8583</td><td>21</td><td>10707.7165</td><td>489.0458</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13309640,Carp:0.10860237,(Frog:0.13530068,(Chicken:0.19692235,(seq1:0.74112893,(Human:0.23414666,((Mouse:0.08201595,Rat:0.08250021):0.07246105,(Seal:0.12322153,(Whale:0.09396277,Cow:0.10883033):0.01834268):0.02758057):0.04351442):0.02273184):0.03640059):0.05676381):0.07784709);&useBranchLengths=true">GTR</a> </td><td>5354.1880</td><td>28</td><td>10764.3759</td><td>545.7052</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.12858018,Carp:0.10407496,(Frog:0.12597985,(Chicken:0.19147943,(seq1:0.69327944,(Human:0.22599340,((Mouse:0.07821089,Rat:0.07865123):0.06781742,(Seal:0.11957412,(Whale:0.08994310,Cow:0.10334745):0.01684025):0.02681731):0.04168572):0.02300012):0.03336129):0.05447437):0.07570539);&useBranchLengths=true">SYM</a> </td><td>5371.8555</td><td>25</td><td>10793.7110</td><td>575.0402</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13894092,Carp:0.10380196,(Frog:0.13322584,(Chicken:0.20059124,(Human:0.23236526,(seq1:0.68418450,((Mouse:0.08727366,Rat:0.08242839):0.07975452,(Whale:0.09388694,(Seal:0.12994555,Cow:0.10421640):0.02485603):0.03293815):0.02195157):0.03250768):0.06639508):0.05962384):0.08399625);&useBranchLengths=true">HKY</a> </td><td>5407.7243</td><td>24</td><td>10863.4485</td><td>644.7778</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13820748,Carp:0.10256633,(Frog:0.12959169,(Chicken:0.19693242,(Human:0.22914128,(seq1:0.65813056,((Mouse:0.08564842,Rat:0.08074631):0.07637853,(Whale:0.09184611,(Seal:0.12709774,Cow:0.10213797):0.02398801):0.03205836):0.02451062):0.02848497):0.06419645):0.05905513):0.08311946);&useBranchLengths=true">K80</a> </td><td>5482.5112</td><td>21</td><td>11007.0223</td><td>788.3516</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13627088,Carp:0.10448048,(Frog:0.13048482,(Chicken:0.19429835,(Human:0.23256106,((Mouse:0.08368173,Rat:0.08406735):0.06970546,(Seal:0.12294223,(Cow:0.10761466,(Whale:0.06632655,seq1:0.66629850):0.02783303):0.02040667):0.03271106):0.04985800):0.05683446):0.05308650):0.08092272);&useBranchLengths=true">F81</a> </td><td>5499.9412</td><td>23</td><td>11045.8824</td><td>827.2117</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13667972,Carp:0.10431863,(Frog:0.12874077,(Chicken:0.19370431,(Human:0.23295675,((Mouse:0.08317545,Rat:0.08426166):0.06861686,(Seal:0.12343151,(Cow:0.10742847,(Whale:0.06815730,seq1:0.65904754):0.02535363):0.02072361):0.03200081):0.04936322):0.05678673):0.05309909):0.08189788);&useBranchLengths=true">JC</a> </td><td>5566.1445</td><td>20</td><td>11172.2890</td><td>953.6183</td><td>0.0000</td><td>1.0000</td></tr>
+		 </table>
+</div><!--selection_results-->
+<div class="selection-caption">
+<table class="selection_table"><tr><td>
+		-lnL:</td><td>negative log likelihod
+		 </td> </tr><tr><td>
+		 K:</td><td>	number of estimated parameters
+		 </td> </tr><tr><td>
+		 AIC:</td><td>	Akaike Information Criterion
+		 </td> </tr><tr><td>
+		 delta:	</td><td>AIC difference
+		 </td> </tr><tr><td>
+		 weight:</td><td>	AIC weight
+		 </td> </tr><tr><td>
+		 cumWeight:</td><td>cumulative AIC weight
+		 </td> </tr>
+	 </table>
+<h2>Confidence interval</h2>
+ <p class="confidence-list"> 
+There are 12 models in the 100.00% confidence interval:<br/>
+GTR+G HKY+G SYM+G K80+G F81+G JC+G GTR SYM HKY K80 F81 JC 
+</p>
+ </div><!--selection-caption-->
+  </div><!--selection-lower-->
+  
+  <div class="selection-distances">
+    <div class="euclidean-img">
+    	<img class="distances-img" src="images/aligned.fasta.jmodeltest.1368516929485.html_eu_AIC.png"/><br/>
+    	Euclidean distances histogram from each model optimized tree to <a href="http://www.phylowidget.org/full/?tree=((seq1:5.96360089,Loach:0.00001245):0.24141407,Carp:0.17418402,(Frog:0.24658962,(Chicken:0.54432226,(Human:0.57014623,((Mouse:0.12966600,Rat:0.11622730):0.14588055,(Whale:0.14893035,(Seal:0.23048836,Cow:0.15240757):0.03858194):0.05415103):0.11334010):0.17887556):0.07418689):0.17958370);&useBranchLengths=true">GTR+G tree</a>.
+    </div>
+    <div class="rf-img">
+    	<img class="distances-img" src="images/aligned.fasta.jmodeltest.1368516929485.html_rf_AIC.png"/><br/>
+    	Robinson-Foulds distances histogram from the different topologies to <a href="http://www.phylowidget.org/full/?tree=((seq1:5.96360089,Loach:0.00001245):0.24141407,Carp:0.17418402,(Frog:0.24658962,(Chicken:0.54432226,(Human:0.57014623,((Mouse:0.12966600,Rat:0.11622730):0.14588055,(Whale:0.14893035,(Seal:0.23048836,Cow:0.15240757):0.03858194):0.05415103):0.11334010):0.17887556):0.07418689):0.17958370);&useBranchLengths=false">GTR+G topology</a>.
+    </div>
+    <div style="clear:both;"></div>
+  </div><!--selection-distances-->
+  
+<h2> Model Averaged Phylogeny </h2>
+
+<table style="text-align:left;">
+<tr><th>Selection criterion</th><td>AIC</td></tr>
+<tr><th>Confidence interval</th><td>100.00%</td></tr>
+<tr><th>Consensus type</th><td>50% majority rule</td></tr>
+</table>
+ 
+<div class="consensus-tree">
+ <div class="newick-tree">
+(Carp:0.174184,(Frog:0.246590,(Chicken:0.544322,(Human:0.570146,((Mouse:0.129666,Rat:0.116227)1.00:0.145881,(Whale:0.148930,(Seal:0.230488,Cow:0.152408)1.00:0.038582)1.00:0.054151)1.00:0.113340)1.00:0.178876)1.00:0.074187)1.00:0.179584,(seq1:5.963601,Loach:0.000012)1.00:0.241414);
+		</div><!--newick-tree-->
+ <a href="http://www.phylowidget.org/full/?tree=(Carp:0.174184,(Frog:0.246590,(Chicken:0.544322,(Human:0.570146,((Mouse:0.129666,Rat:0.116227)1.00:0.145881,(Whale:0.148930,(Seal:0.230488,Cow:0.152408)1.00:0.038582)1.00:0.054151)1.00:0.113340)1.00:0.178876)1.00:0.074187)1.00:0.179584,(seq1:5.963601,Loach:0.000012)1.00:0.241414);&useBranchLengths=true">Display consensus tree in PhyloWidget</a>
+</div><!--consensus-tree-->
+
+<p class="back-to-top"><a href="#" onclick="scrollTo(0,0);return false;" title="Back to top" class="top"><img src="resources/topIcon.gif" alt="Back to top" class="top" /> Back to top <img src="resources/topIcon.gif" alt="Back to top" class="top" /></a></p>
+
+</div><!--selection-->
+
+
+
+
+
+
+
+<div class="selection">   
+<h1> <a name="bic"></a>BIC Selection Results </h1>
+<div class="selection-upper"> 
+	<div class="selection_best_model">
+		<h2 style="text-align: center;"> Model selected </h2>
+		<table class="model_info">
+		<tr><th>   Model </th><td colspan="2">HKY+G</tr>
+		<tr><th>   partition </th><td colspan="2"> 010010</tr>
+		<tr><th>   -lnL </th><td colspan="2"> 5086.6743</tr>
+		<tr><th>   K </th><td colspan="2"> 25</tr>
+		<tr><th>   freqA </th><td> 0.3343</td><th>   R(a) </th><td> - </td></tr>
+		<tr><th>   freqC </th><td> 0.2961</td><th>   R(b) </th><td> - </td></tr>
+		<tr><th>   freqG </th><td> 0.1104</td><th>   R(c) </th><td> - </td></tr>
+		<tr><th>   freqT </th><td> 0.2593</td><th>   R(d) </th><td> - </td></tr>
+		<tr><th>   ti/tv </th><td> 2.6853 </td><th>   R(e) </th><td> - </td></tr>
+		<tr><th></th><td></td><th>   R(f) </th><td> - </td></tr>
+		<tr><th>   p-inv </th><td> -</td><th>   gamma </th><td> 0.3380 </td></tr>
+		</table>
+	</div> <!--selection_best_model-->
+<div class="selection_best_tree">
+
+	<h2 style="text-align: center;"> Best model tree </h2>
+	
+		<div class="newick-tree">
+		(Carp:0.17654327,(Frog:0.28185555,(Chicken:0.64731721,(Human:0.68687629,((Mouse:0.15062594,Rat:0.13550091):0.19143613,(Whale:0.17757206,(Cow:0.15882401,Seal:0.26589454):0.04862517):0.06181962):0.14336528):0.23445795):0.07974109):0.21363677,(seq1:7.09553425,Loach:0.00003171):0.27067722);
+		</div><!--best-tree-newick-->
+	<a href="http://www.phylowidget.org/full/?tree=(Carp:0.17654327,(Frog:0.28185555,(Chicken:0.64731721,(Human:0.68687629,((Mouse:0.15062594,Rat:0.13550091):0.19143613,(Whale:0.17757206,(Cow:0.15882401,Seal:0.26589454):0.04862517):0.06181962):0.14336528):0.23445795):0.07974109):0.21363677,(seq1:7.09553425,Loach:0.00003171):0.27067722);&useBranchLengths=true">Display best model tree in PhyloWidget</a>
+	</div><!--selection_best_tree-->
+</div><!--selection-upper-->
+
+<div class="selection-lower">
+<div class="selection_results">
+	<table class="selection_table">
+		<tr>
+		<th>Model</th><th> -lnL  </th><th>  K      </th><th>   BIC </th><th>delta</th><th>   weight</th><th> cumWeight</th>
+		</tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Carp:0.17654327,(Frog:0.28185555,(Chicken:0.64731721,(Human:0.68687629,((Mouse:0.15062594,Rat:0.13550091):0.19143613,(Whale:0.17757206,(Cow:0.15882401,Seal:0.26589454):0.04862517):0.06181962):0.14336528):0.23445795):0.07974109):0.21363677,(seq1:7.09553425,Loach:0.00003171):0.27067722);&useBranchLengths=true">HKY+G</a> </td><td>5086.6743</td><td>25</td><td>10337.5155</td><td>0.0000</td><td>0.9989</td><td>0.9989</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=((seq1:5.96360089,Loach:0.00001245):0.24141407,Carp:0.17418402,(Frog:0.24658962,(Chicken:0.54432226,(Human:0.57014623,((Mouse:0.12966600,Rat:0.11622730):0.14588055,(Whale:0.14893035,(Seal:0.23048836,Cow:0.15240757):0.03858194):0.05415103):0.11334010):0.17887556):0.07418689):0.17958370);&useBranchLengths=true">GTR+G</a> </td><td>5080.3354</td><td>29</td><td>10351.1042</td><td>13.5887</td><td>0.0011</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.18914220,Carp:0.14766801,(Frog:0.18823051,(Chicken:0.35337628,(Human:0.39266831,((seq1:4.23365400,(Mouse:0.10099488,Rat:0.08909406):0.09747308):0.00045362,(Whale:0.11611248,(Cow:0.12243105,Seal:0.16767317):0.01988229):0.03440759):0.06466866):0.10203181):0.06113203):0.11722666);&useBranchLengths=true">SYM+G</a> </td><td>5125.0478</td><td>26</td><td>10420.8290</td><td>83.3135</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Carp:0.12578062,(Frog:0.17596582,(Chicken:0.33695495,(Human:0.38519289,((Mouse:0.10528440,Rat:0.09201282):0.09732153,(Whale:0.11586411,(Seal:0.16748781,Cow:0.11309116):0.02984150):0.04191734):0.06880796):0.10713728):0.05789322):0.12357932,(Loach:0.00000661,seq1:2.92338979):0.18598786);&useBranchLengths=true">K80+G</a> </td><td>5224.3899</td><td>22</td><td>10593.2465</td><td>255.7311</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=((seq1:3.29520015,Loach:0.00001026):0.17977126,Carp:0.12015110,(Frog:0.16243057,(Chicken:0.31929319,(Human:0.36709134,((Mouse:0.10452038,Rat:0.08957716):0.09400695,(Whale:0.10834597,(Seal:0.15742789,Cow:0.11854628):0.02424728):0.03510651):0.06428024):0.09724933):0.04102109):0.11872069);&useBranchLengths=true">F81+G</a> </td><td>5239.8846</td><td>24</td><td>10637.3693</td><td>299.8538</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.17066129,Carp:0.11429777,(Frog:0.15340357,(Chicken:0.27447262,(Human:0.33089745,((Rat:0.08450378,(seq1:3.13267258,Mouse:0.05703608):0.04146695):0.08175642,(Whale:0.10412828,(Seal:0.14581827,Cow:0.11153577):0.02153519):0.03358913):0.05212480):0.08124271):0.04132743):0.10836007);&useBranchLengths=true">JC+G</a> </td><td>5332.8583</td><td>21</td><td>10803.6166</td><td>466.1012</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13309640,Carp:0.10860237,(Frog:0.13530068,(Chicken:0.19692235,(seq1:0.74112893,(Human:0.23414666,((Mouse:0.08201595,Rat:0.08250021):0.07246105,(Seal:0.12322153,(Whale:0.09396277,Cow:0.10883033):0.01834268):0.02758057):0.04351442):0.02273184):0.03640059):0.05676381):0.07784709);&useBranchLengths=true">GTR</a> </td><td>5354.1880</td><td>28</td><td>10892.2427</td><td>554.7273</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.12858018,Carp:0.10407496,(Frog:0.12597985,(Chicken:0.19147943,(seq1:0.69327944,(Human:0.22599340,((Mouse:0.07821089,Rat:0.07865123):0.06781742,(Seal:0.11957412,(Whale:0.08994310,Cow:0.10334745):0.01684025):0.02681731):0.04168572):0.02300012):0.03336129):0.05447437):0.07570539);&useBranchLengths=true">SYM</a> </td><td>5371.8555</td><td>25</td><td>10907.8778</td><td>570.3623</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13894092,Carp:0.10380196,(Frog:0.13322584,(Chicken:0.20059124,(Human:0.23236526,(seq1:0.68418450,((Mouse:0.08727366,Rat:0.08242839):0.07975452,(Whale:0.09388694,(Seal:0.12994555,Cow:0.10421640):0.02485603):0.03293815):0.02195157):0.03250768):0.06639508):0.05962384):0.08399625);&useBranchLengths=true">HKY</a> </td><td>5407.7243</td><td>24</td><td>10973.0486</td><td>635.5332</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13820748,Carp:0.10256633,(Frog:0.12959169,(Chicken:0.19693242,(Human:0.22914128,(seq1:0.65813056,((Mouse:0.08564842,Rat:0.08074631):0.07637853,(Whale:0.09184611,(Seal:0.12709774,Cow:0.10213797):0.02398801):0.03205836):0.02451062):0.02848497):0.06419645):0.05905513):0.08311946);&useBranchLengths=true">K80</a> </td><td>5482.5112</td><td>21</td><td>11102.9224</td><td>765.4070</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13627088,Carp:0.10448048,(Frog:0.13048482,(Chicken:0.19429835,(Human:0.23256106,((Mouse:0.08368173,Rat:0.08406735):0.06970546,(Seal:0.12294223,(Cow:0.10761466,(Whale:0.06632655,seq1:0.66629850):0.02783303):0.02040667):0.03271106):0.04985800):0.05683446):0.05308650):0.08092272);&useBranchLengths=true">F81</a> </td><td>5499.9412</td><td>23</td><td>11150.9158</td><td>813.4004</td><td>0.0000</td><td>1.0000</td></tr>
+		<tr><td>
+		<a href="http://www.phylowidget.org/full/?tree=(Loach:0.13667972,Carp:0.10431863,(Frog:0.12874077,(Chicken:0.19370431,(Human:0.23295675,((Mouse:0.08317545,Rat:0.08426166):0.06861686,(Seal:0.12343151,(Cow:0.10742847,(Whale:0.06815730,seq1:0.65904754):0.02535363):0.02072361):0.03200081):0.04936322):0.05678673):0.05309909):0.08189788);&useBranchLengths=true">JC</a> </td><td>5566.1445</td><td>20</td><td>11263.6224</td><td>926.1070</td><td>0.0000</td><td>1.0000</td></tr>
+		 </table>
+</div><!--selection_results-->
+<div class="selection-caption">
+<table class="selection_table"><tr><td>
+		-lnL:</td><td>negative log likelihod
+		 </td> </tr><tr><td>
+		 K:</td><td>	number of estimated parameters
+		 </td> </tr><tr><td>
+		 BIC:</td><td>	Bayesian Information Criterion
+		 </td> </tr><tr><td>
+		 delta:	</td><td>BIC difference
+		 </td> </tr><tr><td>
+		 weight:</td><td>	BIC weight
+		 </td> </tr><tr><td>
+		 cumWeight:</td><td>cumulative BIC weight
+		 </td> </tr>
+	 </table>
+<h2>Confidence interval</h2>
+ <p class="confidence-list"> 
+There are 12 models in the 100.00% confidence interval:<br/>
+HKY+G GTR+G SYM+G K80+G F81+G JC+G GTR SYM HKY K80 F81 JC 
+</p>
+  </div><!--selection-caption-->
+  </div><!--selection-lower-->
+
+  <div class="selection-distances">
+    <div class="euclidean-img">
+    	<img class="distances-img" src="images/aligned.fasta.jmodeltest.1368516929485.html_eu_BIC.png"/><br/>
+    	Euclidean distances histogram from each model optimized tree to <a href="http://www.phylowidget.org/full/?tree=(Carp:0.17654327,(Frog:0.28185555,(Chicken:0.64731721,(Human:0.68687629,((Mouse:0.15062594,Rat:0.13550091):0.19143613,(Whale:0.17757206,(Cow:0.15882401,Seal:0.26589454):0.04862517):0.06181962):0.14336528):0.23445795):0.07974109):0.21363677,(seq1:7.09553425,Loach:0.00003171):0.27067722);&useBranchLengths=true">HKY+G tree</a>.
+    </div>
+    <div class="rf-img">
+    	<img class="distances-img" src="images/aligned.fasta.jmodeltest.1368516929485.html_rf_BIC.png"/><br/>
+    	Robinson-Foulds distances histogram from the different topologies to <a href="http://www.phylowidget.org/full/?tree=(Carp:0.17654327,(Frog:0.28185555,(Chicken:0.64731721,(Human:0.68687629,((Mouse:0.15062594,Rat:0.13550091):0.19143613,(Whale:0.17757206,(Cow:0.15882401,Seal:0.26589454):0.04862517):0.06181962):0.14336528):0.23445795):0.07974109):0.21363677,(seq1:7.09553425,Loach:0.00003171):0.27067722);&useBranchLengths=false">HKY+G topology</a>.
+    </div>
+    <div style="clear:both;"></div>
+  </div><!--selection-distances-->
+
+<h2> Model Averaged Phylogeny </h2>
+
+<table style="text-align:left;">
+<tr><th>Selection criterion</th><td>BIC</td></tr>
+<tr><th>Confidence interval</th><td>100.00%</td></tr>
+<tr><th>Consensus type</th><td>50% majority rule</td></tr>
+</table>
+ 
+<div class="consensus-tree">
+ <div class="newick-tree">
+(Carp:0.176543,(seq1:7.095534,Loach:0.000032)1.00:0.270677,(Frog:0.281856,(Chicken:0.647317,(Human:0.686876,((Whale:0.177572,(Cow:0.158824,Seal:0.265895)1.00:0.048625)1.00:0.061820,(Mouse:0.150626,Rat:0.135501)1.00:0.191436)1.00:0.143365)1.00:0.234458)1.00:0.079741)1.00:0.213637);
+		</div><!--newick-tree-->
+ <a href="http://www.phylowidget.org/full/?tree=(Carp:0.176543,(seq1:7.095534,Loach:0.000032)1.00:0.270677,(Frog:0.281856,(Chicken:0.647317,(Human:0.686876,((Whale:0.177572,(Cow:0.158824,Seal:0.265895)1.00:0.048625)1.00:0.061820,(Mouse:0.150626,Rat:0.135501)1.00:0.191436)1.00:0.143365)1.00:0.234458)1.00:0.079741)1.00:0.213637);&useBranchLengths=true">Display consensus tree in PhyloWidget</a>
+</div><!--consensus-tree-->
+
+<p class="back-to-top"><a href="#" onclick="scrollTo(0,0);return false;" title="Back to top" class="top"><img src="resources/topIcon.gif" alt="Back to top" class="top" /> Back to top <img src="resources/topIcon.gif" alt="Back to top" class="top" /></a></p>
+
+</div><!--selection-->
+
+
+
+
+
+
+
+
+
+</div><!--/content-->
+
+	</div><!--/page-->
+	</div><!--/clearfix-->
+
+</div><!--/container2-->
+</div><!--/container1-->
+
+<div id="footer">
+<div id="footerinner">
+<p class="poweredBy">
+<span class="buttons">
+<a href="http://code.google.com/p/jmodeltest2" title="Home" class="home"><img src="resources/homeIcon.gif" alt="Back to home" class="home" /></a> 
+<a href="#" onclick="scrollTo(0,0);return false;" title="Back to top" class="top"><img src="resources/topIcon.gif" alt="Back to top" class="top" /></a>
+</span>
+<a href="http://code.google.com/p/jmodeltest2" rel="external">jModelTest 2.1</a>. D.Darriba, G.L.Taboada, R.Doallo and D.Posada
+</p>
+<div id="contact">
+    <a href="https://groups.google.com/forum/#!forum/jmodeltest">Forum</a>
+	-
+	<a href="http://groups.google.com/group/jmodeltest">Discussion group</a>
+	-
+	<a href="mailto:ddarriba@udc.es">Contact</a>
+</div>
+ 
+</div><!--/footerinner-->
+</div><!--/footer-->
+
+</body>
+</html>

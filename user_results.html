@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<title>Results page</title>
+	<meta name="description" lang="en" content="Results" />
+  <meta name="author" content="Team B">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" type="image/ico" href="../img/favicon.ico" />	
+	<link rel="stylesheet" href="css/screen.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/lightbox.css" type="text/css" media="screen" />
+  <link href='http://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script>
+  window.onload = function()
+  {
+     var d = document.getElementById("user_zip");
+     d.onclick = runZip;
+     if (d.captureEvents) d.captureEvents(Event.CLICK);
+  
+     document.getElementById("user_zip").onkeypress = function() {
+        document.getElementById("status").innerHTML = "";
+     }
+  
+     function runZip() {
+       var zip = new JSZip();
+       zip.file("notes.txt", "results from http://bit.ly/03-713_teamB\n");
+       var img = zip.folder("outputs");
+       img.file("core.png", "core.png");
+       img.file("hgt_graph.png", "hgt_graph.png");
+       var content = zip.generate();
+       location.href="data:application/zip;base64,"+content;
+     }
+  }
+  </script>
+</head>
+
+<body>
+<div id="sidebar">
+	<h1>Results</h1>
+	<p class="author">Team B<br />
+
+	<ul id="nav">
+		<li><a href="#trees" class="first">Trees</a></li>
+		<li><a href="#HGT">HGT</a></li>
+		<li><a href="#other" class="last">Other outputs</a></li>
+	</ul>
+</div>
+
+<div id="content">
+
+<div class="section" id="overview">
+	<p class="lead">Click on the images to enlarge.<br />When enlarged, use
+                  arrow keys to go to the next/previous image.</p>
+</div>
+
+<hr />
+
+<div class="section" id="core">
+	<h2>Core Tree</h2>
+	<h3 style="clear: both;">Image</h3>
+
+  <div class="imageRow">
+  	<div class="set">
+  	  <div class="single first">
+  		  <a href="outputs/core.png" rel="lightbox[coretree]" title="Core tree">
+          <img src="outputs/core.png" height="200px" width="200px" alt="Core tree" />
+        </a>
+      </div>
+  	</div>
+  </div>
+</div>
+
+<hr />
+
+<div class="section" id="HGT">
+	<h2>HGT</h2>
+	<h3 style="clear: both;">Image</h3>
+
+  <div class="imageRow">
+  	<div class="set">
+  	  <div class="single first">
+  		  <a href="outputs/hgt_graph.png" rel="lightbox[hgt]" title="Horizontal Gene Transfers">
+          <img src="outputs/hgt_graph.png" height="200px" width="200px" alt="HGT" />
+        </a>
+  		</div>
+  	</div>
+  </div>
+</div>
+
+<hr />
+
+<div class="section" id="other">
+<h2>Other outputs</h2>
+Other outputs<br />
+On OSX and Linux, the downloaded file is "download.zip"<br />
+On Windows, it is "download"<br />
+<button class="btn btn-large btn-primary" type="submit" id="user_zip">Download outputs as .zip</button>
+<span id="status"></span>
+<br />
+<a href="./user_results.zip" id="downloadZip" onClick="">Download outputs as .zip</a>
+<br /><br />
+<a href="./outputs/">See outputs folder</a>
+</div>
+
+<hr />
+
+Team B
+
+</div><!-- end #content -->
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-1.7.2.min.js"></script>
+<script src="js/jquery-ui-1.8.18.custom.min.js"></script>
+<script src="js/jquery.smooth-scroll.min.js"></script>
+<script src="js/lightbox.js"></script>
+<script src="js/jszip.js"></script>
+<script src="js/jszip-deflate.js"></script>
+
+<script>
+  jQuery(document).ready(function($) {
+      $('a').smoothScroll({
+        speed: 1000,
+        easing: 'easeInOutCubic'
+      });
+
+      $('.showOlderChanges').on('click', function(e){
+        $('.changelog .old').slideDown('slow');
+        $(this).fadeOut();
+        e.preventDefault();
+      })
+  });
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2196019-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+</html>

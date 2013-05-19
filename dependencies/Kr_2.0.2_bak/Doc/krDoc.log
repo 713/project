@@ -1,0 +1,230 @@
+This is pdfTeX, Version 3.1415926-1.40.9 (MiKTeX 2.7) (preloaded format=pdflatex 2009.9.30)  5 OCT 2009 16:29
+entering extended mode
+**C:/temp/kr_2.0.2/Kr_2.0.2/Doc/krDoc.tex
+(C:/temp/kr_2.0.2/Kr_2.0.2/Doc/krDoc.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, german-x-2008-06-18, ngerman-x-2008-06-18, french, loaded.
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\base\article.cls"
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\base\size10.clo"
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2008/09/08 v0.04l Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\eurosym\eurosym.sty"
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box26
+)
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\psnfss\times.sty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\listings\listings.sty"
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\lst@mode=\count88
+\lst@gtempboxa=\box27
+\lst@token=\toks15
+\lst@length=\count89
+\lst@currlwidth=\dimen103
+\lst@column=\count90
+\lst@pos=\count91
+\lst@lostspace=\dimen104
+\lst@width=\dimen105
+\lst@newlines=\count92
+\lst@lineno=\count93
+\lst@maxwidth=\dimen106
+
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count94
+\lst@skipnumbers=\count95
+\lst@framebox=\box28
+)
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\listings\listings.cfg"
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(krDoc.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 19.
+ ("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+("C:\Program Files (x86)\MiKTeX 2.7\tex\context\base\supp-pdf.tex"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count96
+\scratchdimen=\dimen107
+\scratchbox=\box29
+\nofMPsegments=\count97
+\nofMParguments=\count98
+\everyMPshowfont=\toks16
+\MPscratchCnt=\count99
+\MPscratchDim=\dimen108
+\MPnumerator=\count100
+\everyMPtoPDFconversion=\toks17
+)
+\c@lstlisting=\count101
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 30.
+ ("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 30.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 30.
+
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 30.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 33.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 53.
+
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
+ [1
+
+{C:/Documents and Settings/All Users/Application Data/MiKTeX/2.7/pdftex/config/
+pdftex.map}] ("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\listings\lstlang1.st
+y"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 108.
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 108.
+
+(C:\temp\kr_2.0.2\Kr_2.0.2\Src\Kr\mainKr.c
+LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1.
+
+Overfull \hbox (6.76062pt too wide) in paragraph at lines 6--7
+[][][][][] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 7.
+("C:\Program Files (x86)\MiKTeX 2.7\tex\latex\psnfss\omlptm.fd"
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 7.
+ [2] [3]
+LaTeX Font Info:    Font shape `OML/ptm/m/it' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 91.
+
+[4] [5]
+Overfull \hbox (368.7641pt too wide) in paragraph at lines 194--196
+[][] 
+ []
+
+[6] [7] [8] [9]) (C:\temp\kr_2.0.2\Kr_2.0.2\Src\Kr\lcpSubjectTree.c
+Overfull \hbox (6.76062pt too wide) in paragraph at lines 9--10
+[][][][] 
+ []
+
+[10] [11] [12] [13] [14] [15]
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no ˆ in font ptmri7t!
+Missing character: There is no ’ in font ptmri7t!
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no ˆ in font ptmri7t!
+Missing character: There is no ’ in font ptmri7t!
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no ˆ in font ptmri7t!
+Missing character: There is no ’ in font ptmri7t!
+ [16] [17] [18] [19] [20] [21] [22] [23] [24]
+[25] [26] [27] [28] [29]) (C:\temp\kr_2.0.2\Kr_2.0.2\Src\Kr\divergence.c
+Overfull \hbox (6.76062pt too wide) in paragraph at lines 23--24
+[][][][] 
+ []
+
+[30] [31] [32] [33]) (krDoc.bbl) [34] (krDoc.aux) ) 
+Here is how much of TeX's memory you used:
+ 2984 strings out of 95304
+ 40012 string characters out of 1182804
+ 287969 words of memory out of 1500000
+ 6161 multiletter control sequences out of 110000
+ 26211 words of font info for 60 fonts, out of 3000000 for 5000
+ 14 hyphenation exceptions out of 8191
+ 29i,8n,49p,309b,1472s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKT
+eX 2.7/fonts/enc/dvips/fontname/8r.enc}<C:/Program Files (x86)/MiKTeX 2.7/fonts
+/type1/bluesky/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.7/fonts/type1/blu
+esky/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.7/fonts/type1/bluesky/cm/cmr
+6.pfb><C:/Program Files (x86)/MiKTeX 2.7/fonts/type1/bluesky/cm/cmr7.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.7/fonts/type1/bluesky/cm/cmr8.pfb><C:/Program Files 
+(x86)/MiKTeX 2.7/fonts/type1/bluesky/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
+eX 2.7/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files (x86)/MiKTeX 2.7/fo
+nts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.7/fonts/type1
+/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.7/fonts/type1/urw/times/
+utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.7/fonts/type1/urw/times/utmr8a.pfb>
+<C:/Program Files (x86)/MiKTeX 2.7/fonts/type1/urw/times/utmri8a.pfb>
+Output written on krDoc.pdf (34 pages, 230379 bytes).
+PDF statistics:
+ 160 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

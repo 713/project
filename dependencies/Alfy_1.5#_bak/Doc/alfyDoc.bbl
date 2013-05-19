@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{dom11:ali}
+M.~Domazet-Lo\v{s}o and B.~Haubold.
+\newblock Alignment-free detection of local similarity among viral and
+  bacterial genomes.
+\newblock {\em Bioinformatics}, 27:1466--1472, 2011.
+
+\bibitem{hau09:est}
+B.~Haubold, P.~Pfaffelhuber, M.~Domazet-Lo\v{s}o, and T.~Wiehe.
+\newblock Estimating mutation distances from unaligned genomes.
+\newblock {\em Journal of Computational Biology}, 16:1487--1500, 2009.
+
+\bibitem{hud02:gen}
+R.~R. Hudson.
+\newblock Generating samples under a {W}right-{F}isher neutral model of genetic
+  variation.
+\newblock {\em Bioinformatics}, 18:337--338, 2002.
+
+\bibitem{man02:eng}
+G.~Manzini and P.~Ferragina.
+\newblock Engineering a lightweight suffix array construction algorithm.
+\newblock In {\em ESA '02: Proceedings of the 10th Annual European Symposium on
+  Algorithms}, pages 698--710, London, UK, 2002. Springer-Verlag.
+
+\end{thebibliography}

@@ -2,12 +2,17 @@
 
 import smtplib
 import string
+from config import *
+
+# Gets user's email from user_email.txt
+with open("user_email.txt", "r") as email_file:
+  user_email = email_file.read().replace('\n', '')
 
 # =============================================================================
-# temp variable
+# Important variables
 # =============================================================================
-TO = "luigileung@outlook.com"
-completed_job_link = "http://www.contrib.andrew.cmu.edu/~lleung/project713/user_results/"
+TO = user_email
+completed_job_link = HOST_713PROJECT + "user_results.html"
 # =============================================================================
 
 FROM = "03713.project@gmail.com"

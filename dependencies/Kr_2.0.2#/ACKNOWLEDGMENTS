@@ -1,0 +1,17 @@
+================== kr 2.x.x ACKNOWLEDGEMENTS ===================================
+
+kr 2.x.x [1] computes a distance matrix between genomes based on Kr, 
+the estimator of the rate of substitution [2]. 
+
+kr 2.x.x code contributors:
+	Mirjana Domazet-Lošo
+	Bernhard Haubold
+
+References:
+[1] Domazet-Lošo, M., and Haubold, B. 2009.
+    Efficient Efficient Estimation of Pairwise Distances between Genomes
+    (submitted)
+  
+[2] Haubold, B., Pfaffelhuber, P., Domazet-Lošo, M., and Wiehe, T. 2009. 
+    Estimating mutation distances from unaligned genomes, J. Comput. Biol.
+    (in press)

@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{graphics,eurosym,latexsym}
+\usepackage{times}
+\usepackage{listings}
+\lstset{numbers=left,numberstyle=\tiny,stepnumber=5,breaklines=true}
+\bibliographystyle{plain}
+\oddsidemargin=0cm
+\evensidemargin=0cm
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\I}{\item}
+\newcommand{\ty}{\texttt}
+\newcommand{\version}{0.11}
+\textwidth=16cm
+\textheight=23cm
+\begin{document}
+
+\title{\ty{theta}: Estimate Mutation and Recombination Rates from
+  Shustring Lengths}
+\author{Bernhard Haubold and Peter Pfaffelhuber}
+\maketitle
+
+\section{Introduction}
+The aim of this work is to estimate the scaled mutation rate,
+$\theta=4N_{\rm e}\mu$,
+and the scaled recombination rate, $\rho=4N_{\rm e}c$, from the
+distribution of shustring lengths.
+
+\section{Getting Started}
+\ty{theta} was written in C on a computer running Mac OS X; it is
+intended to run on any UNIX system with a C compiler and the GNU
+Scientific Library installed~\cite{gal05:gnu}. However, please contact
+BH at \ty{haubold@evolbio.mpg.de} if you have problems with the
+program.
+\bi
+\I Unpack the program
+\begin{verbatim}
+tar -xvzf theta_XXX.tgz
+\end{verbatim}
+where \ty{XXX} indicates the version.
+\I Change into the newly created directory
+\begin{verbatim}
+cd Theta_XXX
+\end{verbatim}
+and list its contents
+\begin{verbatim}
+ls
+\end{verbatim}
+\I Generate \ty{theta}
+\begin{verbatim}
+make
+\end{verbatim}
+\I List its options
+\begin{verbatim}
+theta -h
+\end{verbatim}
+\I Test the program
+\begin{verbatim}
+sh test.sh
+\end{verbatim}
+\ei
+
+\section{Listings}
+\lstset{language=c}
+The following listings document central parts of the code for \ty{theta}.
+\subsection{The Driver Program: \ty{theta.c}}
+\lstinputlisting{../Theta_\version/theta.c}
+\subsection{Estimate $\theta$}
+\lstinputlisting{../Theta_\version/thetaComp.c}
+\subsection{Estimate $\rho$}
+\lstinputlisting{../Theta_\version/rhoComp.c}
+
+\bibliography{/Users/haubold/References/references}
+
+\end{document}
+

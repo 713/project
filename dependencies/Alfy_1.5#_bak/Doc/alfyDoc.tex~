@@ -1,0 +1,389 @@
+\documentclass{article}
+\usepackage{pst-all}
+\usepackage{graphics,eurosym,latexsym}
+\usepackage{times}
+\usepackage{listings}
+\lstset{columns=fixed,basicstyle=\ttfamily,numbers=left,numberstyle=\tiny,stepnumber=5,breaklines=true}
+\bibliographystyle{plain}
+\oddsidemargin=0cm
+\evensidemargin=0cm
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\I}{\item}
+\newcommand{\ty}{\texttt}
+\newcommand{\version}{1.4}
+\newcommand{\pim}{\hat{\pi}_{\rm m}}
+\textwidth=16cm
+\textheight=23cm
+\begin{document}
+
+\title{\ty{alfy}, Version \version: ALignment-Free local homologY}
+\author{Mirjana Domazet-Lo\v{s}o and Bernhard Haubold}
+\maketitle
+
+\section{Introduction}
+\ty{alfy} is a program for comparing one or more query sequences to a
+set of subject sequences and determining the closest homologue among
+the subjects along each query \cite{dom11:ali}. In this document we 
+describe how to get started with \ty{alfy} and what input format it
+accepts. This is followed by a detailed Tutorial demonstrating central
+aspects of \ty{alfy} when applied to HIV-1 genomes. 
+
+\section{Getting Started}
+\ty{alfy} was written in C and is
+intended to work on any UNIX system with a C compiler. However, please contact
+MDL at \ty{Mirjana.Domazet-Loso@fer.hr} if you have any problems with the
+program.
+\bi
+\I Unpack \ty{alfy}
+\begin{verbatim}
+tar -xvzf alfy_XXX.tgz
+\end{verbatim}
+where \ty{XXX} indicates the version.
+\I Change into the newly created directory
+\begin{verbatim}
+cd Alfy_XXX
+\end{verbatim}
+and list its contents
+\begin{verbatim}
+ls
+\end{verbatim}
+\I Generate \ty{alfy}
+\begin{verbatim}
+make
+\end{verbatim}
+This creates two executables, \ty{alfy} and \ty{alfy64}. \ty{alfy} is
+the 32 bit version of the program, \ty{alfy64} its 64 bit version. The 32 bit version can
+analyze up to $2^{29}\approx 5\times 10^8$ bp, while the 64 bit version
+can theoretically analyze up to $2^{61}\approx 2\times 10^{18}$ bp. In
+practice, the program is only limited by the available computer
+memory. On
+the other hand, the 32 bit version is somewhat faster than its 64 bit
+sibling and uses only half as much memory. We therefore recommend that
+you use the 32 bit version for analyzes of up to $5\times 10^8$ bp.
+\I List options
+\begin{verbatim}
+./alfy -h
+\end{verbatim}
+\ei
+
+\section{Input Files}
+Input sequences need to be in FASTA format and can contain only characters
+from the set $\{\ty{A}, \ty{C}, \ty{G}, \ty{T}\}$. The script
+\ty{cleanSeq.awk} converts sequences to upper case and
+to removes all characters $\notin \{\ty{A}, \ty{C}, \ty{G}, \ty{T}\}$
+from the sequences (but not from their headers):
+\begin{verbatim}
+awk -f Scripts/cleanSeq.awk foo.fasta > foo2.fasta
+\end{verbatim}
+
+\section{Tutorial}
+\bi
+\I Annotate the query strain \ty{A+DQ083238} using 42 pure strains as subject:
+\begin{verbatim}
+./alfy -i Data/A+DQ083238.fasta -j Data/hiv42.fasta
+>A+DQ083238
+1 225 8.620536 A1+AF004885
+226 495 25.146444 A1+AF069670
+496 930 37.790272 G+AF084936
+931 1155 6.579832 A1+AF069670
+1156 1770 21.300528 C+U52953
+1771 1875 16.382023 C+AF067155
+1876 2175 11.652174 A1+AF069670
+2176 2655 25.058455 A1+AF004885
+2656 3285 23.612083 C+AF067155
+3286 3585 29.481606 C+AY772699
+3586 3825 14.728033 C+AF067155
+3826 3915 15.022472 C+U52953
+3916 4185 16.133829 C+AY772699
+4186 4335 12.577181 C+U52953
+4336 5025 23.910015 A1+AF004885
+5026 5205 24.882681 G+AF061642
+5206 5295 24.943821 A1+AF004885
+5296 5415 10.008404 A1+AF069670
+5416 5820 12.434650 A1+U51190
+5821 6030 16.382023 A1+AF484509
+6031 6225 8.395973 A1+AF069670
+6226 6555 11.592705 A1+AF004885
+6556 6705 7.747899 A2+AF286238
+6706 6825 0.000000 A1+AF004885
+6826 7140 11.314382 A1+AF484509
+7141 7485 8.079027 A1+AF004885
+7486 7755 18.382900 D+K03454
+7756 8640 19.603571 A1+AF004885
+8641 8805 1.378151 A1+U51190
+8806 9330 8.914405 A1+AF004885
+9331 9699 15.767802 A1+U51190
+\end{verbatim}
+This means that positions 1--225 of A+DQ083238 are most closely
+related to strain A1+AF004885. Further, across that interval the
+average shustring length of the shustrings induced by the ``winning''
+subject sequence---A1+AF004885 in this case---is 8.6, which is a measure of the strength of
+the homology signal across that interval.
+\I To get a clearer view of the distribution of the various annotations, we can
+summarize the output:
+\begin{verbatim}
+./alfy -i Data/A+DQ083238.fasta -j Data/hiv42.fasta  | 
+awk -f Scripts/quantifyGenotypes.awk
+>A+DQ083238
+A1+AF004885	38.0
+A1+AF069670	11.4
+C+AF067155	10.1
+A1+U51190	9.7
+C+U52953	8.8
+C+AY772699	5.9
+A1+AF484509	5.4
+G+AF084936	4.5
+D+K03454	2.8
+G+AF061642	1.9
+A2+AF286238	1.5
+\end{verbatim}
+This indicates that 38.0\% of strain A+DQ083238 is most closely related
+to strain A1+AF004885, 11.4\% to strain C+AF067155, etc. We can
+further summarize the result by collapsing annotations for strains that
+belong to the same group:
+\begin{verbatim}
+./alfy -i Data/A+DQ083238.fasta -j Data/hiv42.fasta  | 
+perl -pe 's/(.)\+.+?(\s)/$1$2/g' | 
+awk -f Scripts/quantifyGenotypes.awk
+>A
+A1	64.6
+C	24.7
+G	6.3
+D	2.8
+A2	1.5
+\end{verbatim}
+\I \ty{alfy} works in three steps:
+\be
+\I Construction of the enhanced suffix array from all query and
+subject sequences;
+\I determination of ``winning'' subjects across contiguous intervals
+along a query;
+\I sliding window analysis of these closest neighbors intervals to
+find the final annotation of a given query.
+\ee
+The last step is sensitive to the length of the sliding window. By
+default this is set to 300 bp; if we set it to 400 bp, the results
+change somewhat, but not dramatically so:
+\begin{verbatim}
+./alfy -w 400 -i Data/A+DQ083238.fasta -j Data/hiv42.fasta  | 
+perl -pe 's/(.)\+.+?(\s)/$1$2/g' | 
+awk -f Scripts/quantifyGenotypes.awk
+>A
+A1	63.1
+C	26.8
+G	7.6
+D	2.5
+\end{verbatim}
+\I We may only be interested in ``strong'' homology signals in our
+analysis. These are defined as regions where the average shustring
+length is greater than the maximum shustring length occurring by chance
+alone. Regions with an average shustring length below the threshold value are
+marked  \ty{nh} for ``no homology'':
+\begin{verbatim}
+./alfy -i Data/A+DQ083238.fasta -j Data/hiv42.fasta  -M
+>A+DQ083238
+1 225 8.620536 A1+AF004885
+226 495 25.146444 A1+AF069670
+496 930 37.790272 G+AF084936
+931 1155 6.579832 nh
+1156 1770 21.300528 C+U52953
+1771 1875 16.382023 C+AF067155
+1876 2175 11.652174 A1+AF069670
+2176 2655 25.058455 A1+AF004885
+2656 3285 23.612083 C+AF067155
+3286 3585 29.481606 C+AY772699
+3586 3825 14.728033 C+AF067155
+3826 3915 15.022472 C+U52953
+3916 4185 16.133829 C+AY772699
+4186 4335 12.577181 C+U52953
+4336 5025 23.910015 A1+AF004885
+5026 5205 24.882681 G+AF061642
+5206 5295 24.943821 A1+AF004885
+5296 5415 9.539326 A1+AF069670
+5416 5820 13.280936 A1+U51190
+5821 6030 16.382023 A1+AF484509
+6031 6225 8.395973 A1+AF069670
+6226 6555 11.592705 A1+AF004885
+6556 6705 7.747899 nh
+6706 6825 0.000000 nh
+6826 7125 11.475837 A1+AF484509
+7126 7275 2.210084 nh
+7276 7485 11.358851 A1+AF004885
+7486 7755 18.382900 D+K03454
+7756 8505 20.278667 A1+AF004885
+8506 8640 11.820225 A1+AF004885
+8641 8835 1.378151 nh
+8836 9330 9.064439 A1+AF004885
+9331 9699 15.767802 A1+U51190
+\end{verbatim}
+\I As before, we can summarize the annotations:
+\begin{verbatim}
+./alfy -i Data/A+DQ083238.fasta -j Data/hiv42.fasta  -M |
+perl -pe 's/(.)\+.+?(\s)/$1$2/g' | 
+awk -f Scripts/quantifyGenotypes.awk
+>A
+A1	57.5
+C	24.7
+nh	8.7
+G	6.3
+D	2.8
+\end{verbatim}
+We find that the K annotation  is now missing altogether and 8.7\% of
+the annotations are revealed as ``weak'' (\ty{nh}).
+\I To further investigate what a \ty{nh} annotation means, we can
+extract such a region and blast it against the subject sequence:
+\begin{verbatim}
+\end{verbatim}
+\I The amount of weakly homologous regions is sensitive to the minimal
+length of a recombining fragment. This quantity is set by the \ty{-f}
+option with a default value of $\ty{-w}/4=75$. Increasing this value
+leads to fewer regions diagnosed as ``non homologous''. For example,
+if we double the value of \ty{-f} we get
+\begin{verbatim}
+./alfy -f 150 -i Data/A+DQ083238.fasta -j Data/hiv42.fasta  -M |
+perl -pe 's/(.)\+.+?(\s)/$1$2/g' | 
+awk -f Scripts/quantifyGenotypes.awk
+>A
+A1	64.0
+C	24.7
+G	8.5
+D	2.8
+\end{verbatim}
+
+
+\I The previous result is again sensitive to the parameter settings. In this case the central quantity is the significance value
+for the maximum shustring length. The mathematical theory for this was derived in~\cite{hau09:est}
+and it is set with the \ty{-P} option. This can be interpreted like a
+classical $P$-value: it is the error probability when rejecting the
+null hypothesis that a shustring of some given length is due to chance
+alone. The default value of the \ty{-P} option is 0.4, which
+may strike you as rather high---why not use the classical $P=0.05$
+threshold? It is important to realize that a query has to
+contain not just one shustring that is longer than the maximum
+shustring length, but this property has to apply on average to
+\textit{all} shustrings across a given window. If we set \ty{-P} to a
+much more stringent value like 0.05, we get
+\begin{verbatim}
+./alfy -i Data/A+DQ083238.fasta -j Data/hiv42.fasta  -M -P 0.05 | 
+perl -pe 's/(.)\+.+?(\s)/$1$2/g' | 
+awk -f Scripts/quantifyGenotypes.awk
+>A
+>A
+A1	40.3
+nh	28.3
+C	23.2
+G	5.3
+D	2.9
+\end{verbatim}
+The false negative rate is now misleadingly high (28.3\%).
+\I Next, we explore the opposite problem of an inflated false positive
+rate. The files \ty{s1.fasta} and \ty{s2.fasta} contain the two
+simulated homologous sequences $S_1$ and $S_2$, respectively. The sequences are
+separated by 100 mismatches per kb and have the homology structure
+shown in Figure~\ref{fig:hom}: $S_2$ contains a gap between positions
+40--60 kb, which is duly detected by \ty{alfy} as a region without homology when
+running it with $S_1$ as query and $S_2$ as subject:
+\begin{verbatim}
+./alfy -i Data/s1.fasta -j Data/s2.fasta -M
+>S1
+1 40125 13.227115 S2
+40126 60045 9.835734 nh
+60046 100000 13.444236 S2
+\end{verbatim}
+However, if we set \ty{-P} from its default value of 0.4 to, say, 0.5,
+a semblance of homology across the 20 kb gap is created:
+\begin{verbatim}
+./alfy -i Data/s1.fasta -j Data/s2.fasta  -M -P 0.5
+>S1
+1 100000 12.639876 S2
+\end{verbatim}
+\begin{figure}
+\begin{center}
+\input{homol}
+\end{center}
+\caption{Homology structure of the two simulated sequences $S_1$ and
+  $S_2$. \textit{Dark gray}: homologous regions; \textit{light gray}:
+  sequence without homology; \textit{dashed line}: gap.}\label{fig:hom}
+\end{figure}
+
+\I Theoretically, $P=0.5$ should result in exact equality between
+the threshold length and the average length of random shustrings. Since
+the theory strictly applies only in the limit of infinite sequence
+length~\cite{hau09:est}, we observe a slight deviation from this
+ideal, but $P=0.45$ will do the trick:
+\begin{verbatim}
+./alfy -i Data/s1.fasta -j Data/s2.fasta -M -P 0.45
+>S1
+1 40125 13.227115 S2
+40126 60045 9.835734 nh
+60046 100000 13.444236 S2
+\end{verbatim}
+\I If you would like to simulate your own sequences to explore the
+behavior of \ty{alfy}, here is the protocol for generating \ty{s1.fasta} and
+\ty{s2.fasta}:
+\bi
+\I Create two homologous 100 kb sequences separated by 100 mismatches per
+kb
+\begin{verbatim}
+ms 2 1 -s 1000 -r 0 100000 | ms2dna > tmp.fasta
+\end{verbatim}
+The program \ty{ms} is the coalescent simulator
+written by Dick Hudson~\cite{hud02:gen}, which is available from his
+web site. The program \ty{ms2dna} and the two programs \ty{getSeq} and
+\ty{cutSeq} applied
+in the next steps are part of the \ty{bioBox}
+collection of tools available from
+\[
+\ty{http://guanine.evolbio.mpg.de/bioBox/}
+\]
+\I Extract \ty{s1.fasta}
+\begin{verbatim}
+getSeq -s S1 tmp.fasta > s1.fasta
+\end{verbatim}
+\I Extract \ty{s2.fasta} and make the deletion
+\begin{verbatim}
+getSeq -s S2 tmp.fa | 
+cutSeq -s -r 1-40000,60001-100000 > s2.fasta
+\end{verbatim}
+\ei
+\ei
+
+
+\section{Change Log}
+\be
+\I Version 1.1 (February 4, 2011)
+\bi
+\I First stable version.
+\ei
+\I Version 1.2 (February 6, 2011)
+\bi
+\I Changed default value and the interpretation of \ty{-P}.
+\I Changed bracketed output that indicates ``no homology'' to \ty{nh}.
+\I Changed positions as starting from 0 to starting from 1.
+\I Worked on documentation.
+\ei
+\I Version 1.3 (March 11, 2011)
+\bi
+\I Improved documentation.
+\ei
+\I Version 1.4 (December 8, 2011)
+\bi
+\I Fixed crash caused by contigs that are shorter than the default
+window length (\ty{-w}).
+\I Increased default value of minimum recombining fragment (\ty{-f}).
+\ei
+\ee
+
+\section{Acknowledgement}
+This software is based on the \ty{dss\_sort} library by G. 
+Manzini~\cite{man02:eng}.
+
+\bibliography{/home/haubold/References/references}
+%% Generate alfyDoc.bib:
+%% bibtool -x alfyDoc.aux -o alfyDoc.bib
+%%\bibliography{alfyDoc}
+\end{document}
+

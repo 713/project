@@ -1,0 +1,474 @@
+------------------------------- jModeltest 2.1.3 -------------------------------
+(c) 2011-onwards D. Darriba, G.L. Taboada, R. Doallo and D. Posada,
+(1) Department of Biochemistry, Genetics and Immunology
+    University of Vigo, 36310 Vigo, Spain.
+(2) Department of Electronics and Systems
+    University of A Coruna, 15071 A Coruna, Spain.
+e-mail: ddarriba@udc.es, dposada@uvigo.es
+--------------------------------------------------------------------------------
+ 
+Mon May 13 01:55:47 EDT 2013
+Linux 3.8.0-19-generic, arch: amd64, bits: 64, numcores: 4
+ 
+--------------------------------------------------------------------------------
+Citation: Darriba D, Taboada GL, Doallo R and Posada D. 2012.
+          "jModelTest 2: more models, new heuristics and parallel computing".
+          Nature Methods 9(8), 772.
+--------------------------------------------------------------------------------
+ 
+jModelTest 2.1.3
+Copyright (C) 2011 D. Darriba, G.L. Taboada, R. Doallo and D. Posada
+This program comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it under certain conditions
+ 
+Notice: This program may contain errors. Please inspect results carefully.
+ 
+ 
+Arguments = -d aligned.fasta -g 4 -f -AIC -BIC -a -S BEST
+
+Reading data file "aligned.fasta"... OK.
+  number of sequences: 10
+  number of sites: 705
+ 
+ 
+---------------------------------------------------------------
+*                                                             *
+*        COMPUTATION OF LIKELIHOOD SCORES WITH PHYML          *
+*                                                             *
+---------------------------------------------------------------
+ 
+::Settings::
+ 
+ Phyml version = 3.0
+ Phyml binary = PhyML_3.0_linux64
+ Candidate models = 12
+   number of substitution schemes = 3
+   including models with equal/unequal base frequencies (+F)
+   including only models without a proportion of invariable sites
+   including models with/without rate variation among sites (+G) (nCat = 4)
+ Optimized free parameters (K) = substitution parameters + 17 branch lengths + topology 
+ Base tree for likelihood calculations = ML tree
+ Tree topology search operation = BEST
+ 
+ 
+ 
+::Progress::
+ 
+Model 		 Exec. Time 	 Total Time 	 -lnL
+-------------------------------------------------------------------------
+JC+G		00h:00:13:03	00h:00:13:04	    4952.9965	 (1/12)
+F81+G		00h:00:21:08	00h:00:21:08	    4858.7305	 (2/12)
+K80+G		00h:00:23:07	00h:00:37:00	    4860.9616	 (3/12)
+HKY+G		00h:00:40:09	00h:00:40:09	    4711.5084	 (4/12)
+F81		00h:00:04:02	00h:00:41:02	    5128.2295	 (5/12)
+HKY		00h:00:07:00	00h:00:47:09	    5044.7358	 (6/12)
+SYM+G		00h:00:26:07	00h:00:48:05	    4756.6891	 (7/12)
+GTR		00h:00:07:06	00h:00:48:08	    4988.3946	 (8/12)
+JC		00h:00:06:01	00h:00:54:00	    5194.8495	 (9/12)
+K80		00h:00:06:05	00h:00:55:00	    5121.6134	 (10/12)
+SYM		00h:00:06:07	00h:00:55:06	    5003.5162	 (11/12)
+GTR+G		00h:01:02:00	00h:01:02:00	    4706.4037	 (12/12)
+ 
+   Model = JC
+   partition = 000000
+   -lnL = 5194.8495
+   K = 18 
+ 
+   Model = JC+G
+   partition = 000000
+   -lnL = 4952.9965
+   K = 19
+   gamma shape = 0.4880 
+ 
+   Model = F81
+   partition = 000000
+   -lnL = 5128.2295
+   K = 21
+   freqA = 0.2678 
+   freqC = 0.2966 
+   freqG = 0.1417 
+   freqT = 0.2939  
+ 
+   Model = F81+G
+   partition = 000000
+   -lnL = 4858.7305
+   K = 22
+   freqA = 0.2902 
+   freqC = 0.3129 
+   freqG = 0.1262 
+   freqT = 0.2708 
+   gamma shape = 0.4390 
+ 
+   Model = K80
+   partition = 010010
+   -lnL = 5121.6134
+   K = 19
+   kappa = 2.3678 (ti/tv = 1.1839) 
+ 
+   Model = K80+G
+   partition = 010010
+   -lnL = 4860.9616
+   K = 20
+   kappa = 3.1544 (ti/tv = 1.5772)
+   gamma shape = 0.4420 
+ 
+   Model = HKY
+   partition = 010010
+   -lnL = 5044.7357
+   K = 22
+   freqA = 0.2858 
+   freqC = 0.2947 
+   freqG = 0.1344 
+   freqT = 0.2851 
+   kappa = 2.5183 (ti/tv = 1.2656) 
+ 
+   Model = HKY+G
+   partition = 010010
+   -lnL = 4711.5084
+   K = 23
+   freqA = 0.3474 
+   freqC = 0.3060 
+   freqG = 0.1020 
+   freqT = 0.2446 
+   kappa = 6.6985 (ti/tv = 2.9857)
+   gamma shape = 0.2890 
+ 
+   Model = SYM
+   partition = 012345
+   -lnL = 5003.5162
+   K = 23
+   R(a) [AC] =  7.3040
+   R(b) [AG] =  6.6375
+   R(c) [AT] =  5.1292
+   R(d) [CG] =  0.9750
+   R(e) [CT] =  12.5664
+   R(f) [GT] =  1.0000 
+ 
+   Model = SYM+G
+   partition = 012345
+   -lnL = 4756.6891
+   K = 24
+   R(a) [AC] =  5.5905
+   R(b) [AG] =  5.0027
+   R(c) [AT] =  3.9206
+   R(d) [CG] =  0.4172
+   R(e) [CT] =  17.8043
+   R(f) [GT] =  1.0000
+   gamma shape = 0.4360 
+ 
+   Model = GTR
+   partition = 012345
+   -lnL = 4988.3946
+   K = 26
+   freqA = 0.2631 
+   freqC = 0.2713 
+   freqG = 0.1780 
+   freqT = 0.2876 
+   R(a) [AC] =  5.8502
+   R(b) [AG] =  7.1266
+   R(c) [AT] =  3.9302
+   R(d) [CG] =  1.0380
+   R(e) [CT] =  9.5595
+   R(f) [GT] =  1.0000 
+ 
+   Model = GTR+G
+   partition = 012345
+   -lnL = 4706.4037
+   K = 27
+   freqA = 0.3557 
+   freqC = 0.2979 
+   freqG = 0.1180 
+   freqT = 0.2284 
+   R(a) [AC] =  0.9121
+   R(b) [AG] =  3.8248
+   R(c) [AT] =  1.2357
+   R(d) [CG] =  0.4224
+   R(e) [CT] =  8.7211
+   R(f) [GT] =  1.0000
+   gamma shape = 0.2910 
+ 
+  Best-fit models should be reoptimized for comparison with unconstrained likelihood
+ 
+Computation of likelihood scores completed. It took 00h:01:02:00.
+ 
+
+
+
+---------------------------------------------------------------
+*                                                             *
+*             AKAIKE INFORMATION CRITERION (AIC)              *
+*                                                             *
+---------------------------------------------------------------
+ 
+ Model selected: 
+   Model = GTR+G
+   partition = 012345
+   -lnL = 4706.4037
+   K = 27
+   freqA = 0.3557 
+   freqC = 0.2979 
+   freqG = 0.1180 
+   freqT = 0.2284 
+   R(a) [AC] =  0.9121
+   R(b) [AG] =  3.8248
+   R(c) [AT] =  1.2357
+   R(d) [CG] =  0.4224
+   R(e) [CT] =  8.7211
+   R(f) [GT] =  1.0000
+   gamma shape = 0.2910 
+ 
+ML tree (NNI) for the best AIC model = (Carp:0.22688984,Loach:0.33057131,(Frog:0.33439309,(Chicken:0.94593983,(Human:0.88119612,((Mouse:0.17650178,Rat:0.15441465):0.22304813,(Whale:0.20671642,(Cow:0.19379768,Seal:0.32847503):0.05863805):0.07331635):0.18928706):0.31437632):0.07923053):0.27543086);
+ 
+ 
+* AIC MODEL SELECTION : Selection uncertainty
+ 
+Model             -lnL    K         AIC      delta      weight cumWeight
+------------------------------------------------------------------------ 
+GTR+G        4706.4037   27   9466.8075     0.0000      0.7511    0.7511 
+HKY+G        4711.5084   23   9469.0168     2.2093      0.2489    1.0000 
+SYM+G        4756.6891   24   9561.3782    94.5707   2.19e-021    1.0000 
+F81+G        4858.7305   22   9761.4609   294.6534   7.81e-065    1.0000 
+K80+G        4860.9616   20   9761.9232   295.1157   6.20e-065    1.0000 
+JC+G         4952.9965   19   9943.9930   477.1855   1.80e-104    1.0000 
+GTR          4988.3946   26  10028.7893   561.9818   6.96e-123    1.0000 
+SYM          5003.5162   23  10053.0324   586.2249   3.79e-128    1.0000 
+HKY          5044.7357   22  10133.4715   666.6640   1.29e-145    1.0000 
+K80          5121.6134   19  10281.2269   814.4194   1.06e-177    1.0000 
+F81          5128.2295   21  10298.4590   831.6515   1.93e-181    1.0000 
+JC           5194.8495   18  10425.6990   958.8915   4.52e-209    1.0000
+------------------------------------------------------------------------
+-lnL:	negative log likelihod
+ K:	number of estimated parameters
+ AIC:	Akaike Information Criterion
+ delta:	AIC difference
+ weight:	AIC weight
+ cumWeight:	cumulative AIC weight
+ 
+ 
+* AIC MODEL SELECTION : Confidence interval
+ 
+There are 12 models in the 100% confidence interval: [ GTR+G HKY+G SYM+G F81+G K80+G JC+G GTR SYM HKY K80 F81 JC ] 
+ 
+ 
+ 
+---------------------------------------------------------------
+*                                                             *
+*                    MODEL AVERAGED PHYLOGENY                 *
+*                                                             *
+---------------------------------------------------------------
+ 
+Selection criterion: . . . . AIC
+Confidence interval: . . . . 1.00
+Consensus type:. . . . . . . 50% majority rule
+ 
+ 
+Using 12 models in the 1.00 confidence interval = GTR+G HKY+G SYM+G F81+G K80+G JC+G GTR SYM HKY K80 F81 JC  
+ 
+Species in order:
+ 
+    1. Carp
+    2. Loach
+    3. Frog
+    4. Chicken
+    5. Human
+    6. Mouse
+    7. Rat
+    8. Whale
+    9. Cow
+    10. Seal
+ 
+Bipartitions included in the consensus tree
+ 
+    1234567891
+             0
+    ********** ( 1.0 )
+    --******** ( 1.0 )
+    ---******* ( 1.0 )
+    ----****** ( 1.0 )
+    -----***** ( 1.0 )
+    -----**--- ( 1.0 )
+    -------*** ( 1.0 )
+    --------** ( 1.0 )
+
+ 
+                                                              +-------10 Rat
+                                                 +-----------13
+                                                 |            +---------9 Mouse
+                                      +---------14
+                                      |          |      +------------------8 Seal
+                                      |          |   +-11
+                                      |          |   |  +----------7 Cow
+                                      |          +--12
+                                      |              +-----------6 Whale
+                    +----------------15
+                    |                 +--------------------------------------------------5 Human
+                +--16
+                |   +------------------------------------------------------4 Chicken
++--------------17
+|               +------------------3 Frog
+|
++------------------2 Loach
+|
++------------1 Carp
+
+ 
+(Carp:0.226890,Loach:0.330571,(Frog:0.334393,(Chicken:0.945940,(Human:0.881196,((Whale:0.206716,(Cow:0.193798,Seal:0.328475)1.00:0.058638)1.00:0.073316,(Mouse:0.176502,Rat:0.154415)1.00:0.223048)1.00:0.189287)1.00:0.314376)1.00:0.079231)1.00:0.275431);
+ 
+Note: this tree is unrooted. Branch lengths are the expected number of substitutions per site. Labels next to parentheses represent phylogenetic uncertainty due to model selection (see documentation)
+
+
+
+---------------------------------------------------------------
+*                                                             *
+*             BAYESIAN INFORMATION CRITERION (BIC)            *
+*                                                             *
+---------------------------------------------------------------
+ 
+ Sample size: 705.0
+ 
+ Model selected: 
+   Model = HKY+G
+   partition = 010010
+   -lnL = 4711.5084
+   K = 23
+   freqA = 0.3474 
+   freqC = 0.3060 
+   freqG = 0.1020 
+   freqT = 0.2446 
+   kappa = 6.6985 (ti/tv = 2.9857)
+   gamma shape = 0.2890 
+ 
+ML tree (NNI) for the best BIC model = (Carp:0.20586217,Loach:0.31652551,(Frog:0.32622111,(Chicken:0.88587052,(Human:0.85864484,((Mouse:0.17523524,Rat:0.15649668):0.23622855,(Whale:0.20892172,(Cow:0.17917932,Seal:0.31601071):0.05681077):0.07011193):0.17416012):0.31839301):0.07564080):0.26915734);
+ 
+ 
+* BIC MODEL SELECTION : Selection uncertainty
+ 
+Model             -lnL    K         BIC      delta      weight cumWeight
+------------------------------------------------------------------------ 
+HKY+G        4711.5084   23   9573.8553     0.0000      0.9997    0.9997 
+GTR+G        4706.4037   27   9589.8788    16.0235      0.0003    1.0000 
+SYM+G        4756.6891   24   9670.7749    96.9196   9.00e-022    1.0000 
+K80+G        4860.9616   20   9853.0872   279.2318   2.32e-061    1.0000 
+F81+G        4858.7305   22   9861.7413   287.8859   3.06e-063    1.0000 
+JC+G         4952.9965   19  10030.5988   456.7434   6.60e-100    1.0000 
+GTR          4988.3946   26  10147.3024   573.4471   3.00e-125    1.0000 
+SYM          5003.5162   23  10157.8709   584.0156   1.52e-127    1.0000 
+HKY          5044.7357   22  10233.7519   659.8965   5.07e-144    1.0000 
+K80          5121.6134   19  10367.8326   793.9773   3.89e-173    1.0000 
+F81          5128.2295   21  10394.1811   820.3258   7.39e-179    1.0000 
+JC           5194.8495   18  10507.7466   933.8912   1.61e-203    1.0000
+------------------------------------------------------------------------
+-lnL:	negative log likelihod
+K:	number of estimated parameters
+BIC:	Bayesian Information Criterion
+delta:	BIC difference
+weight:	BIC weight
+cumWeight:	cumulative BIC weight
+ 
+ 
+* BIC MODEL SELECTION : Confidence interval
+ 
+There are 12 models in the 100% confidence interval: [ HKY+G GTR+G SYM+G K80+G F81+G JC+G GTR SYM HKY K80 F81 JC ] 
+ 
+ 
+ 
+---------------------------------------------------------------
+*                                                             *
+*                    MODEL AVERAGED PHYLOGENY                 *
+*                                                             *
+---------------------------------------------------------------
+ 
+Selection criterion: . . . . BIC
+Confidence interval: . . . . 1.00
+Consensus type:. . . . . . . 50% majority rule
+ 
+ 
+Using 12 models in the 1.00 confidence interval = HKY+G GTR+G SYM+G K80+G F81+G JC+G GTR SYM HKY K80 F81 JC  
+ 
+Species in order:
+ 
+    1. Carp
+    2. Loach
+    3. Frog
+    4. Chicken
+    5. Human
+    6. Mouse
+    7. Rat
+    8. Whale
+    9. Cow
+    10. Seal
+ 
+Bipartitions included in the consensus tree
+ 
+    1234567891
+             0
+    ********** ( 1.0 )
+    --******** ( 1.0 )
+    ---******* ( 1.0 )
+    ----****** ( 1.0 )
+    -----***** ( 1.0 )
+    -----**--- ( 1.0 )
+    -------*** ( 1.0 )
+    --------** ( 1.0 )
+
+ 
+                                                            +-------10 Rat
+                                               +-----------13
+                                               |            +---------9 Mouse
+                                     +--------14
+                                     |         |      +-----------------8 Seal
+                                     |         |   +-11
+                                     |         |   |  +---------7 Cow
+                                     |         +--12
+                                     |             +-----------6 Whale
+                   +----------------15
+                   |                 +-------------------------------------------------5 Human
+               +--16
+               |   +--------------------------------------------------4 Chicken
++-------------17
+|              +------------------3 Frog
+|
++-----------------2 Loach
+|
++-----------1 Carp
+
+ 
+(Carp:0.205862,Loach:0.316526,(Frog:0.326221,(Chicken:0.885871,(Human:0.858645,((Whale:0.208922,(Cow:0.179179,Seal:0.316011)1.00:0.056811)1.00:0.070112,(Mouse:0.175235,Rat:0.156497)1.00:0.236229)1.00:0.174160)1.00:0.318393)1.00:0.075641)1.00:0.269157);
+ 
+Note: this tree is unrooted. Branch lengths are the expected number of substitutions per site. Labels next to parentheses represent phylogenetic uncertainty due to model selection (see documentation)
+ 
+ 
+ 
+---------------------------------------------------------------
+*                                                             *
+*                    SELECTION SUMMARY                        *
+*                                                             *
+---------------------------------------------------------------
+
+::Optimized Topologies Summary::
+
+There are 2 different topologies.
+
+Topology Id: 1
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  1	100.00%		  0	7.53e-01	1.79e-01
+BIC	  1	100.00%		  0	7.07e-01	1.58e-01
+Models supporting:   8
+                     JC+G F81+G K80 K80+G HKY HKY+G SYM+G GTR+G 
+
+Topology Id: 2
+	Rank	Weight		 RF	AvgEucl		VarEucl
+AIC	  2	  0.00%		  2	1.14e+00	5.83e-05
+BIC	  2	  0.00%		  2	1.08e+00	5.85e-05
+Models supporting:   4
+                     JC F81 SYM GTR 
+
+ 
+ 
+ 
+::Best Models::
+ 
+	Model 		f(a) 	f(c) 	f(g) 	f(t) 	kappa 	titv 	Ra	Rb	Rc	Rd	Re	Rf	pInv 	gamma
+----------------------------------------------------------------------------------------------------------------------------------------
+AIC 	GTR+G		0.36	0.30	0.12	0.23	0.00	0.00	  0.912   3.825   1.236   0.422   8.721   1.000 N/A	   0.29
+BIC 	HKY+G		0.35	0.31	0.10	0.24	6.70	2.99	  1.000   6.699   1.000   1.000   6.699   1.000 N/A	   0.29

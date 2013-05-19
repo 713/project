@@ -36,7 +36,7 @@ echo <<<EOT
       <output id="uploadStatus"></output>
 
       <hr>
-      <p><a href="https://github.com/713/project/">Link to our backends on Github</a>
+      <p><a href="https://github.com/713/project/">Link to this project on Github</a>
         <small class="text-warning pull-right">( Team B members: Stuti A.,
           Rebecca E., Luigi L., Prateek T., Yiming X. )</small>
       </p>
@@ -151,6 +151,8 @@ if ($fileCount = count($arrayFiles))
       ";
       </script> 
       ';
+      exec("python get_core2.py");
+      exec("python emailing.py");
 //      echo "<p>Extra info: Stored in " . $uploadDir . $arrayFiles[$i] . "</p>";
 
       }

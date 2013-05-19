@@ -1,0 +1,15 @@
+\begin{pspicture}(0,-2)(9.699,1)
+\psset{xunit=1cm}
+\psaxes[Dx=1]{}(0,-1)(9.699,-1)
+\psset{linewidth=15pt}
+\psline[linecolor=lightgray](0,1)(9.699,1)
+\psline[linecolor=darkgray](1.197,1)(1.848,1)
+\psline[linecolor=darkgray](2.651,1)(4.358,1)
+
+\psline[linecolor=lightgray](0,0)(9.699,0)
+\psline[linecolor=darkgray](1.125,0)(1.874,0)
+\psline[linecolor=darkgray](2.655,0)(4.334,0)
+\end{pspicture}
+
+
+

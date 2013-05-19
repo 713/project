@@ -1,0 +1,360 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=latex 2012.6.4)  29 JUN 2012 13:53
+entering extended mode
+ %&-line parsing enabled.
+**alfyDoc.tex
+(./alfyDoc.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, ngerman, german, german-x-2009-06-19, ngerman-x-2009-06-19, loaded.
+
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/pstricks/pst-all.sty
+Package: pst-all 2008/01/01 the main pstricks tools
+
+(/usr/share/texmf-texlive/tex/latex/pstricks/pstricks.sty
+Package: pstricks 2008/11/26 v0.40 LaTeX wrapper for `PSTricks' (RN,HV)
+
+(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.tex
+`PSTricks' v1.29  <2009/05/19> (tvz)
+\pst@dima=\dimen103
+\pst@dimb=\dimen104
+\pst@dimc=\dimen105
+\pst@dimd=\dimen106
+\pst@dimg=\dimen107
+\pst@dimh=\dimen108
+\pst@hbox=\box26
+\pst@boxg=\box27
+\pst@cnta=\count87
+\pst@cntb=\count88
+\pst@cntc=\count89
+\pst@cntd=\count90
+\pst@cntg=\count91
+\pst@cnth=\count92
+\pst@toks=\toks14
+(/usr/share/texmf-texlive/tex/generic/pstricks/pstricks.con)
+\psunit=\dimen109
+\psxunit=\dimen110
+\psyunit=\dimen111
+\pslinewidth=\dimen112
+\pst@customdefs=\toks15
+\pslinearc=\dimen113
+\everypsbox=\toks16
+\psframesep=\dimen114
+\pslabelsep=\dimen115
+\pst@shift=\dimen116
+\theoverlaybox=\box28
+)
+File: pstricks.tex 2009/05/19 v1.29 `PSTricks' (tvz,hv)
+
+(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: dvips.def on input line 225.
+
+(/usr/share/texmf-texlive/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+(/usr/share/texmf-texlive/tex/latex/pstricks/pst-node.sty
+Package: pst-node 2006/01/01 package wrapper for pst-node.tex
+
+(/usr/share/texmf-texlive/tex/generic/pstricks/pst-node.tex  v1.01, 2008/11/26
+\psrow=\count93
+\pscol=\count94
+\psmatrixcnt=\count95
+\psrowsep=\skip43
+\pscolsep=\skip44
+)
+File: pst-node.tex 2008/11/26 1.01 `pst-node' (tvz)
+) (/usr/share/texmf-texlive/tex/latex/pst-tree/pst-tree.sty
+Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
+
+(/usr/share/texmf-texlive/tex/generic/pst-tree/pst-tree.tex
+(/usr/share/texmf-texlive/tex/generic/xkeyval/pst-xkey.tex
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+
+(/usr/share/texmf-texlive/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+(/usr/share/texmf-texlive/tex/generic/xkeyval/xkeyval.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+\XKV@depth=\count96
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+
+(/usr/share/texmf-texlive/tex/generic/xkeyval/keyval.tex))))
+ v1.11, 2009/09/17(tvz,dg,hv)
+\pstree@rootbox=\box29
+\pstree@box=\box30
+\psnodecnt=\count97
+\pstreelevel=\count98
+\pstreecnt=\count99
+\pstree@cnt=\count100
+\pstree@stop=\count101
+)
+File: pst-tree.tex 2009/09/17 1.11 `pst-tree' (tvz,hv)
+)
+(/usr/share/texmf-texlive/tex/latex/pstricks/pst-plot.sty
+Package: pst-plot 2004/07/15 package wrapper for pst-plot.tex
+
+(/usr/share/texmf-texlive/tex/generic/pstricks/pst-plot.tex
+(/usr/share/texmf-texlive/tex/generic/multido/multido.tex
+ v1.41, 2004/05/18 <tvz>
+\multido@count=\count102
+\multidocount=\count103
+\multido@stuff=\toks19
+)  v1.04, 2009/06/08)
+File: pst-plot.tex 2009/06/08 1.04 `pst-plot' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-grad/pst-grad.sty
+Package: pst-grad 2004/07/15 package wrapper for pst-grad.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-grad/pst-grad.tex
+`pst-grad' v1.06, 2006/11/27 (tvz,dg,hv))
+File: pst-grad.tex 2006/11/27 1.06 `pst-grad' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-coil/pst-coil.sty
+Package: pst-coil 2006/08/11 package wrapper for pst-coil.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-coil/pst-coil.tex  v1.06, 2006/11/27)
+File: pst-coil.tex 2006/11/05 v1.00 `pst-coil' (tvz)
+) (/usr/share/texmf-texlive/tex/latex/pst-text/pst-text.sty
+Package: pst-text 2006/01/01 package wrapper for pst-text.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-text/pst-text.tex
+ v1.00, 2006/11/05(tvz,hv))
+File: pst-text.tex 2006/11/05 1.00 `pst-text' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-3d/pst-3d.sty
+Package: pst-3d 2005/09/02 package wrapper for pst-3d.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-3d/pst-3d.tex
+`PST-3d' v1.00, 2005/09/03 (tvz))
+File: pst-3d.tex 2005/09/03 v1.00 `PST-3d' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-eps/pst-eps.sty
+Package: pst-eps 2005/05/20 package wrapper for pst-eps.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-eps/pst-eps.tex  v1.00, 2006/11/04
+\pst@epsout=\write3
+\pst@tempout=\write4
+)
+File: pst-eps.tex 2006/11/04 1.00 `pst-eps' (tvz)
+)
+(/usr/share/texmf-texlive/tex/latex/pst-fill/pst-fill.sty
+Package: pst-fill 2005/09/13 package wrapper for pst-fill.tex (hv)
+
+(/usr/share/texmf-texlive/tex/generic/pst-fill/pst-fill.tex
+`PST-Fill' v1.01, 2007/03/10 (tvz,dg,hv)
+\pst@fillbox=\box31
+)
+File: pst-fill.tex 2007/03/10 v1.01 `PST-fill' (tvz,dg)
+)
+(/usr/share/texmf-texlive/tex/latex/pstricks-add/pstricks-add.sty
+Package: pstricks-add 2009/03/17 v. 0.13 package wrapper for pstricks-add.tex (
+hv)
+
+(/usr/share/texmf-texlive/tex/generic/pstricks-add/pstricks-add.tex
+(/usr/share/texmf-texlive/tex/generic/pstricks-add/pst-fp.tex
+`pst-fp' v0.02, 2009/04/02 (hv)
+\pstFP@xs=\count104
+\pstFP@xia=\count105
+\pstFP@xib=\count106
+\pstFP@xfa=\count107
+\pstFP@xfb=\count108
+\pstFP@rega=\count109
+\pstFP@regb=\count110
+\pstFP@regs=\count111
+\pstFP@times=\count112
+)
+(/usr/share/texmf-texlive/tex/generic/pst-math/pst-math.tex
+`pst-math' v0.23 , (CJ,hv)) `pstricks-add' v3.35, 2009/10/12 (dr,hv)
+\pst@dimm=\dimen117
+\pst@dimn=\dimen118
+\pst@dimo=\dimen119
+\pst@dimp=\dimen120
+\pst@cntm=\count113
+\pst@cntn=\count114
+\pst@cnto=\count115
+\pst@cntp=\count116
+\@zero=\count117
+\pstRadUnit=\dimen121
+\pstRadUnitInv=\dimen122
+\pshooklength=\dimen123
+\pshookwidth=\dimen124
+\@digitcounter=\count118
+\psk@subticksize=\dimen125
+\pst@xticksizeA=\dimen126
+\pst@xticksizeB=\dimen127
+\pst@xticksizeC=\dimen128
+\pst@yticksizeA=\dimen129
+\pst@yticksizeB=\dimen130
+\pst@yticksizeC=\dimen131
+\psk@llx=\dimen132
+\psk@lly=\dimen133
+\psk@urx=\dimen134
+\psk@ury=\dimen135
+\pst@xunit=\dimen136
+\pst@yunit=\dimen137
+\linecnt=\count119
+\chart@ColorIndex=\dimen138
+\chart@ColorStep=\dimen139
+\pst@chartHeight=\dimen140
+\pst@chartStackDepth=\dimen141
+\pst@chartStackWidth=\dimen142
+\chart@Toggle=\count120
+)
+File: pstricks-add.tex 2009/10/12 v3.35 `PSTricks-add' (hv)
+)
+(/usr/share/texmf-texlive/tex/latex/multido/multido.sty
+Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
+
+))
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: dvips.def on input line 91.
+)
+(/usr/share/texmf-texlive/tex/latex/eurosym/eurosym.sty
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box32
+)
+(/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+)
+(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count121
+\lst@gtempboxa=\box33
+\lst@token=\toks20
+\lst@length=\count122
+\lst@currlwidth=\dimen143
+\lst@column=\count123
+\lst@pos=\count124
+\lst@lostspace=\dimen144
+\lst@width=\dimen145
+\lst@newlines=\count125
+\lst@lineno=\count126
+\lst@maxwidth=\dimen146
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count127
+\lst@skipnumbers=\count128
+\lst@framebox=\box34
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+ (./alfyDoc.aux)
+\openout1 = `alfyDoc.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 20.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+\c@lstlisting=\count129
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 24.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 24.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 24.
+
+(/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 26.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 40.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 40.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 59.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 59.
+ [1
+
+] [2] [3] [4]
+Overfull \hbox (1.97308pt too wide) in paragraph at lines 282--289
+[]\OT1/ptm/m/n/10 Next, we ex-plore the op-po-site prob-lem of an in-flated fal
+se pos-i-tive rate. The files \OT1/pcr/m/n/10 s1.fasta \OT1/ptm/m/n/10 and \OT1
+/pcr/m/n/10 s2.fasta
+ []
+
+(./homol.tex) [5]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 328.
+ (./alfyDoc.bbl [6]) [7] (./alfyDoc.aux) ) 
+Here is how much of TeX's memory you used:
+ 5388 strings out of 495022
+ 76653 string characters out of 1181059
+ 203058 words of memory out of 3000000
+ 8480 multiletter control sequences out of 15000+50000
+ 11058 words of font info for 38 fonts, out of 3000000 for 9000
+ 28 hyphenation exceptions out of 8191
+ 38i,8n,54p,303b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on alfyDoc.dvi (7 pages, 34348 bytes).

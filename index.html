@@ -65,7 +65,11 @@
                 </div> <!-- mc-field-group -->
               </div>	
               <div class="clear">
-                <!-- CHECK onClick WHY IT IS NOT WORKING -->
+                <!-- onClick to show message is not working
+                     Currently, user can look at the uploading status and
+                     "% uploading completed" in the browser's status bar
+                     Currently, uploading message can be seen in the next page.
+                -->
                 <button class="btn btn-large btn-block btn-primary"
                         type="submit" name="submit" onClick="uploadingMessage()">
                   Process
@@ -110,6 +114,8 @@
 
     //========================================================================= 
     // Displays message during uploading.
+    // Currently, user can view at the "% uploading completed" on their
+    // browser's status bar.
     //========================================================================= 
     function uploadingMessage() {
       document.getElementById("uploadingMessage").innerHTML=" \

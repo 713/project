@@ -1,0 +1,242 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import shutil
+from lib import convert
+from lib import core_tree
+from Bio import SeqIO
+# cur_dir = os.getcwd()
+# sys.path.append(cur_dir+"/lib/")
+# libfiles = []
+# for file in os.listdir(cur_dir+"/lib/"):
+#     if file.endswith(".py"):
+#         from lib import file
+
+################################################
+#Function to check if the file is valid. Requires the file name with the
+#entire path.
+def is_valid_file(filename):
+    if(os.path.isfile(filename)):
+        return True
+    return False
+
+#Function to check if the directory is valid. Requires the path to the directory
+def is_valid_dir(dirpath):
+    if(os.path.isdir(dirpath)):
+        return True
+    return False
+
+#Function to get the path of a file
+def get_filepath(dirpath, filename):
+    if(is_valid_dir(dirpath)):
+        filepath = "%s/%s" %(dirpath, filename)
+        if(is_valid_file(filepath)):
+            return filepath
+        else:
+            sys.error("File not in directory")
+    else:
+        sys.error("Invalid path to file")
+def get_filename(filepath):
+    if(is_valid_file(filepath)):
+        path = filepath.split("/")
+        last_elem = len(path) - 1
+        if(path[last_elem] == ""):
+            return path[last_elem - 1]
+        return path[last_elem]
+
+def generate_dirpath(dirlist):
+    path = ""
+    for i in xrange(len(dirlist)):
+        if(i == len(dirlist) - 1):
+            path += "%s" %(dirlist[i])
+        else:
+            path += "%s/" %(dirlist[i])
+    return path
+
+def get_dirpath(filepath):
+    if(is_valid_file(filepath)):
+        path = filepath.split("/")
+        last_elem = len(path) - 1
+        if(path[last_elem] == ""):
+            return generate_dirpath(path[:last_elem - 1])
+        return generate_dirpath(path[:last_elem])
+    else:
+        sys.exit("Invalid filepath")
+#Function to concatenate the contigs                      
+def get_concat_contigs(filepath):
+    print filepath
+    if(is_valid_file(filepath)):
+        filename = get_filename(filepath)
+        dirpath = get_dirpath(filepath)
+        print filename, dirpath
+        if(filename.endswith(".fasta")):
+            file_org = open("%s" %filepath, "r")
+            file_new = open("%s/concat-%s" %(dirpath, filename), "a")
+            file_new.write(">%s\n" %(filename))
+            for line in file_org:
+                if(line != "" and line[0] != ">"):
+                      line = line.rstrip()
+                      file_new.write(line)
+            file_org.close()
+            file_new.close()
+    else:
+        sys.exit("Invalid path")
+
+def get_best_model(filename):
+    assert os.path.isfile(filename)
+    file = open("%s" %filename)
+    found_best_model = False
+    for line in file:
+        if("::Best Models::") in line:
+            found_best_model = True
+        if(found_best_model == True):
+            if("AIC" in line):
+                line = line.split()
+                model = line[1] #Model is present in the second column
+                pInv = line[-2] #Prob. of invariant sites is the second last col.
+                gamma = line[-1] #Gamma is the last column.
+    return(model, pInv, gamma)
+
+def model_selection(core_file, output, location_jModelTest):
+    os.system("java -jar %s -d %s -g 4 -f -AIC -BIC -a -S BEST > %s"%(location_jModelTest,core_file,output))
+    model = get_best_model(output)
+    print model
+    return model
+
+#Get all the concatenated fasta files from the directory.
+def from_directory(dirpath):
+    assert(is_valid_dir(dirpath))
+    filenames = []
+    for filename in os.listdir(dirpath):
+        if("concat" in filename and filename.endswith(".fasta")):
+            filepath = "%s/%s" %(dirpath, filename)
+            assert(is_valid_file(filepath))
+            filenames.append(filepath)
+    return filenames
+
+#Function to fetch the sequence for a given strain.
+def get_sequence(filepath):
+    sequence = ""
+    count = 0
+    if(is_valid_file("%s" %(filepath))):
+        file = open("%s" %filepath)
+        #Read the sequence in a string.
+        for line in file:
+            if(count > 0):
+                sequence += line.rstrip()
+            count += 1         
+        file.close()
+    else:
+        sys.exit("Not a valid file", filepath) 
+    return sequence
+
+"""First this function fetches all the sequence files in the directory
+The command to run mauve is
+
+    mauve (or progressiveMauve) --output=<alignment_filename> 
+    --backbone-output=<backbone_filename> <seqfile_1> <seqfile_2> ... <seqfile_n>
+    
+    This function produces the backbone file containing the sequence positions common in all species being aligned
+    Also, this function produces the alignment file which is used for ******
+    
+"""
+def mauve(dirpath, output, backbone,location_mauve):
+#     print location_mauve, output
+    print "Running Mauve" 
+    file_list = from_directory(dirpath)
+    # Additional option flags will be in a config file later.
+    systemCall = ("%s --output=%s --backbone-output=%s"
+                 %(location_mauve, output, backbone))
+    for filename in file_list:
+        systemCall = "%s %s" %(systemCall, filename)
+    os.system(systemCall)
+
+#Returns the start position of a sequence
+def get_start_pos(seq_num):
+    return 2 * seq_num
+
+#Returns the end position of a sequence
+def get_end_pos(seq_num):
+    return 2 * seq_num + 1
+
+#Checks whether the region is a core genome
+def is_core_genome(positions):
+    for i in xrange(0,len(positions), 2):
+        #In the entire region, the start and end positions
+        #for any one organism should be non-zero 
+        if(positions[i] == "0" and positions[i+1] == "0"):
+            return False
+    return True
+
+#Returns the concatenated sequence of the core genome.
+def get_concat_seq(sequence, seq_num, backbone):
+    bac_file = open("%s"%backbone, "r")
+    align_seq = ""
+    count = 0
+    for line in bac_file:
+        #Ignore the first line which
+        #contains the sequence name.    
+        if(count > 0): 
+            line = line.split()
+            if(is_core_genome(line)):
+                print len(line), line, get_start_pos(seq_num), seq_num
+                assert(len(line) > get_start_pos(seq_num))
+                #Fetch the sequence positions from the backbone file.
+                start = int(line[get_start_pos(seq_num)])
+                end = int(line[get_end_pos(seq_num)])
+                #Switch the start and end positions in case of inversions
+                if(start > end):
+                    start, end = end, start
+                #Slice the sequence in those positions.
+                assert(len(sequence) > end)
+                if(start != 0 or end != 0):
+                    align_seq += sequence[start:end]
+        count += 1
+    bac_file.close()
+    return align_seq
+
+def aligned_sequence(dirpath, output, backbone,
+                     location_mauve, location_jModelTest, output_model):
+    assert(is_valid_dir(dirpath))
+    out_file = open("%s/out_core.fasta" %(dirpath), "a")
+    #distr_file = open("out_distr.fasta","a")
+    file_list = from_directory(dirpath)
+    for filename in os.listdir(dirpath):
+        if filename.endswith("gb") or filename.endswith("gbk"):
+            count = SeqIO.convert(filename, "genbank", filename+".fasta", "fasta")
+            print "Genbank file found - "+filename
+            print "Generating "+filename+".fasta ..." + "Done!"
+    for filename in os.listdir(dirpath):
+        if filename.endswith("fasta"):
+            get_concat_contigs("%s/%s" %(dirpath, filename))
+    #Get the list of all the concatenated fasta sequence files
+    #present in the directory
+    
+    #Concatenate all the contigs for each organism in the file.
+    # Alignment with Mauve
+    mauve(dirpath, output, backbone, location_mauve)
+    print "Alignment done!"
+    #Iterating through the files in the directory
+    # Variable i in each iteration represents the name of the file 
+    for i in xrange(len(file_list)):
+        seq = get_sequence(file_list[i])
+#         print seq
+        concat_seq = get_concat_seq(seq, i, backbone)
+        out_file.write(">seq%s\n%s\n" %(i,concat_seq))
+    out_file.close()
+    """After this we get a file by the name out_core.fasta"""
+    # Model Selection with JModelTest
+    print "Moving to model selection"
+    model,pInv,gamma = model_selection("out_core.fasta",output_model,location_jModelTest)
+    core_tree.make_core_tree("out_core.fasta",gamma, model,pInv)
+    
+if __name__ == "__main__":
+    data_dirpath   = "/home/prateek/Dropbox/Semester_2/Project/"
+    cwd = data_dirpath
+    data_backbone  = cwd+"pipeline_output/backbone"
+    data_output    = cwd+"pipeline_output/output"
+    location_mauve = cwd+"dependencies/mauve_2.3.1/progressiveMauve"
+    location_jModelTest = cwd+"dependencies/jmodeltest-2.1.3/jModelTest.jar"
+    output_model = cwd+"pipeline_output/output_model_selection.txt"
+    aligned_sequence(data_dirpath, data_output, data_backbone, location_mauve, location_jModelTest, output_model)

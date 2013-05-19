@@ -1,0 +1,33 @@
+============================= kr 2.x.x INSTALLATION README =====================
+
+1) Extracting the tarfile:
+
+"tar -xvzf kr_2.x.x.tgz"
+
+2) switch to Kr_2.x.x/Src/Kr:
+
+"cd Kr_2.x.x/Src/Kr"
+
+3)for mac users only:
+	edit Makefile, so CFLAGS and CFLAGS64 are changed to this:
+
+CFLAGS= -O3 -Wall -Wshadow -pedantic -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -std=c99 -DVER32 -DUNIX -I/opt/local/include/ -L/opt/local/lib
+
+CFLAGS64= -O3 -Wall -Wshadow -pedantic -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -std=c99 -DUNIX -I/opt/local/include/ -L/opt/local/lib
+
+4) running make:
+
+"make"
+
+This command builds necessary libraries and two executables: "kr" and "kr64".
+The executable "kr" is a 32-bit program and the executable "kr64" is a 
+64-bit program. In general, "kr64" is adopted for large-scale data sets 
+(over 0.5 Gb), and "kr" from smaller data sets.
+
+5) If you want to use "kr" or "kr64" from any directory without referring to
+"Kr_2.x.x/Src/Kr" source directory, simply include the path to these 
+executables in the list of directories of the enviroment variable PATH, e.g:
+
+PATH=${PATH}:$(HOME)/some-path/Kr_2.x.x/Src/Kr
+
+or, copy it to your bin directory.
